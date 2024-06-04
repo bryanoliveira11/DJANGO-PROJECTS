@@ -16,7 +16,7 @@ To run these projects on your local environment, follow these steps:
 
 2. Create and activate a virtual environment:
 
-  - Creating a Enviroment : <b> python -m venv venv <b/> <br/>
+  - Creating a Enviroment : <b> python -m venv venv </b> <br/>
 
   - Activating a Enviroment : source venv/bin/activate  # On Windows, use "venv\Scripts\activate" <br/> <br/>
 
