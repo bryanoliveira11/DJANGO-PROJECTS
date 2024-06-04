@@ -1,4 +1,5 @@
 INSTALLED_APPS = [
+    'core',
     # django
     'django.contrib.admin',
     'django.contrib.auth',

@@ -1,0 +1,12 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+{% include "global/partials/head.html" %}
+
+<body>
+{% block content %}{% endblock content %}
+
+<script src="{% static 'global/js/build/scripts.js' %}"></script>
+</body>
+</html>
