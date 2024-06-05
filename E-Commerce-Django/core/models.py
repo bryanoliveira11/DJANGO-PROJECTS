@@ -21,6 +21,11 @@ class Product(models.Model):
     image = models.ImageField(
         upload_to='products/%Y/%m/%d/',
     )
+    # Sale Stuff
+    is_sale = models.BooleanField(default=False)
+    sale_price = models.DecimalField(
+        decimal_places=2, max_digits=6, default=None, blank=True, null=True
+    )
 
     def __str__(self) -> str:
         return self.name
