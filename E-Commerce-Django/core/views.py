@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from django.urls import reverse
 
 from .models import Product
 
@@ -21,6 +21,18 @@ def index(request):
 
 
 def login_user(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            messages.success(request, 'You are logged in.')
+            login(request, user=user)
+            return redirect(reverse('home:home'))
+        else:
+            messages.error(request, 'Invalid User')
+            return redirect(reverse('home:login'))
+
     return render(
         request,
         'core/pages/login.html',
@@ -31,4 +43,6 @@ def login_user(request):
 
 
 def logout_user(request):
-    return HttpResponse()
+    logout(request)
+    messages.success(request, 'You have been logged out.')
+    return redirect(reverse('home:home'))
