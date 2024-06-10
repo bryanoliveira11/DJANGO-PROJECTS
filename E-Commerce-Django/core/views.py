@@ -1,3 +1,6 @@
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponse
 from django.shortcuts import render
 
 from .models import Product
@@ -15,3 +18,17 @@ def index(request):
             'products': products,
         }
     )
+
+
+def login_user(request):
+    return render(
+        request,
+        'core/pages/login.html',
+        context={
+            'site_title': 'Login',
+        }
+    )
+
+
+def logout_user(request):
+    return HttpResponse()
