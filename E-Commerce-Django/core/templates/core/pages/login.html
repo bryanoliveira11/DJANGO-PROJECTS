@@ -1,16 +1,22 @@
 {% extends "global/base.html" %}
 
 {% block content %}
+{% if request.user.is_authenticated %}
 <div class="form-container">
-    <form method="POST" action="{% url 'home:login' %}">
-        {% csrf_token %}
-        <div class="form-group">
-          <input type="text" class="form-control" name="username" placeholder="Enter your username">
-        </div>
-        <div class="form-group">
-          <input type="password" class="form-control" name="password" placeholder="Enter your password">
-        </div>
-        <button type="submit" class="btn btn-secondary">Login</button>
-    </form>
+  You're Logged in already.
 </div>
+{% else %}
+<div class="form-container">
+  <form method="POST" action="{% url 'home:login' %}">
+      {% csrf_token %}
+      <div class="form-group">
+        <input type="text" class="form-control" name="username" placeholder="Enter your username">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" name="password" placeholder="Enter your password">
+      </div>
+      <button type="submit" class="btn btn-secondary">Login</button>
+  </form>
+</div>
+{% endif %}
 {% endblock content %}
