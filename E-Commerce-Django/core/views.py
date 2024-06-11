@@ -3,6 +3,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import redirect, render
 from django.urls import reverse
 
+from core.forms import SignUpForm
+
 from .models import Product
 
 
@@ -53,10 +55,16 @@ def logout_user(request):
 
 
 def register_user(request):
+    form = SignUpForm()
+
+    if request.method == 'POST':
+        ...
+
     return render(
         request,
         'core/pages/register.html',
         context={
+            'form': form,
             'site_title': 'Register',
             'header_title': 'Register',
             'header_subtitle': 'Create a new account.',
