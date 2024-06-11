@@ -15,6 +15,8 @@ def index(request):
         'core/pages/home.html',
         context={
             'site_title': 'Shop List',
+            'header_title': 'Django-Commerce',
+            'header_subtitle': 'List of Products.',
             'products': products,
         }
     )
@@ -38,6 +40,8 @@ def login_user(request):
         'core/pages/login.html',
         context={
             'site_title': 'Login',
+            'header_title': 'Login',
+            'header_subtitle': 'Login into your account.',
         }
     )
 
@@ -46,3 +50,15 @@ def logout_user(request):
     logout(request)
     messages.success(request, 'You have been logged out.')
     return redirect(reverse('home:login'))
+
+
+def register_user(request):
+    return render(
+        request,
+        'core/pages/register.html',
+        context={
+            'site_title': 'Register',
+            'header_title': 'Register',
+            'header_subtitle': 'Create a new account.',
+        }
+    )
