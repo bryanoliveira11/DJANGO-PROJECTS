@@ -15,7 +15,7 @@ This project is a clone of the popular digital distribution platform, Steam, bui
 1. Clone the repository
 
     ```bash
-    git clone https://github.com/yourusername/django-steam-clone.git
+    git clone https://github.com/bryanoliveira11/DJANGO-PROJECTS
     cd django-steam-clone
     ```
 
@@ -52,12 +52,6 @@ This project is a clone of the popular digital distribution platform, Steam, bui
     ```
 
 7. Open your browser and go to `http://127.0.0.1:8000/` to see the application.
-
-## Usage
-
-- Register a new user account or log in with the superuser account.
-- Browse games, view game details, add games to your cart, and complete purchases.
-- Write reviews and rate games.
 
 ## Project Structure
 
