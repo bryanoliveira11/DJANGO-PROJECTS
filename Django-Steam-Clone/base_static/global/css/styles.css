@@ -98,8 +98,8 @@ nav.nav-container .row-item a i {
   color: var(--color-gray-3);
 }
 
-nav.nav-container .row-item span:hover {
-  color: #ffffff;
+nav.nav-container .row-item:hover span, nav.nav-container .row-item:hover i {
+  color: #fff;
 }
 
 nav.nav-container .nav-row-items-end {
