@@ -1,0 +1,41 @@
+{% load static %}
+
+<nav class="nav-container">
+    <div class="nav-row-items">
+        <div class="nav-row-items-start">
+            <div class="row-item">
+                <span><i class="fa-brands fa-steam"></i>Steam</span>
+            </div>
+            <div class="row-item"><span>View</span></div>
+            <div class="row-item"><span>Friends</span></div>
+            <div class="row-item"><span>Games</span></div>
+            <div class="row-item"><span>Help</span></div>
+        </div>
+        <div class="nav-row-items-end">
+            <div class="row-item end-item">
+                <div class="item-with-bg news-page">
+                    <a href="#"><i class="fa-solid fa-bullhorn"></i></a>
+                </div>
+            </div>
+            <div class="row-item end-item">
+                <div class="item-with-bg notifications">
+                    <i class="fa-solid fa-bell"></i>
+                </div>
+            </div>
+            <div class="row-item end-item">
+                <div class="item-with-bg profile-dropdown">
+                    <img src="{% static 'global/img/profile-pic.png' %}" alt="Profile Pic">
+                    <span>
+                        username
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="row-item end-item">
+                <div class="big-picture">
+                    <i class="fa-solid fa-tv"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
