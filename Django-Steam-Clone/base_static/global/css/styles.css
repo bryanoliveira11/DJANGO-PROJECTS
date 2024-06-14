@@ -3,6 +3,7 @@
   --primary-bg: #202c3c;
   --primary-lighter-bg: #203a51;
   --color-secondary: #1a9fff;
+  --color-secondary-lighter: #6D949E;
   --row-items-bg: #272d37;
 
   --color-white: #fff;
@@ -218,15 +219,18 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   background: red;
 }
 
-.header-container .shop-shortcuts-container {
+.header-container .shop-shortcuts-container .shop-shortcuts-col {
   display: flex;
   flex-direction: column;
+  width: fit-content;
+  margin: 0 auto;
+  align-items: end;
 }
 
 .header-container .shop-shortcuts-content {
   width: 94rem;
   height: 3.5rem;
-  margin: 3rem auto;
+  margin: 0 auto;
   background: blue;
 }
 
@@ -252,6 +256,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   flex-direction: row;
   width: fit-content;
   margin-left: 3rem;
+  cursor: pointer;
 }
 
 .header-container
@@ -268,15 +273,71 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 }
 
 .header-container .shop-shortcuts-content .shop-search-bar {
+  margin-left: auto;
+  margin-right: 0.5rem;
+}
+
+.shop-search-bar .search-container {
   position: relative;
-  left: 0;
+  display: flex;
+  align-items: center;
+}
+
+.header-container .shop-shortcuts-content .shop-search-bar input {
+  height: 2.8rem;
+  border-radius: 0.3rem;
+  border: none;
+  outline: 1px solid var(--primary-lighter-bg);
+  padding: 1rem;
+  width: 20rem;
+  background: #316282;
+}
+
+.header-container .shop-shortcuts-content .shop-search-bar input:hover {
+  outline: 1px solid var(--color-secondary);
+}
+
+.header-container .shop-shortcuts-content .shop-search-bar button {
+  position: absolute;
+  right: -0.2rem;
+  background: none;
+  border: none;
+  outline: 1px solid var(--primary-lighter-bg);
+  border-radius: 0.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem;
+  height: 100%;
+  background: var(--color-secondary);
+}
+
+.header-container .shop-shortcuts-content .shop-search-bar button:hover {
+  filter: brightness(120%);
+}
+
+.header-container .shop-shortcuts-content .shop-search-bar button i {
+  font-size: 1.4rem;
+  color: var(--primary-bg);
 }
 
 .header-container .shop-wishlist-btn {
-  position: absolute;
-  right: 49rem;
-  top: 9.7rem;
-  width: 10rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 11rem;
   height: 2rem;
-  background: greenyellow;
+  margin: 2rem 0 0.3rem 0;
+  font-size: 1.1rem;
+  color: var(--color-white);
+  background: #6cb3c5ec;
+  border: 1px solid var(--color-dark-text);
+  cursor: pointer;
+}
+
+.header-container .shop-wishlist-btn:hover {
+  background: #ffffffd7;
+  color: var(--color-dark-text);
 }
