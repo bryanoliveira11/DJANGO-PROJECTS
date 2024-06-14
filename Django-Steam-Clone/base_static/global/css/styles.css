@@ -1,10 +1,11 @@
 /* vars */
 :root {
   --primary-bg: #202c3c;
-  --primary-lighter-bg: #203A51;
+  --primary-lighter-bg: #203a51;
+  --color-secondary: #1A9FFF;
   --row-items-bg: #272d37;
 
-  --color-white: #ebe4e2;
+  --color-white: #fff;
   --color-white-background: #f5f4f4;
   --clr-dark-background: #333435;
   --color-black: #000;
@@ -85,7 +86,7 @@ nav.nav-container .nav-row-items-start .row-item {
   margin-left: 1.5rem;
 }
 
-nav.nav-container .nav-row-items-start .row-item span{
+nav.nav-container .nav-row-items-start .row-item span {
   font-size: 1.4rem;
   cursor: pointer;
   transition: all 100ms ease-in;
@@ -98,8 +99,9 @@ nav.nav-container .row-item a i {
   color: var(--color-gray-3);
 }
 
-nav.nav-container .row-item:hover span, nav.nav-container .row-item:hover i {
-  color: #fff;
+nav.nav-container .row-item:hover span,
+nav.nav-container .row-item:hover i {
+  color: var(--color-white);
 }
 
 nav.nav-container .nav-row-items-end {
@@ -124,24 +126,25 @@ nav.nav-container .nav-row-items-end .item-with-bg {
 nav.nav-container .nav-row-items-end .item-with-bg a,
 nav.nav-container .nav-row-items-end .item-with-bg i {
   font-size: 1.4rem;
-  color: var(--color-gray-3);
+  color: var(--color-gray-2);
   margin: 0;
   padding: 0.5rem;
 }
 
-nav.nav-container .nav-row-items-end .row-item{
+nav.nav-container .nav-row-items-end .row-item {
   cursor: pointer;
   transition: all 100ms ease-in;
 }
 
 nav.nav-container .nav-row-items-end .item-with-bg:hover {
   filter: brightness(140%);
-  color: #fff;
+  color: var(--color-white);
 }
 
 nav.nav-container .nav-row-items-end .item-with-bg.profile-dropdown {
   display: flex;
   flex-direction: row;
+  align-items: center;
   width: fit-content;
 }
 
@@ -153,16 +156,17 @@ nav.nav-container .nav-row-items-end .item-with-bg.profile-dropdown:hover {
 nav.nav-container .nav-row-items-end .item-with-bg.profile-dropdown img {
   width: 2.4rem;
   height: 2.4rem;
-  padding: 0.1rem;
-  box-shadow: 5px 0 3px -2px rgb(0,0,0, .3);
+  margin-left: 0.4rem;
+  box-shadow: 5px 0 3px -2px rgb(0, 0, 0, 0.3);
 }
 
 nav.nav-container .nav-row-items-end .item-with-bg.profile-dropdown span {
-  margin-left: 0.5rem;
+  margin-left: 0.8rem;
 }
 
 nav.nav-container .nav-row-items-end .item-with-bg.profile-dropdown span i {
   font-size: 0.8rem;
+  margin-right: 0.4rem;
 }
 
 nav.nav-container .nav-row-items-end .end-item .big-picture i {
@@ -170,5 +174,40 @@ nav.nav-container .nav-row-items-end .end-item .big-picture i {
 }
 
 nav.nav-container .nav-row-items-end .end-item .big-picture i:hover {
-  color: #fff;
+  color: var(--color-white);
+}
+
+nav.nav-container .nav-row-items-start.nav-bottom {
+  margin-top: 0.6rem;
+}
+
+nav.nav-container .nav-row-items-start .row-item-upper {
+  margin-left: 1.8rem;
+  text-transform: uppercase;
+  color: var(--color-gray-0);
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+nav.nav-container .nav-row-items-start .row-item-upper.nav-chevron {
+  margin-left: 1.5rem;
+}
+
+nav.nav-container .nav-row-items-start .row-item-upper.nav-chevron a {
+  transition: all 100ms ease-in;
+  color: var(--color-gray-2);
+}
+
+nav.nav-container .nav-row-items-start .row-item-upper.nav-chevron a:hover {
+  color: var(--color-white);
+}
+
+nav.nav-container .nav-row-items-start .row-item-upper span:hover {
+  cursor: pointer;
+  color: var(--color-white);
+}
+
+nav.nav-container .nav-row-items-start .row-item-upper.active span {
+  color: var(--color-secondary);
+  border-bottom: 3px solid var(--color-secondary);
 }
