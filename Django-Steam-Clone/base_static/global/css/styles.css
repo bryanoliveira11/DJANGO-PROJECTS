@@ -3,8 +3,9 @@
   --primary-bg: #202c3c;
   --primary-lighter-bg: #203a51;
   --color-secondary: #1a9fff;
-  --color-secondary-lighter: #6D949E;
+  --color-secondary-lighter: #6d949e;
   --row-items-bg: #272d37;
+  --search-form-primary-color: #28506b;
 
   --color-white: #fff;
   --color-white-background: #f5f4f4;
@@ -216,7 +217,8 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 .header-container {
   width: 100%;
   height: 45rem;
-  background: red;
+  background: url("https://cdn.akamai.steamstatic.com/steam/clusters/sale_autumn2019_assets/54b5034d397baccb93181cc6/home_header_bg_day_english.gif?t=1687217633");
+  background-position: center;
 }
 
 .header-container .shop-shortcuts-container .shop-shortcuts-col {
@@ -229,9 +231,12 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 
 .header-container .shop-shortcuts-content {
   width: 94rem;
-  height: 3.5rem;
   margin: 0 auto;
-  background: blue;
+  height: 3.5rem;
+  background: #3c5f8ae5;
+  -webkit-box-shadow: -1px 1px 8px 3px rgba(32, 44, 60, 0.904);
+  -moz-box-shadow: -1px 1px 8px 3px rgb(32, 44, 60, 0.904);
+  box-shadow: -1px 1px 8px 3px rgb(32, 44, 60, 0.904);
 }
 
 .header-container .shop-shortcuts-content .shop-shortcut {
@@ -254,21 +259,33 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 .header-container .shop-shortcuts-content .shop-shortcut-dropdown {
   display: flex;
   flex-direction: row;
+  align-items: center;
   width: fit-content;
-  margin-left: 3rem;
+  padding: 0 1.5rem;
+  margin-left: 1rem;
   cursor: pointer;
+  height: 100%;
+}
+
+.header-container .shop-shortcuts-content .shop-shortcut-dropdown:hover {
+  background: rgb(78, 138, 184);
+  background: linear-gradient(
+    97deg,
+    rgba(78, 138, 184, 0.918) 45%,
+    rgba(49, 98, 130, 0.753) 100%
+  );
 }
 
 .header-container
   .shop-shortcuts-content
   .shop-shortcut-dropdown.profile-pic-drop {
-  margin-left: 1rem;
+  margin-left: 0;
 }
 
 .header-container .shop-shortcuts-content .shop-shortcut-dropdown span {
   color: var(--color-white);
   text-transform: capitalize;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 1.4rem;
 }
 
@@ -287,10 +304,11 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   height: 2.8rem;
   border-radius: 0.3rem;
   border: none;
-  outline: 1px solid var(--primary-lighter-bg);
+  outline: 1px solid var(--search-form-primary-color);
   padding: 1rem;
   width: 20rem;
   background: #316282;
+  color: var(--color-white);
 }
 
 .header-container .shop-shortcuts-content .shop-search-bar input:hover {
@@ -299,18 +317,19 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 
 .header-container .shop-shortcuts-content .shop-search-bar button {
   position: absolute;
-  right: -0.2rem;
+  right: 0;
   background: none;
   border: none;
-  outline: 1px solid var(--primary-lighter-bg);
+  outline: 1px solid var(--search-form-primary-color);
   border-radius: 0.2rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.6rem;
+  padding: 0.7rem;
   height: 100%;
   background: var(--color-secondary);
+  scale: 0.95;
 }
 
 .header-container .shop-shortcuts-content .shop-search-bar button:hover {
@@ -318,8 +337,8 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 }
 
 .header-container .shop-shortcuts-content .shop-search-bar button i {
-  font-size: 1.4rem;
-  color: var(--primary-bg);
+  font-size: 1.6rem;
+  color: var(--search-form-primary-color);
 }
 
 .header-container .shop-wishlist-btn {
@@ -329,12 +348,16 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   justify-content: center;
   width: 11rem;
   height: 2rem;
-  margin: 2rem 0 0.3rem 0;
+  margin: 2rem 0 0.2rem 0;
   font-size: 1.1rem;
   color: var(--color-white);
-  background: #6cb3c5ec;
+  background: #6cb3c5e5;
   border: 1px solid var(--color-dark-text);
   cursor: pointer;
+}
+
+.header-container .shop-wishlist-btn span {
+  margin-bottom: 0.2rem;
 }
 
 .header-container .shop-wishlist-btn:hover {
