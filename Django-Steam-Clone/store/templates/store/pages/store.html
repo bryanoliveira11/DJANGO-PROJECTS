@@ -1,9 +1,19 @@
 {% extends "global/base.html" %}
+{% load static %}
 
 {% block content %}
-<div class="store-container">
-    <div class="store-featured-content">
-        <h1 class="store-title">featured & recommended</h1>
+<div class="main-store-container">
+    <div class="store-column-content">
+        <div class="steam-gift-cards">
+            <img src="{% static 'global/img/steamcards-asset.png' %}" alt="steam cards asset">
+            <h1>steam gift cards</h1>
+            <span>Give the Gift of Game</span>
+        </div>
+    </div>
+    <div class="store-featured-container">
+        <div class="store-featured-content">
+            <h1 class="store-title">featured & recommended</h1>
+        </div>
     </div>
 </div>
 {% endblock content %}
