@@ -165,7 +165,6 @@ nav.nav-container .nav-row-items-end .item-with-bg.profile-dropdown:hover {
 
 nav.nav-container .nav-row-items-end .item-with-bg.profile-dropdown img {
   width: 2.4rem;
-  height: 2.4rem;
   margin-left: 0.4rem;
   box-shadow: 5px 0 3px -2px rgb(0, 0, 0, 0.3);
 }
@@ -260,7 +259,6 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   .shop-shortcut-dropdown
   img.profile-pic {
   width: 1.8rem;
-  height: 1.8rem;
   margin-right: 1rem;
 }
 
