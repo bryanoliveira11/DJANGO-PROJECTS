@@ -58,8 +58,13 @@ img {
   max-width: 100%;
 }
 
-nav.nav-container {
+.navbar-wrap {
+  position: relative;
   height: 9rem;
+  z-index: 1;
+}
+
+nav.nav-container {
   background: rgb(23, 29, 37);
   background: linear-gradient(
     174deg,
@@ -68,6 +73,9 @@ nav.nav-container {
   );
   padding: 1rem 1.5rem;
   color: var(--color-gray-3);
+  height: 9rem;
+  width: 100%;
+  position: fixed;
 }
 
 nav.nav-container .nav-row-items {
@@ -363,4 +371,11 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 .header-container .shop-wishlist-btn:hover {
   background: #ffffffd7;
   color: var(--color-dark-text);
+}
+
+.store-container {
+  width: 120rem;
+  height: 50rem;
+  background: red;
+  margin-top: 3rem;
 }

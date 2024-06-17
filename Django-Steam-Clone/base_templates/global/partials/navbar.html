@@ -1,55 +1,57 @@
 {% load static %}
 
-<nav class="nav-container">
-    <div class="nav-row-items">
-        <div class="nav-row-items-start">
-            <div class="row-item">
-                <span><i class="fa-brands fa-steam"></i>Steam</span>
+<div class="navbar-wrap">
+    <nav class="nav-container">
+        <div class="nav-row-items">
+            <div class="nav-row-items-start">
+                <div class="row-item">
+                    <span><i class="fa-brands fa-steam"></i>Steam</span>
+                </div>
+                <div class="row-item"><span>View</span></div>
+                <div class="row-item"><span>Friends</span></div>
+                <div class="row-item"><span>Games</span></div>
+                <div class="row-item"><span>Help</span></div>
             </div>
-            <div class="row-item"><span>View</span></div>
-            <div class="row-item"><span>Friends</span></div>
-            <div class="row-item"><span>Games</span></div>
-            <div class="row-item"><span>Help</span></div>
+            <div class="nav-row-items-end">
+                <div class="row-item end-item">
+                    <div class="item-with-bg news-page" title="View News from Steam">
+                        <a href="#"><i class="fa-solid fa-bullhorn"></i></a>
+                    </div>
+                </div>
+                <div class="row-item end-item">
+                    <div class="item-with-bg notifications" title="View Notifications">
+                        <i class="fa-solid fa-bell"></i>
+                    </div>
+                </div>
+                <div class="row-item end-item">
+                    <div class="item-with-bg profile-dropdown" title="Manage Account">
+                        <img src="{% static 'global/img/profile-pic.png' %}" alt="Profile Pic">
+                        <small>
+                            username
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </small>
+                    </div>
+                </div>
+                <div class="row-item end-item">
+                    <div class="big-picture" title="Enter Big Picture Mode">
+                        <i class="fa-solid fa-tv"></i>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="nav-row-items-end">
-            <div class="row-item end-item">
-                <div class="item-with-bg news-page" title="View News from Steam">
-                    <a href="#"><i class="fa-solid fa-bullhorn"></i></a>
+        <div class="nav-row-items">
+            <div class="nav-row-items-start nav-bottom">
+                <div class="row-item-upper nav-chevron">
+                    <a href="#"><i class="fa-solid fa-arrow-left"></i></a>
                 </div>
-            </div>
-            <div class="row-item end-item">
-                <div class="item-with-bg notifications" title="View Notifications">
-                    <i class="fa-solid fa-bell"></i>
+                <div class="row-item-upper nav-chevron">
+                    <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
                 </div>
-            </div>
-            <div class="row-item end-item">
-                <div class="item-with-bg profile-dropdown" title="Manage Account">
-                    <img src="{% static 'global/img/profile-pic.png' %}" alt="Profile Pic">
-                    <small>
-                        username
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </small>
-                </div>
-            </div>
-            <div class="row-item end-item">
-                <div class="big-picture" title="Enter Big Picture Mode">
-                    <i class="fa-solid fa-tv"></i>
-                </div>
+                <div class="row-item-upper active"><span>store</span></div>
+                <div class="row-item-upper"><span>library</span></div>
+                <div class="row-item-upper"><span>community</span></div>
+                <div class="row-item-upper"><span>username</span></div>
             </div>
         </div>
-    </div>
-    <div class="nav-row-items">
-        <div class="nav-row-items-start nav-bottom">
-            <div class="row-item-upper nav-chevron">
-                <a href="#"><i class="fa-solid fa-arrow-left"></i></a>
-            </div>
-            <div class="row-item-upper nav-chevron">
-                <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-            <div class="row-item-upper active"><span>store</span></div>
-            <div class="row-item-upper"><span>library</span></div>
-            <div class="row-item-upper"><span>community</span></div>
-            <div class="row-item-upper"><span>username</span></div>
-        </div>
-    </div>
-</nav>
+    </nav>
+</div>
