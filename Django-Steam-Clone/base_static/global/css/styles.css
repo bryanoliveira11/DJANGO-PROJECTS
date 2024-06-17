@@ -374,24 +374,23 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 }
 
 .main-store-container {
-  width: 140rem;
-  margin: 0 auto;
+  width: 150rem;
+  margin: 1rem auto;
   display: flex;
-  background: purple;
 }
 
 .store-featured-container {
   width: 100%;
   max-width: 94rem;
-  background: blue;
   padding: 0 1rem;
-  margin-left: 1rem;
+  margin-left: 4.5rem;
 }
 
 .store-featured-container h1.store-title {
   text-transform: uppercase;
   color: var(--color-white);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 
 .store-column-content {
@@ -399,24 +398,28 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   flex-direction: column;
   max-width: 20.5rem;
   width: 100%;
-  height: 50rem;
-  background: red;
+  height: fit-content;
 }
 
 .store-column-content .steam-gift-cards {
+  display: block;
   padding: 2rem 1rem;
   font-weight: 700;
   width: fit-content;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
+  cursor: pointer;
+}
+
+.store-column-content .steam-gift-cards:hover h1,
+.store-column-content .steam-gift-cards:hover span {
+  color: var(--color-white);
 }
 
 .store-column-content .steam-gift-cards img {
-  width: 15rem;
-  height: 6rem;
+  width: 16rem;
 }
 
 .store-column-content .steam-gift-cards h1 {
-  font-size: 1.5rem;
   text-transform: uppercase;
   color: var(--color-secondary);
   margin: 0.5rem 0 0 0;
@@ -424,6 +427,43 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 }
 
 .store-column-content .steam-gift-cards span {
-  color: var(--color-gray-1);
+  color: var(--color-gray-2);
   font-size: 1.3rem;
+}
+
+.store-column-content .recently-viewed-content {
+  width: fit-content;
+  width: 90%;
+  background: rgb(40, 52, 68);
+  background: linear-gradient(
+    86deg,
+    rgba(40, 52, 68, 1) 58%,
+    rgba(56, 67, 83, 0.9850140739889706) 100%
+  );
+  color: var(--color-gray-2);
+  padding: 0.2rem 0 1.5rem 0;
+  margin-left: 1rem;
+}
+
+.store-column-content h1 {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: #536f86;
+  margin-bottom: 0.4rem;
+}
+
+.store-column-content p {
+  text-transform: capitalize;
+  font-size: 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.store-column-content p:hover {
+  color: #5bc0f4;
+}
+
+.store-column-content .filter-item {
+  color: var(--color-gray-2);
+  padding: 0.6rem 1rem;
 }
