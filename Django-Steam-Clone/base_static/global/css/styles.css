@@ -44,6 +44,7 @@ body {
   font-family: var(--font-primary);
   min-height: 100vh;
   background: var(--primary-bg);
+  overflow-x: hidden;
 }
 
 ul {
@@ -372,23 +373,10 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 }
 
 .main-store-container {
-  width: 150rem;
+  max-width: 150rem;
+  width: 100%;
   margin: 1rem auto;
   display: flex;
-}
-
-.store-featured-container {
-  width: 100%;
-  max-width: 94rem;
-  padding: 0 1rem;
-  margin-left: 4.5rem;
-}
-
-.store-featured-container h1.store-title {
-  text-transform: uppercase;
-  color: var(--color-white);
-  font-size: 1.4rem;
-  font-weight: 600;
 }
 
 .store-column-content {
@@ -401,10 +389,9 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 
 .store-column-content .steam-gift-cards {
   display: block;
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem;
   font-weight: 700;
   width: fit-content;
-  margin-top: 1.5rem;
   cursor: pointer;
 }
 
@@ -464,4 +451,26 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 .store-column-content .filter-item {
   color: var(--color-gray-2);
   padding: 0.6rem 1rem;
+}
+
+.store-featured-container {
+  max-width: 99rem;
+  width: 100%;
+  padding: 0 1rem;
+  margin-left: 4.5rem;
+}
+
+.store-featured-container h1.store-title {
+  text-transform: uppercase;
+  color: var(--color-white);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.store-featured-container .store-games-slider-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background: red;
+  height: 20rem;
 }
