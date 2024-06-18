@@ -472,5 +472,40 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   flex-direction: row;
   width: 100%;
   background: red;
-  height: 20rem;
+  max-height: 35rem;
+  height: 35rem;
+  -webkit-box-shadow: 1px 1px 13px 3px rgb(0, 0, 0, 0.3);
+  -moz-box-shadow: 1px 1px 13px 3px rgb(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 13px 3px rgb(0, 0, 0, 0.3);
+}
+
+.store-featured-container .store-games-slider-container .game-primary-image {
+  width: 65%;
+  background: blue;
+}
+
+.store-featured-container .store-games-slider-container .game-info-content {
+  color: var(--color-white);
+  width: 35%;
+}
+
+.store-featured-container
+  .store-games-slider-container
+  .game-info-content
+  .game-title {
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  font-size: 2rem;
+  text-wrap: wrap;
+  height: fit-content;
+}
+
+.store-featured-container
+  .store-games-slider-container
+  .game-info-content
+  .game-grid-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 1rem;
+    padding: 0.5rem 1.5rem;
 }
