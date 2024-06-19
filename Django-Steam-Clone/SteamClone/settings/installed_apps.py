@@ -1,4 +1,5 @@
 INSTALLED_APPS = [
+    'games',
     'store',
     # django
     'django.contrib.admin',
