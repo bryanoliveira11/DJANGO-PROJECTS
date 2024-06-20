@@ -10,11 +10,11 @@ class Games(models.Model):
         blank=True,
         default='',
     )
-    minimum_requirements = models.TextField()
-    recommended_requirements = models.TextField()
+    minimum_requirements = models.TextField(null=True, blank=True)
+    recommended_requirements = models.TextField(null=True, blank=True)
     developers = models.CharField(max_length=150)
     publishers = models.CharField(max_length=150)
-    price = models.CharField(max_length=50)
+    price = models.CharField(max_length=50, null=True, blank=True)
     screenshot1 = models.ImageField(
         upload_to='games/screenshots/%Y/%m/%d/',
         blank=True,
