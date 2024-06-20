@@ -7,16 +7,23 @@
             </div>
         </div>
         <div class="game-primary-image">
-            <img src="https://meups.com.br/wp-content/uploads/2024/06/ELDEN-RING-SHADOW-OF-THE-ERDTREE-1.jpg" alt="game primary image">
+            {% for game in slide_games  %}
+                {% if game.background_raw %}
+                <img src="{{game.background_raw}}" alt="game primary image">
+                {% else %}
+                <img src="{{game.header_image}}" alt="game primary image">
+                {% endif %}
+            {% endfor %}
         </div>
         <div class="game-info-content">
+            {% for game in slide_games  %}
             <div class="game-info-container">
-                <h1 class="game-title">Some Game</h1>
+                <h1 class="game-title">{{game.name}}</h1>
                 <div class="game-grid-images">
-                    <img src="https://image.api.playstation.com/vulcan/ap/rnd/202402/0817/114b1df9577098209a8bb8e45f4a009e201e9a2fa5113a06.png" alt="game image">
-                    <img src="https://image.api.playstation.com/vulcan/ap/rnd/202402/0817/114b1df9577098209a8bb8e45f4a009e201e9a2fa5113a06.png" alt="game image">
-                    <img src="https://image.api.playstation.com/vulcan/ap/rnd/202402/0817/114b1df9577098209a8bb8e45f4a009e201e9a2fa5113a06.png" alt="game image">
-                    <img src="https://image.api.playstation.com/vulcan/ap/rnd/202402/0817/114b1df9577098209a8bb8e45f4a009e201e9a2fa5113a06.png" alt="game image">
+                    <img src="{{game.screenshot1}}" alt="game image">
+                    <img src="{{game.screenshot2}}" alt="game image">
+                    <img src="{{game.screenshot3}}" alt="game image">
+                    <img src="{{game.screenshot4}}" alt="game image">
                 </div>
                 <div class="game-status">
                     <h2>Now Available</h2>
@@ -26,11 +33,18 @@
                 </div>
                 <div class="game-price-platform">
                     <div class="content">
-                        <span>50$</span>
+                        <span>
+                            {% if game.price %}
+                            {{game.price}}
+                            {% else %}
+                            Free
+                            {% endif %}
+                        </span>
                         <i class="fa-brands fa-windows"></i>
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
         <div class="slider-arrow">
             <div class="arrow-right">
