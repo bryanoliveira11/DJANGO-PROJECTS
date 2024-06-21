@@ -711,3 +711,24 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
     rgba(69, 94, 123, 0) 100%
   );
 }
+
+.store-slides {
+  width: 100%;
+  max-height: 5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.store-slides .slide-dot {
+  width: 1.8rem;
+  height: 1.1rem;
+  border-radius: 0.2rem;
+  background: #4e6479;
+  margin: 1.5rem 0 0 0.4rem;
+}
+
+.store-slides .slide-dot.active {
+  filter: brightness(150%);
+}

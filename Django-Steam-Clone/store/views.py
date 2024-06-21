@@ -15,5 +15,6 @@ class StorePage(View):
             {
                 'title': 'Store',
                 'slide_games': slide_games,
+                'slide_len': range(len(slide_games) - 1),
             }
         )
