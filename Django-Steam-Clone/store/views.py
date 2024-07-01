@@ -9,7 +9,7 @@ from games.models import Games
 class StorePage(View):
     def get(self, *args, **kwargs):
         all_games = Games.objects.all()
-        rand_start = random.randint(1, len(all_games))
+        rand_start = random.randint(1, (len(all_games) - 12))
         rand_price = random.randint(10, 250)
         slide_games = all_games[rand_start:rand_start + 12]
 

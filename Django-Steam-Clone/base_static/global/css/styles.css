@@ -727,8 +727,18 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   border-radius: 0.2rem;
   background: #4e6479;
   margin: 1.5rem 0 0 0.4rem;
+  cursor: pointer;
+  opacity: 0.4;
 }
 
 .store-slides .slide-dot.active {
+  opacity: 1;
+}
+
+.store-slides .slide-dot:hover {
   filter: brightness(150%);
+}
+
+.store-slides .slide-dot.active:hover {
+  filter: brightness(100%);
 }
