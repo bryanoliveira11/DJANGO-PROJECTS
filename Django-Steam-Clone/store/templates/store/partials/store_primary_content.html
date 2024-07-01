@@ -11,7 +11,7 @@
                 {% if game.background_raw %}
                 <img src="{{game.background_raw}}" alt="game primary image">
                 {% else %}
-                <img src="{{game.header_image}}" alt="game primary image">
+                <img src="{{game.screenshot1}}" alt="game primary image">
                 {% endif %}
             {% endfor %}
         </div>
@@ -37,7 +37,7 @@
                             {% if game.price %}
                             {{game.price}}
                             {% else %}
-                            Free
+                            {{rand_price}}
                             {% endif %}
                         </span>
                         <i class="fa-brands fa-windows"></i>
