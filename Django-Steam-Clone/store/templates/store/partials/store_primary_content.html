@@ -1,18 +1,14 @@
 <div class="store-featured-content">
     <h1 class="store-title">featured & recommended</h1>
     {% for game in slide_games  %}
-    <div class="store-games-slider-container">
+    <div class="store-games-slider-container fadeAnim">
         <div class="slider-arrow">
-            <div class="arrow-left">
+            <div class="arrow-left" onclick="plusSlides(-1)">
                 <i class="fa-solid fa-chevron-left"></i>
             </div>
         </div>
         <div class="game-primary-image">
-            {% if game.background_raw %}
-            <img src="{{game.background_raw}}" alt="game primary image">
-            {% else %}
-            <img src="{{game.screenshot1}}" alt="game primary image">
-            {% endif %}
+            <img src="{{game.screenshot1}}" alt="game image">
         </div>
         <div class="game-info-content">
             <div class="game-info-container">
@@ -44,7 +40,7 @@
             </div>
         </div>
         <div class="slider-arrow">
-            <div class="arrow-right">
+            <div class="arrow-right" onclick="plusSlides(1)">
                 <i class="fa-solid fa-chevron-right"></i>
             </div>
         </div>
@@ -52,8 +48,7 @@
     {% endfor %}
 </div>
 <div class="store-slides">
-    <div class="slide-dot active"></div>
     {% for i in slide_len  %}
-    <div class="slide-dot"></div>
+    <div class="slide-dot" onclick="currentSlide({{i}})"></div>
     {% endfor %}
 </div>

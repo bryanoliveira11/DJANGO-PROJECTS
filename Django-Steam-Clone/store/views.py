@@ -19,7 +19,7 @@ class StorePage(View):
             {
                 'title': 'Store',
                 'slide_games': slide_games,
-                'slide_len': range(len(slide_games) - 1),
+                'slide_len': range(1, (len(slide_games) + 1)),
                 'rand_price': f'R$ {rand_price},99',
             }
         )
