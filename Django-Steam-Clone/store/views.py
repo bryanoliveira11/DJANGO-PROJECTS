@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.views.generic import View
 
 from games.models import Games
-from utils.get_random_header import get_store_visual_assets
+from utils.get_random_assets import get_store_visual_assets
 
 
 class StorePage(View):

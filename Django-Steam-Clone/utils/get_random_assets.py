@@ -40,7 +40,8 @@ def get_store_visual_assets() -> tuple[str, str | None]:
     header = get_random_header()
     header_static = get_static_path('headers', header)
     background = get_matching_background(header)
-    background_static = get_static_path('backgrounds', background)
+    background_static = get_static_path(
+        'backgrounds', background) if background is not None else None
 
     return header_static, background_static
 
