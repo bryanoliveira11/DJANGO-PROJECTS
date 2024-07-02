@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.views.generic import View
 
 from games.models import Games
+from utils.get_random_header import get_store_visual_assets
 
 
 class StorePage(View):
@@ -11,6 +12,8 @@ class StorePage(View):
         return random.randint(1, (len(games) - 12))
 
     def get(self, *args, **kwargs):
+        header, background = get_store_visual_assets()
+
         all_games = Games.objects.all()
         rand_start = self.get_rand_start(all_games)
         slide_games = all_games[rand_start:rand_start + 12]
@@ -20,6 +23,8 @@ class StorePage(View):
             'store/pages/store.html',
             {
                 'title': 'Store',
+                'header': header,
+                'background': background,
                 'slide_games': slide_games,
                 'slide_len': range(1, (len(slide_games) + 1)),
             }
