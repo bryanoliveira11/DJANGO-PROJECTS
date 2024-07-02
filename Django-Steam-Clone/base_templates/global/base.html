@@ -4,7 +4,13 @@
 <head>
     {% include "global/partials/head.html" %}
 </head>
-<body>
+
+{% if not background %}
+<body style="background: #202c3c;">
+{% else %}
+<body style="background: url('{% static background %}');">
+{% endif %}
+
 {% include "global/partials/navbar.html" %}
 {% include "global/partials/header.html" %}
 {% block content %}{% endblock content %}
