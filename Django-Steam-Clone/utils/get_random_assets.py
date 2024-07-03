@@ -36,14 +36,19 @@ def get_static_path(
     return f'global/img/{folder}/{item}'
 
 
-def get_store_visual_assets() -> tuple[str, str | None]:
+def get_store_visual_assets() -> tuple[str, str | None, bool]:
     header = get_random_header()
     header_static = get_static_path('headers', header)
     background = get_matching_background(header)
     background_static = get_static_path(
-        'backgrounds', background) if background is not None else None
+        'backgrounds', background
+    ) if background is not None else None
+    is_video = False
 
-    return header_static, background_static
+    if 'webm' in header:
+        is_video = True
+
+    return header_static, background_static, is_video
 
 
 print(get_store_visual_assets())

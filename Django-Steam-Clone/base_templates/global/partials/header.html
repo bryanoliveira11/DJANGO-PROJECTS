@@ -1,7 +1,16 @@
 {% load static %}
 
-<div class="header-container" style="background: url('{% static header %}'); background-position: 50% 50%;">
+{% if header and not is_video %}
+<div class="header-container"
+    style="background: url('{% static header %}');
+    background-position: 50% 50%; background-repeat: no-repeat;
+    background-size: cover;">
     <div class="shop-shortcuts-container">
+{% else %}
+<div class="header-container">
+    <video src="{% static header %}" autoplay="true" loop="true"></video>
+    <div class="shop-shortcuts-container" style="position:relative; z-index:1;">
+{% endif %}
         <div class="shop-shortcuts-col">
             <div class="shop-wishlist-btn">
                 <span>Wishlist (99)</span>

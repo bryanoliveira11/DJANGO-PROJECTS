@@ -224,7 +224,12 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 
 .header-container {
   width: 100%;
-  height: 58rem;
+  height: 68rem;
+}
+
+.header-container video {
+  position: absolute;
+  width: 100%;
 }
 
 .header-container .shop-shortcuts-container .shop-shortcuts-col {
