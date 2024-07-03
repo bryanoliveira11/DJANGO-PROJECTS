@@ -1,4 +1,5 @@
 {% load static %}
+{% load filters %}
 
 <div class="steam-gift-cards">
     <img src="{% static 'global/img/steamcards-asset.png' %}" alt="steam cards asset">
@@ -7,11 +8,9 @@
 </div>
 <div class="recently-viewed-content">
     <h1>recently viewed</h1>
-    <p>something 1</p>
-    <p>something 2</p>
-    <p>something 3</p>
-    <p>something 4</p>
-    <p>something 5</p>
+    {% for game in rand_games  %}
+        <p>{{game.name|game_name_length_limit}}</p>
+    {% endfor %}
 </div>
 <div class="filter-item">
     <h1>your tags</h1>
