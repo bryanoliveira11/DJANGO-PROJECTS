@@ -39,6 +39,3 @@ def get_ids():
         ids_list.append(element.get_attribute('data-appid'))
 
     return ids_list
-
-
-print(get_ids())

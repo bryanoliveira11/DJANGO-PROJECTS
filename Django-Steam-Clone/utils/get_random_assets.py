@@ -49,6 +49,3 @@ def get_store_visual_assets() -> tuple[str, str | None, bool]:
         is_video = True
 
     return header_static, background_static, is_video
-
-
-print(get_store_visual_assets())
