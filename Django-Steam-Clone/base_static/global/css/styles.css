@@ -62,7 +62,7 @@ img {
 .navbar-wrap {
   position: relative;
   height: 9rem;
-  z-index: 1;
+  z-index: 2;
 }
 
 nav.nav-container {
@@ -634,7 +634,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   font-size: 1.8rem;
 }
 
-.store-featured-container .store-games-slider-container .slider-arrow {
+.slider-arrow {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -643,18 +643,12 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   color: var(--color-white);
 }
 
-.store-featured-container
-  .store-games-slider-container
-  .slider-arrow
-  .arrow-left {
+.slider-arrow .arrow-left {
   position: absolute;
   margin-right: 5rem;
 }
 
-.store-featured-container
-  .store-games-slider-container
-  .slider-arrow
-  .arrow-right {
+.slider-arrow .arrow-right {
   position: absolute;
   margin-left: 5rem;
 }
@@ -767,11 +761,12 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 /* sales cards style */
 
 .sales-container {
+  display: flex;
+  flex-direction: row;
   height: 100rem;
   max-width: 130rem;
   width: 100%;
   margin: 0 auto;
-  background: red;
   z-index: 1;
   position: relative;
   top: -9rem;
@@ -780,8 +775,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 .sales-container .sales-grid-cards-content {
   max-height: 45rem;
   height: 100%;
-  background: blue;
-  max-width: 116rem;
+  max-width: 120rem;
   width: 100%;
   margin: 0 auto;
 }
@@ -789,7 +783,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 .sales-container .sales-grid-cards-content .sales-grid {
   display: flex;
   flex-direction: row;
-  max-width: 116rem;
+  max-width: 120rem;
   width: 100%;
   gap: 2rem;
 }
@@ -800,3 +794,31 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   height: 45rem;
   background: gold;
 }
+
+.sales-container
+  .sales-grid-cards-content
+  .sales-grid
+  .slider-arrow
+  .arrow-right,
+.sales-container
+  .sales-grid-cards-content
+  .sales-grid
+  .slider-arrow
+  .arrow-left {
+    background: rgba(15, 21, 34, 0.650);
+    transition: all 150ms ease;
+}
+
+.sales-container
+  .sales-grid-cards-content
+  .sales-grid
+  .slider-arrow
+  .arrow-right:hover,
+.sales-container
+  .sales-grid-cards-content
+  .sales-grid
+  .slider-arrow
+  .arrow-left:hover {
+    background: rgba(15, 21, 34, 0.750);
+    scale: 1.1;
+  }
