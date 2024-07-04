@@ -244,10 +244,10 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   width: 94rem;
   margin: 0 auto;
   height: 3.5rem;
-  background: #3c5f8ae5;
-  -webkit-box-shadow: -1px 1px 8px 3px rgba(32, 44, 60, 0.904);
-  -moz-box-shadow: -1px 1px 8px 3px rgb(32, 44, 60, 0.904);
-  box-shadow: -1px 1px 8px 3px rgb(32, 44, 60, 0.904);
+  background: #3c5f8ac4;
+  -webkit-box-shadow: -1px 1px 8px 3px rgba(32, 44, 60, 0.295);
+  -moz-box-shadow: -1px 1px 8px 3px rgb(32, 44, 60, 0.295);
+  box-shadow: -1px 1px 8px 3px rgb(32, 44, 60, 0.295);
 }
 
 .header-container .shop-shortcuts-content .shop-shortcut {
@@ -805,8 +805,8 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   .sales-grid
   .slider-arrow
   .arrow-left {
-    background: rgba(15, 21, 34, 0.650);
-    transition: all 150ms ease;
+  background: rgba(15, 21, 34, 0.65);
+  transition: all 150ms ease-in-out;
 }
 
 .sales-container
@@ -819,6 +819,22 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   .sales-grid
   .slider-arrow
   .arrow-left:hover {
-    background: rgba(15, 21, 34, 0.750);
-    scale: 1.1;
-  }
+  background: rgba(15, 21, 34, 0.75);
+  scale: 1.1;
+}
+
+.sales-grid-cards-content .slide-dot {
+  background: #4D515A;
+  opacity: 0.7;
+  transition: all 150ms ease-in-out;
+}
+
+.store-slides .slide-dot.active {
+  filter: brightness(140%);
+  opacity: 1;
+}
+
+.store-slides .slide-dot.active:hover {
+  filter: brightness(140%);
+  opacity: 1;
+}
