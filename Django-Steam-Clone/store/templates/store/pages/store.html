@@ -2,11 +2,14 @@
 
 {% block content %}
 <div class="main-store-container">
+    {% comment%}
     <div class="store-column-content">
         {% include "store/partials/store_lateral_column.html" %}
     </div>
     <div class="store-featured-container">
         {% include "store/partials/store_primary_content.html" %}
     </div>
+    {% endcomment %}
+    {% include "store/partials/sales_content.html" %}
 </div>
 {% endblock content %}

@@ -763,3 +763,40 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
     opacity: 1;
   }
 }
+
+/* sales cards style */
+
+.sales-container {
+  height: 100rem;
+  max-width: 130rem;
+  width: 100%;
+  margin: 0 auto;
+  background: red;
+  z-index: 1;
+  position: relative;
+  top: -9rem;
+}
+
+.sales-container .sales-grid-cards-content {
+  max-height: 45rem;
+  height: 100%;
+  background: blue;
+  max-width: 116rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.sales-container .sales-grid-cards-content .sales-grid {
+  display: flex;
+  flex-direction: row;
+  max-width: 116rem;
+  width: 100%;
+  gap: 2rem;
+}
+
+.sales-container .sales-grid-cards-content .sales-grid .game-card-item {
+  max-width: 37.5rem;
+  width: 100%;
+  height: 45rem;
+  background: gold;
+}
