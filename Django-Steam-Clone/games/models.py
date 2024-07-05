@@ -1,6 +1,10 @@
 from django.db import models
 
 
+class Genres(models.Model):
+    name = models.CharField(max_length=150, unique=True)
+
+
 class Games(models.Model):
     name = models.CharField(max_length=200)
     steam_appid = models.CharField(max_length=150)
@@ -30,7 +34,4 @@ class Games(models.Model):
     movie1 = models.CharField(max_length=500, null=True, blank=True)
     movie2 = models.CharField(max_length=500, null=True, blank=True)
     movie3 = models.CharField(max_length=500, null=True, blank=True)
-
-
-class Genres(models.Model):
-    name = models.CharField(max_length=150, unique=True)
+    genres = models.ManyToManyField(Genres, blank=True, default='')
