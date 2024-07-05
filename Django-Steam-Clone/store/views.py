@@ -10,8 +10,12 @@ from utils.get_random_assets import get_store_visual_assets
 
 
 class StorePage(View):
-    def get_rand_start(self, games: BaseManager[Games]) -> int:
-        return random.randint(1, (len(games) - 12))
+    def get_rand_start(self, games: BaseManager[Games], is_sale: bool) -> int:
+        if not is_sale:
+            return random.randint(1, (len(games) - 12))
+
+        # 24 games when it's is sale
+        return random.randint(1, (len(games) - 24))
 
     def get_rand_games(self, number_of_games: int, games: BaseManager[Games]):
         rand_games: list[Games] = []
@@ -23,7 +27,7 @@ class StorePage(View):
     def get_slide_games(
         self, games: BaseManager[Games], is_sale=False
     ) -> tuple[BaseManager[Games], bool]:
-        rand_start = self.get_rand_start(games)
+        rand_start = self.get_rand_start(games, is_sale)
 
         # off sale, games = 12 in total, 12 slides
         if not is_sale:
