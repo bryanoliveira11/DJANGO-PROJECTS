@@ -4,9 +4,11 @@ from django.db import models
 class Games(models.Model):
     name = models.CharField(max_length=200)
     steam_appid = models.CharField(max_length=150)
+    is_free = models.BooleanField(default=False)
     short_description = models.CharField(max_length=500)
-    header_image = models.ImageField(
-        upload_to='games/headers/%Y/%m/%d/',
+    sale_image = models.CharField(max_length=500)
+    capsule_image = models.ImageField(
+        upload_to='games/capsule_images/%Y/%m/%d/',
         blank=True,
         default='',
     )
@@ -14,29 +16,17 @@ class Games(models.Model):
     recommended_requirements = models.TextField(null=True, blank=True)
     developers = models.CharField(max_length=150)
     publishers = models.CharField(max_length=150)
-    price = models.CharField(max_length=50, null=True, blank=True)
-    screenshot1 = models.ImageField(
-        upload_to='games/screenshots/%Y/%m/%d/',
-        blank=True,
-        default='',
+    price_initial = models.CharField(max_length=50, null=True, blank=True)
+    price_final = models.CharField(max_length=50, null=True, blank=True)
+    discount_percent = models.DecimalField(
+        max_digits=3, null=True, blank=True, decimal_places=1
     )
-    screenshot2 = models.ImageField(
-        upload_to='games/screenshots/%Y/%m/%d/',
-        blank=True,
-        default='',
-    )
-    screenshot3 = models.ImageField(
-        upload_to='games/screenshots/%Y/%m/%d/',
-        blank=True,
-        default='',
-    )
-    screenshot4 = models.ImageField(
-        upload_to='games/screenshots/%Y/%m/%d/',
-        blank=True,
-        default='',
-    )
-    background_raw = models.ImageField(
-        upload_to='games/backgrounds/%Y/%m/%d/',
-        blank=True,
-        default='',
-    )
+    screenshot1 = models.CharField(max_length=500)
+    screenshot2 = models.CharField(max_length=500)
+    screenshot3 = models.CharField(max_length=500)
+    screenshot4 = models.CharField(max_length=500)
+    screenshot5 = models.CharField(max_length=500)
+    background_raw = models.CharField(max_length=500)
+    movie1 = models.CharField(max_length=500, null=True, blank=True)
+    movie2 = models.CharField(max_length=500, null=True, blank=True)
+    movie3 = models.CharField(max_length=500, null=True, blank=True)
