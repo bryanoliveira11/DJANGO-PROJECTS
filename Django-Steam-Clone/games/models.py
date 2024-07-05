@@ -30,3 +30,7 @@ class Games(models.Model):
     movie1 = models.CharField(max_length=500, null=True, blank=True)
     movie2 = models.CharField(max_length=500, null=True, blank=True)
     movie3 = models.CharField(max_length=500, null=True, blank=True)
+
+
+class Genres(models.Model):
+    name = models.CharField(max_length=150, unique=True)
