@@ -49,8 +49,12 @@ class StorePage(View):
     def get(self, *args, **kwargs):
         header, background, is_video = get_store_visual_assets()
         all_games = Games.objects.all()
+        discount_games = Games.objects.filter(
+            discount_percent__isnull=False,
+            discount_percent__gt=0,
+        )
         rand_games = self.get_rand_games(5, all_games)
-        slide_games, is_sale = self.get_slide_games(all_games, True)
+        slide_games, is_sale = self.get_slide_games(discount_games, True)
 
         return render(
             self.request,

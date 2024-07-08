@@ -1,11 +1,21 @@
+{% load filters %}
 <div class="sales-container">
     <div class="sales-grid-cards-content">
         <div class="sales-grid">
             {% include "store/partials/slider_arrow_left.html" %}
             {% for game in slide_games  %}
             <div class="game-card-item saleCardAnim" title="{{game.name}}">
+                <!--<img src="{{game.sale_image}}" alt="Game Image Art"> -->
                 <div class="game-card-flex-col">
-                    <img src="{{game.sale_image}}" alt="Game Image Art">
+                    <div class="game-card-prices">
+                        <div class="discount-price">
+                            <span>-{{game.discount_percent|format_discount}}%</span>
+                        </div>
+                        <div class="game-prices">
+                            <span class="initial-price strikediag">{{game.price_initial}}</span>
+                            <span class="final-price">{{game.price_final}}</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             {% endfor %}

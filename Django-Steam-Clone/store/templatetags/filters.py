@@ -8,3 +8,8 @@ register = Library()
 @register.filter
 def game_name_length_limit(game):
     return filters.game_name_length_limit(game)
+
+
+@register.filter
+def format_discount(game):
+    return filters.format_discount(game)

@@ -773,11 +773,12 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 }
 
 .sales-grid .game-card-item {
-  max-width: 35rem;
+  max-width: 37.5rem;
   width: 100%;
   height: 45rem;
   display: none;
   cursor: pointer;
+  background: gold;
 }
 
 .sales-grid .game-card-item.active {
@@ -788,12 +789,69 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 .sales-grid .game-card-item .game-card-flex-col {
   display: flex;
   flex-direction: column;
+  align-items: end;
+  justify-content: end;
+  width: 100%;
+  height: 100%;
 }
 
-.sales-grid .game-card-item .game-card-flex-col img {
-  width: 35rem;
-  max-height: 45rem;
+.sales-grid .game-card-item .game-card-flex-col .game-card-prices {
+  display: flex;
+  background: red;
+  width: 50%;
+  height: 2.7rem;
+}
+
+.sales-grid .game-card-item .game-card-flex-col .discount-price {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  font-size: 1.7rem;
+  width: 30%;
   height: 100%;
+  font-weight: 600;
+  background: #a1cd44;
+}
+
+.sales-grid .game-card-item .game-card-flex-col .game-prices {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  height: 100%;
+  background: var(--color-black);
+}
+
+.sales-grid .game-card-item .game-card-flex-col .game-prices .initial-price {
+  font-size: 1.4rem;
+  color: var(--color-gray-5);
+  margin-right: 0.3rem;
+}
+
+.strikediag {
+  display: inline-block;
+  position: relative;
+}
+.strikediag::before {
+  content: "";
+  position: absolute;
+  left: -0.1em;
+  right: -0.1em;
+  top: 0.38em;
+  bottom: 0.38em;
+  background: linear-gradient(
+    to left top,
+    transparent 45.5%,
+    #486168 47.5%,
+    #486168 52.5%,
+    transparent 54.5%
+  );
+  pointer-events: none;
+}
+
+.sales-grid .game-card-item .game-card-flex-col .game-prices .final-price {
+  font-size: 1.4rem;
+  color: var(--color-white);
 }
 
 .sales-container
@@ -844,7 +902,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 
 .saleCardAnim {
   animation-name: saleCardAnim;
-  animation-duration: 200ms;
+  animation-duration: 150ms;
 }
 
 @keyframes saleCardAnim {
