@@ -852,6 +852,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 .sales-grid .game-card-item .game-card-flex-col .game-prices .final-price {
   font-size: 1.4rem;
   color: var(--color-white);
+  font-weight: 600;
 }
 
 .sales-container

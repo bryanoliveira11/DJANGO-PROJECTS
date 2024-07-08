@@ -25,8 +25,16 @@ class StorePage(View):
         return rand_games
 
     def get_slide_games(
-        self, games: BaseManager[Games], is_sale=False
+        self, is_sale=False
     ) -> tuple[BaseManager[Games], bool]:
+        games = Games.objects.all()
+
+        if is_sale:
+            games = Games.objects.filter(
+                discount_percent__isnull=False,
+                discount_percent__gt=0,
+            )
+
         rand_start = self.get_rand_start(games, is_sale)
 
         # off sale, games = 12 in total, 12 slides
@@ -48,13 +56,8 @@ class StorePage(View):
 
     def get(self, *args, **kwargs):
         header, background, is_video = get_store_visual_assets()
-        all_games = Games.objects.all()
-        discount_games = Games.objects.filter(
-            discount_percent__isnull=False,
-            discount_percent__gt=0,
-        )
-        rand_games = self.get_rand_games(5, all_games)
-        slide_games, is_sale = self.get_slide_games(discount_games, True)
+        slide_games, is_sale = self.get_slide_games(is_sale=True)
+        rand_games = self.get_rand_games(5, slide_games)
 
         return render(
             self.request,
