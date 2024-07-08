@@ -3,7 +3,11 @@
         <div class="sales-grid">
             {% include "store/partials/slider_arrow_left.html" %}
             {% for game in slide_games  %}
-            <div class="game-card-item">{{game.name}}</div>
+            <div class="game-card-item saleCardAnim" title="{{game.name}}">
+                <div class="game-card-flex-col">
+                    <img src="{{game.sale_image}}" alt="Game Image Art">
+                </div>
+            </div>
             {% endfor %}
             {% include "store/partials/slider_arrow_right.html" %}
         </div>

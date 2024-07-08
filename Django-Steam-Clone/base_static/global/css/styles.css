@@ -489,6 +489,8 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 
 .store-featured-container .store-games-slider-container .game-primary-image {
   width: 65%;
+  height: 36rem;
+  object-fit: cover;
 }
 
 .store-featured-container
@@ -496,10 +498,6 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   .game-primary-image
   img {
   width: 100%;
-  height: 40rem;
-  margin-left: auto;
-  margin-right: auto;
-  object-fit: cover;
 }
 
 .store-featured-container
@@ -744,20 +742,6 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   filter: brightness(100%);
 }
 
-.fadeAnim {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {
-    opacity: 0.8;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 /* sales cards style */
 
 .sales-container {
@@ -788,16 +772,28 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   gap: 2rem;
 }
 
-.sales-container .sales-grid-cards-content .sales-grid .game-card-item {
-  max-width: 37.5rem;
+.sales-grid .game-card-item {
+  max-width: 35rem;
   width: 100%;
   height: 45rem;
-  background: gold;
   display: none;
+  cursor: pointer;
 }
 
-.sales-container .sales-grid-cards-content .sales-grid .game-card-item.active {
+.sales-grid .game-card-item.active {
   display: flex;
+  color: var(--color-white);
+}
+
+.sales-grid .game-card-item .game-card-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.sales-grid .game-card-item .game-card-flex-col img {
+  width: 35rem;
+  max-height: 45rem;
+  height: 100%;
 }
 
 .sales-container
@@ -842,4 +838,39 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 .store-slides .slide-dot.active:hover {
   filter: brightness(140%);
   opacity: 1;
+}
+
+/* keyframes */
+
+.saleCardAnim {
+  animation-name: saleCardAnim;
+  animation-duration: 200ms;
+}
+
+@keyframes saleCardAnim {
+  33% {
+    opacity: 0;
+  }
+  66% {
+    transform: translateX(-20px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.fadeAnim {
+  animation-name: fade;
+  animation-duration: 150ms;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 1;
+  }
 }
