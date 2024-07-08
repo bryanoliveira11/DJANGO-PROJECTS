@@ -33,6 +33,7 @@ class StorePage(View):
             games = Games.objects.filter(
                 discount_percent__isnull=False,
                 discount_percent__gt=0,
+                price_initial__icontains='R$',
             )
 
         rand_start = self.get_rand_start(games, is_sale)

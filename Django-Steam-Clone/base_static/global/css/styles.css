@@ -778,12 +778,33 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   height: 45rem;
   display: none;
   cursor: pointer;
-  background: gold;
 }
 
 .sales-grid .game-card-item.active {
   display: flex;
   color: var(--color-white);
+}
+
+.sales-grid .game-card-item .game-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 100%;
+  height: 100%;
+}
+
+.sales-grid .game-card-item .game-card-content .game-card-movie {
+  display: block;
+  height: max-content;
+  width: 100%;
+}
+
+.sales-grid .game-card-item .game-card-content .game-card-movie video {
+  display: none;
+}
+
+.sales-grid .game-card-item .game-card-content:hover .game-card-movie video {
+  display: block;
 }
 
 .sales-grid .game-card-item .game-card-flex-col {
@@ -795,16 +816,34 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   height: 100%;
 }
 
+.sales-grid .game-card-item .game-card-content:hover .game-card-flex-col {
+  background: rgb(72, 87, 89);
+  background: linear-gradient(
+    135deg,
+    #485759,
+    #49585a,
+    #4c5b5c,
+    #516060,
+    #576565,
+    #5d6b6a,
+    #647270,
+    #6b7875,
+    #727e7a,
+    #77837e,
+    #7b8681,
+    #7c8782
+  );
+}
+
 .sales-grid .game-card-item .game-card-flex-col .game-card-prices {
   display: flex;
-  background: red;
   width: 50%;
-  height: 2.7rem;
+  height: 2.8rem;
 }
 
 .sales-grid .game-card-item .game-card-flex-col .discount-price {
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: center;
   font-size: 1.7rem;
   width: 30%;

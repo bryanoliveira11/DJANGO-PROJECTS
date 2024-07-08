@@ -4,16 +4,29 @@
         <div class="sales-grid">
             {% include "store/partials/slider_arrow_left.html" %}
             {% for game in slide_games  %}
-            <div class="game-card-item saleCardAnim" title="{{game.name}}">
-                <!--<img src="{{game.sale_image}}" alt="Game Image Art"> -->
-                <div class="game-card-flex-col">
-                    <div class="game-card-prices">
-                        <div class="discount-price">
-                            <span>-{{game.discount_percent|format_discount}}%</span>
-                        </div>
-                        <div class="game-prices">
-                            <span class="initial-price strikediag">{{game.price_initial}}</span>
-                            <span class="final-price">{{game.price_final}}</span>
+            <link rel="preload" as="image" href="{{game.sale_image}}">
+            <div class="game-card-item saleCardAnim" title="{{game.name}}"
+            style="background-image: url('{{game.sale_image}}');
+            background-size: cover; background-position: 50%;">
+                <div class="game-card-content">
+                    <div class="game-card-movie">
+                        {% if game.movie1 %}
+                        <video src="{{game.movie1}}" muted="true" autoplay loop></video>
+                        {% elif game.movie2 %}
+                        <video src="{{game.movie2}}" muted="true" autoplay loop></video>
+                        {% elif game.movie3 %}
+                        <video src="{{game.movie3}}" muted="true" autoplay loop></video>
+                        {% endif %}
+                    </div>
+                    <div class="game-card-flex-col">
+                        <div class="game-card-prices">
+                            <div class="discount-price">
+                                <span>-{{game.discount_percent|format_discount}}%</span>
+                            </div>
+                            <div class="game-prices">
+                                <span class="initial-price strikediag">{{game.price_initial}}</span>
+                                <span class="final-price">{{game.price_final}}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
