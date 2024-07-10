@@ -13,19 +13,34 @@ background-size: cover; background-position: 50%;">
             <video src="{{game.movie3}}" muted="true" autoplay loop></video>
             {% endif %}
         </div>
-        <div class="game-card-flex-prices">
-            <div class="add-to-cart-btn" title="Add to Cart">
-                <button>
-                    Add to Cart
-                </button>
-            </div>
-            <div class="game-card-prices">
-                <div class="discount-price">
-                    <span>-{{game.discount_percent|format_discount}}%</span>
+        <div class="game-card-flex-content">
+            <div class="game-content">
+                <h1>{{game.name}}</h1>
+                <div class="game-reviews">
+                    <p class="positive-review">
+                        Very Positive <span>(9.999)</span>
+                    </p>
                 </div>
-                <div class="game-prices">
-                    <span class="initial-price strikediag">{{game.price_initial}}</span>
-                    <span class="final-price">{{game.price_final}}</span>
+                <div class="game-genres">
+                    {% for genre in game.genres.all  %}
+                    <div class="genre-item"><span>{{genre.name}}</span></div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="content-flex-row">
+                <div class="add-to-cart-btn" title="Add to Cart">
+                    <button>
+                        Add to Cart
+                    </button>
+                </div>
+                <div class="game-card-prices">
+                    <div class="discount-price">
+                        <span>-{{game.discount_percent|format_discount}}%</span>
+                    </div>
+                    <div class="game-prices">
+                        <span class="initial-price strikediag">{{game.price_initial}}</span>
+                        <span class="final-price">{{game.price_final}}</span>
+                    </div>
                 </div>
             </div>
         </div>

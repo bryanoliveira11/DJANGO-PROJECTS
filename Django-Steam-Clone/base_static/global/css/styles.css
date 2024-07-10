@@ -830,29 +830,115 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   transform: translateY(0);
 }
 
-.sales-grid .game-card-item .game-card-flex-prices {
+.sales-grid .game-card-item .game-card-flex-content {
   display: flex;
-  align-items: end;
-  justify-content: end;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   height: 55%;
   position: relative;
   overflow: hidden;
 }
 
-.sales-grid .game-card-item .game-card-flex-prices .add-to-cart-btn {
+.sales-grid .game-card-item .game-card-flex-content .game-content {
+  position: relative;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  padding: 2rem 5rem 2rem 2rem;
+  transition: top 300ms ease-in-out;
+}
+
+.sales-grid .game-card-item:hover .game-card-flex-content .game-content {
+  visibility: visible;
+  top: 0;
+  z-index: 1;
+}
+
+.sales-grid .game-card-item .game-card-flex-content .game-content h1 {
+  margin: 0;
+  color: var(--color-white);
+  font-size: 2.4rem;
+}
+
+.sales-grid .game-card-item .game-reviews,
+.sales-grid .game-card-item .game-genres .genre-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0.3rem 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-radius: 0.3rem;
+  width: fit-content;
+}
+
+.sales-grid .game-card-item .game-reviews {
+  margin: 0.5rem 0;
+  cursor: text;
+  background: #0000005e;
+}
+
+.sales-grid .game-card-item .game-reviews p {
+  margin: 0.3rem;
+  padding: 0 0.3rem;
+}
+
+.sales-grid .game-card-item .game-reviews p.positive-review {
+  color: #47a7ee;
+}
+
+.sales-grid .game-card-item .game-reviews p.mixed-review {
+  color: #b1a06c;
+}
+
+.sales-grid .game-card-item .game-reviews p.negative-review {
+  color: #9d4c2e;
+}
+
+.sales-grid .game-card-item .game-reviews span {
+  color: var(--color-white);
+}
+
+.sales-grid .game-card-item .game-genres .genre-item {
+  background: #00000046;
+}
+
+.sales-grid .game-card-item .game-genres {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.sales-grid .game-card-item .game-genres .genre-item span {
+  color: var(--color-gray-2);
+  margin: 0.3rem;
+  padding: 0 0.3rem;
+}
+
+.sales-grid .game-card-item .game-card-flex-content .content-flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: end;
+  width: 100%;
+}
+
+.sales-grid .game-card-item .game-card-flex-content .add-to-cart-btn {
   margin-left: 2rem;
   width: 45%;
   transition: margin 300ms ease-in-out;
   visibility: hidden;
 }
 
-.sales-grid .game-card-item .game-card-flex-prices button {
+.sales-grid .game-card-item .game-card-flex-content button {
   position: relative;
   padding: 0.8rem 1.5rem;
   border-radius: 0.5rem;
   color: #bdc104;
-  border: 1px solid #5d7604;
+  border: 1px solid #769505;
   outline: none;
   font-size: 1.4rem;
   font-weight: 600;
@@ -860,17 +946,17 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   cursor: pointer;
 }
 
-.sales-grid .game-card-item .game-card-flex-prices button:hover {
+.sales-grid .game-card-item .game-card-flex-content button:hover {
   filter: brightness(130%);
 }
 
-.sales-grid .game-card-item:hover .game-card-flex-prices .add-to-cart-btn {
+.sales-grid .game-card-item:hover .game-card-flex-content .add-to-cart-btn {
   margin-bottom: 2.7rem;
   z-index: 1;
   visibility: visible;
 }
 
-.sales-grid .game-card-item .game-card-flex-prices::before {
+.sales-grid .game-card-item .game-card-flex-content::before {
   content: "";
   position: absolute;
   top: 100%;
@@ -878,15 +964,15 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   width: 100%;
   height: 100%;
   background: var(--prices-bg-gradient);
-  transition: top 350ms;
+  transition: top 350ms ease-in-out;
   z-index: 1;
 }
 
-.sales-grid .game-card-item:hover .game-card-flex-prices::before {
+.sales-grid .game-card-item:hover .game-card-flex-content::before {
   top: 0;
 }
 
-.sales-grid .game-card-item .game-card-flex-prices .game-card-prices {
+.sales-grid .game-card-item .game-card-flex-content .game-card-prices {
   display: flex;
   width: 55%;
   height: 2.8rem;
@@ -897,12 +983,12 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 .sales-grid
   .game-card-item
   .game-card-content:hover
-  .game-card-flex-prices
+  .game-card-flex-content
   .game-card-prices {
   margin-bottom: 3rem;
 }
 
-.sales-grid .game-card-item .game-card-flex-prices .discount-price {
+.sales-grid .game-card-item .game-card-flex-content .discount-price {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -913,7 +999,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   background: #a1cd44;
 }
 
-.sales-grid .game-card-item .game-card-flex-prices .game-prices {
+.sales-grid .game-card-item .game-card-flex-content .game-prices {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -922,7 +1008,11 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   background: var(--color-black);
 }
 
-.sales-grid .game-card-item .game-card-flex-prices .game-prices .initial-price {
+.sales-grid
+  .game-card-item
+  .game-card-flex-content
+  .game-prices
+  .initial-price {
   font-size: 1.4rem;
   color: var(--color-gray-5);
   margin-right: 0.3rem;
@@ -932,6 +1022,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   display: inline-block;
   position: relative;
 }
+
 .strikediag::before {
   content: "";
   position: absolute;
@@ -949,7 +1040,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   pointer-events: none;
 }
 
-.sales-grid .game-card-item .game-card-flex-prices .game-prices .final-price {
+.sales-grid .game-card-item .game-card-flex-content .game-prices .final-price {
   font-size: 1.4rem;
   color: var(--color-white);
   font-weight: 600;
@@ -1009,7 +1100,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 @keyframes saleCardAnim {
   from {
     opacity: 0;
-    transform: translateX(-20px);
+    transform: translateX(-40px);
   }
   to {
     opacity: 1;
@@ -1033,7 +1124,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 
 .toTopAnimMovie {
   animation-name: toTop;
-  animation-duration: 800ms;
+  animation-duration: 600ms;
 }
 
 @keyframes toTop {
@@ -1049,7 +1140,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 
 .toBottomAnimMovie {
   animation-name: toBottom;
-  animation-duration: 800ms;
+  animation-duration: 600ms;
 }
 
 @keyframes toBottom {
