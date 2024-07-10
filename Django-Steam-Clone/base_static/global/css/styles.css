@@ -21,6 +21,17 @@
     #7b8681,
     #7c8782
   );
+  --add-to-cart-gradient: linear-gradient(
+    180deg,
+    #789705,
+    #769505,
+    #718f05,
+    #6b8705,
+    #647e04,
+    #5d7604,
+    #597004,
+    #576e04
+  );
 
   --color-white: #fff;
   --color-white-background: #f5f4f4;
@@ -819,9 +830,8 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   transform: translateY(0);
 }
 
-.sales-grid .game-card-item .game-card-flex-col {
+.sales-grid .game-card-item .game-card-flex-prices {
   display: flex;
-  flex-direction: column;
   align-items: end;
   justify-content: end;
   width: 100%;
@@ -830,25 +840,55 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   overflow: hidden;
 }
 
-.sales-grid .game-card-item .game-card-flex-col::before {
-  content: '';
+.sales-grid .game-card-item .game-card-flex-prices .add-to-cart-btn {
+  margin-left: 2rem;
+  width: 45%;
+  transition: margin 300ms ease-in-out;
+  visibility: hidden;
+}
+
+.sales-grid .game-card-item .game-card-flex-prices button {
+  position: relative;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  color: #bdc104;
+  border: 1px solid #5d7604;
+  outline: none;
+  font-size: 1.4rem;
+  font-weight: 600;
+  background: var(--add-to-cart-gradient);
+  cursor: pointer;
+}
+
+.sales-grid .game-card-item .game-card-flex-prices button:hover {
+  filter: brightness(130%);
+}
+
+.sales-grid .game-card-item:hover .game-card-flex-prices .add-to-cart-btn {
+  margin-bottom: 2.7rem;
+  z-index: 1;
+  visibility: visible;
+}
+
+.sales-grid .game-card-item .game-card-flex-prices::before {
+  content: "";
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
   height: 100%;
   background: var(--prices-bg-gradient);
-  transition: top 0.5s;
+  transition: top 350ms;
   z-index: 1;
 }
 
-.sales-grid .game-card-item:hover .game-card-flex-col::before {
+.sales-grid .game-card-item:hover .game-card-flex-prices::before {
   top: 0;
 }
 
-.sales-grid .game-card-item .game-card-flex-col .game-card-prices {
+.sales-grid .game-card-item .game-card-flex-prices .game-card-prices {
   display: flex;
-  width: 50%;
+  width: 55%;
   height: 2.8rem;
   transition: margin 300ms ease-in-out;
   z-index: 1;
@@ -857,12 +897,12 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 .sales-grid
   .game-card-item
   .game-card-content:hover
-  .game-card-flex-col
+  .game-card-flex-prices
   .game-card-prices {
   margin-bottom: 3rem;
 }
 
-.sales-grid .game-card-item .game-card-flex-col .discount-price {
+.sales-grid .game-card-item .game-card-flex-prices .discount-price {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -873,7 +913,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   background: #a1cd44;
 }
 
-.sales-grid .game-card-item .game-card-flex-col .game-prices {
+.sales-grid .game-card-item .game-card-flex-prices .game-prices {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -882,7 +922,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   background: var(--color-black);
 }
 
-.sales-grid .game-card-item .game-card-flex-col .game-prices .initial-price {
+.sales-grid .game-card-item .game-card-flex-prices .game-prices .initial-price {
   font-size: 1.4rem;
   color: var(--color-gray-5);
   margin-right: 0.3rem;
@@ -909,7 +949,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   pointer-events: none;
 }
 
-.sales-grid .game-card-item .game-card-flex-col .game-prices .final-price {
+.sales-grid .game-card-item .game-card-flex-prices .game-prices .final-price {
   font-size: 1.4rem;
   color: var(--color-white);
   font-weight: 600;

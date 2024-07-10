@@ -13,7 +13,12 @@ background-size: cover; background-position: 50%;">
             <video src="{{game.movie3}}" muted="true" autoplay loop></video>
             {% endif %}
         </div>
-        <div class="game-card-flex-col">
+        <div class="game-card-flex-prices">
+            <div class="add-to-cart-btn" title="Add to Cart">
+                <button>
+                    Add to Cart
+                </button>
+            </div>
             <div class="game-card-prices">
                 <div class="discount-price">
                     <span>-{{game.discount_percent|format_discount}}%</span>
