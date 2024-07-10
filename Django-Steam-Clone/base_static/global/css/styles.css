@@ -6,6 +6,21 @@
   --color-secondary-lighter: #6d949e;
   --row-items-bg: #272d37;
   --search-form-primary-color: #28506b;
+  --prices-bg-gradient: linear-gradient(
+    135deg,
+    #485759,
+    #49585a,
+    #4c5b5c,
+    #516060,
+    #576565,
+    #5d6b6a,
+    #647270,
+    #6b7875,
+    #727e7a,
+    #77837e,
+    #7b8681,
+    #7c8782
+  );
 
   --color-white: #fff;
   --color-white-background: #f5f4f4;
@@ -795,16 +810,13 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 
 .sales-grid .game-card-item .game-card-content .game-card-movie {
   display: block;
-  height: max-content;
+  height: 45%;
   width: 100%;
 }
 
-.sales-grid .game-card-item .game-card-content .game-card-movie video {
-  display: none;
-}
-
 .sales-grid .game-card-item .game-card-content:hover .game-card-movie video {
-  display: block;
+  width: 100%;
+  transform: translateY(0);
 }
 
 .sales-grid .game-card-item .game-card-flex-col {
@@ -813,32 +825,23 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   align-items: end;
   justify-content: end;
   width: 100%;
-  height: 100%;
-}
-
-.sales-grid .game-card-item .game-card-content:hover .game-card-flex-col {
-  background: rgb(72, 87, 89);
-  background: linear-gradient(
-    135deg,
-    #485759,
-    #49585a,
-    #4c5b5c,
-    #516060,
-    #576565,
-    #5d6b6a,
-    #647270,
-    #6b7875,
-    #727e7a,
-    #77837e,
-    #7b8681,
-    #7c8782
-  );
+  height: 55%;
+  position: relative;
 }
 
 .sales-grid .game-card-item .game-card-flex-col .game-card-prices {
   display: flex;
   width: 50%;
   height: 2.8rem;
+  transition: margin 300ms ease-in-out;
+}
+
+.sales-grid
+  .game-card-item
+  .game-card-content:hover
+  .game-card-flex-col
+  .game-card-prices {
+  margin-bottom: 3rem;
 }
 
 .sales-grid .game-card-item .game-card-flex-col .discount-price {
@@ -946,14 +949,11 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 }
 
 @keyframes saleCardAnim {
-  33% {
+  from {
+    transform: translateX(-20px);
     opacity: 0;
   }
-  66% {
-    transform: translateX(-20px);
-    opacity: 0.5;
-  }
-  100% {
+  to {
     transform: translateX(0);
     opacity: 1;
   }
@@ -970,5 +970,68 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   }
   to {
     opacity: 1;
+  }
+}
+
+.toTopAnimMovie {
+  animation-name: toTop;
+  animation-duration: 800ms;
+}
+
+@keyframes toTop {
+  from {
+    opacity: 0;
+    transform: translateY(130%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.toBottomAnimMovie {
+  animation-name: toBottom;
+  animation-duration: 800ms;
+}
+
+@keyframes toBottom {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(130%);
+  }
+}
+
+.pricesBgAnim {
+  animation-name: pricesBGAdd;
+  animation-duration: 900ms;
+}
+
+@keyframes pricesBGAdd {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    background: rgb(72, 87, 89);
+    background: var(--prices-bg-gradient);
+  }
+}
+
+.pricesBgAnimRemove {
+  animation-name: pricesBGRemove;
+  animation-duration: 400ms;
+}
+
+@keyframes pricesBGRemove {
+  from {
+    background: rgb(72, 87, 89);
+    background: var(--prices-bg-gradient);
+  }
+  to {
+    background: none;
   }
 }
