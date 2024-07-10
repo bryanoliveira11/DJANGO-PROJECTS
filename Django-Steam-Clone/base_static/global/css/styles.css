@@ -827,6 +827,23 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   width: 100%;
   height: 55%;
   position: relative;
+  overflow: hidden;
+}
+
+.sales-grid .game-card-item .game-card-flex-col::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--prices-bg-gradient);
+  transition: top 0.5s;
+  z-index: 1;
+}
+
+.sales-grid .game-card-item:hover .game-card-flex-col::before {
+  top: 0;
 }
 
 .sales-grid .game-card-item .game-card-flex-col .game-card-prices {
@@ -834,6 +851,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   width: 50%;
   height: 2.8rem;
   transition: margin 300ms ease-in-out;
+  z-index: 1;
 }
 
 .sales-grid
@@ -945,17 +963,17 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 
 .saleCardAnim {
   animation-name: saleCardAnim;
-  animation-duration: 150ms;
+  animation-duration: 100ms;
 }
 
 @keyframes saleCardAnim {
   from {
-    transform: translateX(-20px);
     opacity: 0;
+    transform: translateX(-20px);
   }
   to {
-    transform: translateX(0);
     opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -1001,37 +1019,6 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   }
   to {
     opacity: 0;
-    transform: translateY(130%);
-  }
-}
-
-.pricesBgAnim {
-  animation-name: pricesBGAdd;
-  animation-duration: 900ms;
-}
-
-@keyframes pricesBGAdd {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-    background: rgb(72, 87, 89);
-    background: var(--prices-bg-gradient);
-  }
-}
-
-.pricesBgAnimRemove {
-  animation-name: pricesBGRemove;
-  animation-duration: 400ms;
-}
-
-@keyframes pricesBGRemove {
-  from {
-    background: rgb(72, 87, 89);
-    background: var(--prices-bg-gradient);
-  }
-  to {
-    background: none;
+    transform: translateY(110%);
   }
 }

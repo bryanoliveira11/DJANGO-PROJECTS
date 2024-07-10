@@ -18,19 +18,12 @@ const removeClassList = (element, value) => {
   if (element) element.classList.remove(value);
 };
 
-function validateCardClasses() {
+function removeMoviesAnimation() {
   const movies = document.querySelectorAll(".game-card-movie video");
-  const pricesBGs = document.querySelectorAll(".game-card-flex-col");
 
   movies.forEach((movie) => {
     if (movie.classList.contains("toBottomAnimMovie")) {
       removeClassList(movie, "toBottomAnimMovie");
-    }
-  });
-
-  pricesBGs.forEach((pricesBG) => {
-    if (pricesBG.classList.contains("pricesBgAnimRemove")) {
-      removeClassList(pricesBG, "pricesBgAnimRemove");
     }
   });
 }
@@ -41,12 +34,12 @@ showSlides(slideIndex);
 
 function plusSlides(slideNumber) {
   showSlides((slideIndex += slideNumber));
-  validateCardClasses();
+  removeMoviesAnimation();
 }
 
 function currentSlide(slideNumber) {
   showSlides((slideIndex = slideNumber));
-  validateCardClasses();
+  removeMoviesAnimation();
 }
 
 function slidesOffSale(slides, dots, slideNumber) {
@@ -114,13 +107,8 @@ function showSlides(slideNumber) {
 (() => {
   const gameCardItems = document.querySelectorAll(".game-card-item");
 
-  const pricesGradient = getComputedStyle(root).getPropertyValue(
-    "--prices-bg-gradient"
-  );
-
   gameCardItems.forEach((card) => {
     const movie = card.querySelector(".game-card-movie video");
-    const pricesBG = card.querySelector(".game-card-flex-col");
 
     if (movie) changeOpacity(movie, 0);
 
@@ -130,23 +118,12 @@ function showSlides(slideNumber) {
         addClassList(movie, "toTopAnimMovie");
         changeOpacity(movie, 1);
       }
-      if (pricesBG) {
-        removeClassList(pricesBG, "pricesBgAnimRemove");
-        addClassList(pricesBG, "pricesBgAnim");
-        changeBackground(pricesBG, pricesGradient);
-      }
     });
-
     card.addEventListener("mouseout", () => {
       if (movie) {
         removeClassList(movie, "toTopAnimMovie");
         addClassList(movie, "toBottomAnimMovie");
         changeOpacity(movie, 0);
-      }
-      if (pricesBG) {
-        removeClassList(pricesBG, "pricesBgAnim");
-        addClassList(pricesBG, "pricesBgAnimRemove");
-        changeBackground(pricesBG, "none");
       }
     });
   });
