@@ -105,7 +105,7 @@ def get_genres(data):
     return genres_db_list
 
 
-if __name__ == '__main__':
+def get_details_data():
     from games.models import Games
 
     for i in range(len(ids_list)):
@@ -160,3 +160,34 @@ if __name__ == '__main__':
         except (KeyError, AttributeError, TypeError) as err:
             print(f'Error While Fetching Data in game {game_id}', err)
             continue
+
+
+def update_details_with_reviews():
+    from games.models import Games, Reviews
+
+    all_games = Games.objects.all()
+
+    for i in range(len(all_games)):
+        steam_id = all_games[i].steam_appid
+        reviews_url = f'https://store.steampowered.com/appreviews/{
+            steam_id}?json=1'
+        data = requests.get(reviews_url).json().get('query_summary')
+        description = data.get('review_score_desc')
+        total_reviews = data.get('total_reviews')
+        positive_reviews = data.get('total_positive')
+        negative_reviews = data.get('total_negative')
+        review = Reviews.objects.create(
+            description=description,
+            total_reviews=total_reviews,
+            total_positive=positive_reviews,
+            total_negative=negative_reviews,
+        )
+        game = Games.objects.filter(steam_appid=steam_id).first()
+        if game and not game.reviews:
+            game.reviews = review
+            game.save()
+
+
+if __name__ == '__main__':
+    # get_details_data()
+    update_details_with_reviews()

@@ -5,6 +5,13 @@ class Genres(models.Model):
     name = models.CharField(max_length=150, unique=True)
 
 
+class Reviews(models.Model):
+    description = models.CharField(max_length=150)
+    total_reviews = models.DecimalField(max_digits=20, decimal_places=3)
+    total_positive = models.DecimalField(max_digits=20, decimal_places=3)
+    total_negative = models.DecimalField(max_digits=20, decimal_places=3)
+
+
 class Games(models.Model):
     name = models.CharField(max_length=200)
     steam_appid = models.CharField(max_length=150)
@@ -35,3 +42,6 @@ class Games(models.Model):
     movie2 = models.CharField(max_length=500, null=True, blank=True)
     movie3 = models.CharField(max_length=500, null=True, blank=True)
     genres = models.ManyToManyField(Genres, blank=True, default='')
+    reviews = models.ForeignKey(
+        Reviews, on_delete=models.CASCADE, null=True, blank=True
+    )
