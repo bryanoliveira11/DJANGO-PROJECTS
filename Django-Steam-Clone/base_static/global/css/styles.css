@@ -846,7 +846,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   width: 100%;
   height: 100%;
   visibility: hidden;
-  padding: 2rem 5rem 2rem 2rem;
+  padding: 2rem 4rem 2rem 2rem;
   transition: top 300ms ease-in-out;
 }
 
@@ -890,7 +890,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   color: #47a7ee;
 }
 
-.sales-grid .game-card-item .game-reviews p.Mixed{
+.sales-grid .game-card-item .game-reviews p.Mixed {
   color: #b1a06c;
 }
 
