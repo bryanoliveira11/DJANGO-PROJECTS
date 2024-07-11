@@ -904,11 +904,14 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 
 .sales-grid .game-card-item .game-genres .genre-item {
   background: #00000046;
+  width: fit-content;
+  height: 2.3rem;
 }
 
 .sales-grid .game-card-item .game-genres {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 0.5rem;
 }
 
