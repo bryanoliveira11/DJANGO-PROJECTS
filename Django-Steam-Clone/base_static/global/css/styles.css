@@ -869,7 +869,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   align-items: center;
   justify-content: center;
   margin: 0.3rem 0;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 600;
   border-radius: 0.3rem;
   width: fit-content;
@@ -886,15 +886,15 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   padding: 0 0.3rem;
 }
 
-.sales-grid .game-card-item .game-reviews p.positive-review {
+.sales-grid .game-card-item .game-reviews p.Positive {
   color: #47a7ee;
 }
 
-.sales-grid .game-card-item .game-reviews p.mixed-review {
+.sales-grid .game-card-item .game-reviews p.Mixed{
   color: #b1a06c;
 }
 
-.sales-grid .game-card-item .game-reviews p.negative-review {
+.sales-grid .game-card-item .game-reviews p.Negative {
   color: #9d4c2e;
 }
 

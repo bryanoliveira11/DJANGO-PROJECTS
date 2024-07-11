@@ -7,9 +7,9 @@ class Genres(models.Model):
 
 class Reviews(models.Model):
     description = models.CharField(max_length=150)
-    total_reviews = models.DecimalField(max_digits=20, decimal_places=3)
-    total_positive = models.DecimalField(max_digits=20, decimal_places=3)
-    total_negative = models.DecimalField(max_digits=20, decimal_places=3)
+    total_reviews = models.DecimalField(max_digits=20, decimal_places=0)
+    total_positive = models.DecimalField(max_digits=20, decimal_places=0)
+    total_negative = models.DecimalField(max_digits=20, decimal_places=0)
 
 
 class Games(models.Model):
