@@ -10,6 +10,9 @@ class Reviews(models.Model):
     total_reviews = models.DecimalField(max_digits=20, decimal_places=0)
     total_positive = models.DecimalField(max_digits=20, decimal_places=0)
     total_negative = models.DecimalField(max_digits=20, decimal_places=0)
+    positive_percent = models.DecimalField(
+        max_digits=3, decimal_places=0, null=True, blank=True
+    )
 
 
 class Games(models.Model):

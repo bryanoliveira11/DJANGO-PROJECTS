@@ -188,6 +188,23 @@ def update_details_with_reviews():
             game.save()
 
 
+def calculate_review_percent():
+    from games.models import Reviews
+
+    reviews = Reviews.objects.all()
+
+    for i in range(len(reviews)):
+        review = reviews[i]
+
+        if review.total_positive and review.total_reviews:
+            positive_percent = (
+                (review.total_positive * 100) / review.total_reviews
+            )
+            review.positive_percent = positive_percent
+            review.save()
+
+
 if __name__ == '__main__':
     # get_details_data()
-    update_details_with_reviews()
+    # update_details_with_reviews()
+    calculate_review_percent()
