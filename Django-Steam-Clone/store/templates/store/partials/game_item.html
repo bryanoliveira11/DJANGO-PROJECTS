@@ -18,15 +18,18 @@ background-size: cover; background-position: 50%;">
             <div class="game-content">
                 <h1>
                 {{game.name}}
-                <input type="hidden" id="game-name" value="{{game.name}}">
-                <input type="hidden" id="game-review-text"
-                value="{{game.reviews.positive_percent}}% of the {{game.reviews.total_reviews|intcomma}} user reviews for this game are positive.">
-                </h1>
                 <div class="game-reviews">
                     <p class="{{game.reviews.description}}">
                         {{game.reviews.description}} 
                         <span>({{game.reviews.total_reviews|intcomma}})</span>
                     </p>
+                </div>
+                <div class="game-review-text">
+                    <span>
+                    {{game.reviews.positive_percent}}% of the
+                    {{game.reviews.total_reviews|intcomma}} user
+                    reviews for this game are positive.
+                    </span>
                 </div>
                 <div class="game-genres">
                     {% for genre in game.genres.all  %}

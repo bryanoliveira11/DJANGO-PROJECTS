@@ -845,13 +845,13 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   top: 50%;
   width: 100%;
   height: 100%;
-  visibility: hidden;
+  opacity: 0;
   padding: 2rem 4rem 2rem 2rem;
   transition: top 300ms ease-in-out;
 }
 
 .sales-grid .game-card-item:hover .game-card-flex-content .game-content {
-  visibility: visible;
+  opacity: 1;
   top: 0;
   z-index: 1;
 }
@@ -860,21 +860,6 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   margin: 0 0 0.5rem 0;
   font-size: 2.4rem;
   color: var(--color-white);
-  transition: background 150ms ease;
-}
-
-.sales-grid
-  .game-card-item
-  .game-card-flex-content
-  .game-content
-  h1.show-review-percent {
-  background: var(--color-gray-2);
-  color: var(--color-gray-7);
-  font-size: 1.1rem;
-  border-radius: 0.3rem;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .sales-grid .game-card-item .game-reviews,
@@ -891,7 +876,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 }
 
 .sales-grid .game-card-item .game-reviews {
-  margin: 0.5rem 0;
+  margin: 1rem 0;
   cursor: text;
   background: #0000005e;
 }
@@ -915,6 +900,27 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 
 .sales-grid .game-card-item .game-reviews span {
   color: var(--color-white);
+}
+
+.sales-grid
+  .game-card-item
+  .game-card-flex-content
+  .game-content
+  .game-review-text {
+  position: absolute;
+  opacity: 0;
+  top: 18px;
+  background: var(--color-gray-2);
+  color: var(--color-gray-7);
+  font-size: 1.1rem;
+  border-radius: 0.3rem;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: opacity 150ms ease-in-out;
+}
+
+.sales-grid .game-card-item .game-reviews:hover + .game-review-text{
+  opacity: 1;
 }
 
 .sales-grid .game-card-item .game-genres .genre-item {
@@ -948,7 +954,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   margin-left: 2rem;
   width: 45%;
   transition: margin 300ms ease-in-out;
-  visibility: hidden;
+  opacity: 0;
 }
 
 .sales-grid .game-card-item .game-card-flex-content button {
@@ -971,7 +977,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 .sales-grid .game-card-item:hover .game-card-flex-content .add-to-cart-btn {
   margin-bottom: 2.7rem;
   z-index: 1;
-  visibility: visible;
+  opacity: 1;
 }
 
 .sales-grid .game-card-item .game-card-flex-content::before {

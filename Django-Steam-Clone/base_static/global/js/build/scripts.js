@@ -128,28 +128,3 @@ function showSlides(slideNumber) {
     });
   });
 })();
-
-(() => {
-  const gameContents = document.querySelectorAll(".game-content");
-
-  if (!gameContents) return;
-
-  gameContents.forEach((gameContent) => {
-    const gameReview = gameContent.querySelector(".game-reviews");
-    const cardGameName = gameContent.querySelector("h1");
-    const gameName = cardGameName.querySelector('#game-name').value;
-    const gameReviewText = cardGameName.querySelector('#game-review-text').value;
-
-    if (!gameReview || !cardGameName || !gameName || !gameReviewText) return;
-
-    gameReview.addEventListener("mouseover", () => {
-      addClassList(cardGameName, "show-review-percent");
-      cardGameName.innerText = gameReviewText;
-    });
-
-    gameReview.addEventListener("mouseout", () => {
-      removeClassList(cardGameName, "show-review-percent");
-      cardGameName.innerText = gameName;
-    });
-  });
-})();
