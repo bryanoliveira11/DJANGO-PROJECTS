@@ -16,7 +16,11 @@ background-size: cover; background-position: 50%;">
         </div>
         <div class="game-card-flex-content">
             <div class="game-content">
-                <h1>{{game.name}}</h1>
+                <h1>
+                {{game.name}}
+                <input type="hidden" name="gameName" value={{game.name}}>
+                </h1>
+                <input type="hidden" name="gameReviewPercent" value={{game.name}}>
                 <div class="game-reviews">
                     <p class="{{game.reviews.description}}">
                         {{game.reviews.description}} 
@@ -31,9 +35,7 @@ background-size: cover; background-position: 50%;">
             </div>
             <div class="content-flex-row">
                 <div class="add-to-cart-btn" title="Add to Cart">
-                    <button>
-                        Add to Cart
-                    </button>
+                    <button>Add to Cart</button>
                 </div>
                 <div class="game-card-prices">
                     <div class="discount-price">

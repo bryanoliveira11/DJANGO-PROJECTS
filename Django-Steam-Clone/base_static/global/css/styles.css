@@ -857,9 +857,25 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 }
 
 .sales-grid .game-card-item .game-card-flex-content .game-content h1 {
-  margin: 0;
-  color: var(--color-white);
+  margin: 0 0 0.5rem 0;
   font-size: 2.4rem;
+  color: var(--color-white);
+  transition: background 250ms ease-in-out;
+}
+
+.sales-grid
+  .game-card-item
+  .game-card-flex-content
+  .game-content
+  h1.show-review-percent {
+  background: var(--color-gray-2);
+  color: var(--color-gray-7);
+  font-size: 1.1rem;
+  font-style: sans-serif;
+  border-radius: 0.3rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .sales-grid .game-card-item .game-reviews,
@@ -1097,17 +1113,17 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 
 .saleCardAnim {
   animation-name: saleCardAnim;
-  animation-duration: 100ms;
+  animation-duration: 300ms;
 }
 
 @keyframes saleCardAnim {
   from {
-    opacity: 0;
     transform: translateX(-40px);
+    opacity: 0;
   }
   to {
-    opacity: 1;
     transform: translateX(0);
+    opacity: 1;
   }
 }
 

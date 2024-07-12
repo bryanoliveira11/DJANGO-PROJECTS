@@ -128,3 +128,27 @@ function showSlides(slideNumber) {
     });
   });
 })();
+
+(() => {
+  const gameContents = document.querySelectorAll(".game-content");
+
+  if (!gameContents) return;
+
+  gameContents.forEach((gameContent) => {
+    const gameReview = gameContent.querySelector(".game-reviews");
+    const cardGameName = gameContent.querySelector("h1");
+    const gameName = cardGameName.querySelector("input").value;
+
+    if (!gameReview || !cardGameName) return;
+
+    gameReview.addEventListener("mouseover", () => {
+      addClassList(cardGameName, "show-review-percent");
+      cardGameName.innerText = "99% of the reviews are fucking shit";
+    });
+
+    gameReview.addEventListener("mouseout", () => {
+      removeClassList(cardGameName, "show-review-percent");
+      cardGameName.innerText = gameName;
+    });
+  });
+})();
