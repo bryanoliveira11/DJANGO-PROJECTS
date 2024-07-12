@@ -189,6 +189,8 @@ def update_details_with_reviews():
 
 
 def calculate_review_percent():
+    from django.contrib.humanize.templatetags.humanize import intcomma
+
     from games.models import Reviews
 
     reviews = Reviews.objects.all()

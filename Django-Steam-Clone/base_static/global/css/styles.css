@@ -860,7 +860,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   margin: 0 0 0.5rem 0;
   font-size: 2.4rem;
   color: var(--color-white);
-  transition: background 250ms ease-in-out;
+  transition: background 150ms ease;
 }
 
 .sales-grid
@@ -871,7 +871,6 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   background: var(--color-gray-2);
   color: var(--color-gray-7);
   font-size: 1.1rem;
-  font-style: sans-serif;
   border-radius: 0.3rem;
   margin-bottom: 1rem;
   padding: 1rem;

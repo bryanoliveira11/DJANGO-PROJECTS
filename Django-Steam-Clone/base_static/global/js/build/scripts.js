@@ -137,13 +137,14 @@ function showSlides(slideNumber) {
   gameContents.forEach((gameContent) => {
     const gameReview = gameContent.querySelector(".game-reviews");
     const cardGameName = gameContent.querySelector("h1");
-    const gameName = cardGameName.querySelector("input").value;
+    const gameName = cardGameName.querySelector('#game-name').value;
+    const gameReviewText = cardGameName.querySelector('#game-review-text').value;
 
-    if (!gameReview || !cardGameName) return;
+    if (!gameReview || !cardGameName || !gameName || !gameReviewText) return;
 
     gameReview.addEventListener("mouseover", () => {
       addClassList(cardGameName, "show-review-percent");
-      cardGameName.innerText = "99% of the reviews are fucking shit";
+      cardGameName.innerText = gameReviewText;
     });
 
     gameReview.addEventListener("mouseout", () => {

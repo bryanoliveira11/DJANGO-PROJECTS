@@ -18,9 +18,9 @@ background-size: cover; background-position: 50%;">
             <div class="game-content">
                 <h1>
                 {{game.name}}
-                <input type="hidden" name="gameName" value={{game.name}}>
-                <input type="hidden" name="gameReviewPercent" value={{game.positive_percent}}>
-                <input type="hidden" name="gameTotalReviews" value={{game.total_reviews}}>
+                <input type="hidden" id="game-name" value="{{game.name}}">
+                <input type="hidden" id="game-review-text"
+                value="{{game.reviews.positive_percent}}% of the {{game.reviews.total_reviews|intcomma}} user reviews for this game are positive.">
                 </h1>
                 <div class="game-reviews">
                     <p class="{{game.reviews.description}}">
