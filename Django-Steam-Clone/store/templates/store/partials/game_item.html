@@ -41,15 +41,7 @@ background-size: cover; background-position: 50%;">
                 <div class="add-to-cart-btn" title="Add to Cart">
                     <button>Add to Cart</button>
                 </div>
-                <div class="game-card-prices">
-                    <div class="discount-price">
-                        <span>-{{game.discount_percent|format_discount}}%</span>
-                    </div>
-                    <div class="game-prices">
-                        <span class="initial-price strikediag">{{game.price_initial}}</span>
-                        <span class="final-price">{{game.price_final}}</span>
-                    </div>
-                </div>
+                {% include "store/partials/sale_prices.html" %}
             </div>
         </div>
     </div>

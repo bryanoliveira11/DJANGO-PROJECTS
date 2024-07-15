@@ -1,0 +1,11 @@
+{% load filters %}
+
+<div class="game-card-prices">
+    <div class="discount-price">
+        <span>-{{game.discount_percent|format_discount}}%</span>
+    </div>
+    <div class="game-prices">
+        <span class="initial-price strikediag">{{game.price_initial}}</span>
+        <span class="final-price">{{game.price_final}}</span>
+    </div>
+</div>

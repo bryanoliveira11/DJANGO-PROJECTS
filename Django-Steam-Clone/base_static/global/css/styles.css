@@ -996,7 +996,8 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   top: 0;
 }
 
-.sales-grid .game-card-item .game-card-flex-content .game-card-prices {
+.sales-grid .game-card-item .game-card-flex-content .game-card-prices,
+.deep-discounts-container .game-card-prices {
   display: flex;
   width: 55%;
   height: 2.8rem;
@@ -1012,7 +1013,8 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   margin-bottom: 3rem;
 }
 
-.sales-grid .game-card-item .game-card-flex-content .discount-price {
+.sales-grid .game-card-item .game-card-flex-content .discount-price,
+.deep-discounts-container .discount-price {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1023,7 +1025,8 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   background: #a1cd44;
 }
 
-.sales-grid .game-card-item .game-card-flex-content .game-prices {
+.sales-grid .game-card-item .game-card-flex-content .game-prices,
+.deep-discounts-container .game-prices {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1032,11 +1035,8 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   background: var(--color-black);
 }
 
-.sales-grid
-  .game-card-item
-  .game-card-flex-content
-  .game-prices
-  .initial-price {
+.sales-grid .game-card-item .game-card-flex-content .game-prices .initial-price,
+.deep-discounts-container .game-prices .initial-price {
   font-size: 1.4rem;
   color: var(--color-gray-5);
   margin-right: 0.3rem;
@@ -1064,7 +1064,8 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   pointer-events: none;
 }
 
-.sales-grid .game-card-item .game-card-flex-content .game-prices .final-price {
+.sales-grid .game-card-item .game-card-flex-content .game-prices .final-price,
+.deep-discounts-container .game-prices .final-price {
   font-size: 1.4rem;
   color: var(--color-white);
   font-weight: 600;
@@ -1120,7 +1121,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 
 .deep-discounts-container {
   max-width: 120rem;
-  width: 120rem;
+  width: 100%;
   max-height: 40.5rem;
   height: 40.5rem;
   margin: 8.5rem auto;
@@ -1174,10 +1175,12 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
-  padding: 1rem 2.5rem;
+  padding: 1rem;
 }
 
 .deep-discounts-container .deep-discounts-cards .deep-disc-card-item {
+  display: flex;
+  flex-direction: column;
   max-width: 37.5rem;
   width: 100%;
   max-height: 24.5rem;
@@ -1195,6 +1198,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 .deep-discounts-container .store-slides .slide-dot {
   width: 1.5rem;
   height: 0.9rem;
+  margin: 0.2rem;
   background: #e0b77e;
   filter: brightness(40%);
 }
@@ -1233,6 +1237,11 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 .fadeAnim {
   animation-name: fade;
   animation-duration: 150ms;
+}
+
+.disc-fade {
+  animation-name: fade;
+  animation-duration: 900ms;
 }
 
 @keyframes fade {
