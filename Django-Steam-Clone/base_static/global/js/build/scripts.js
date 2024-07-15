@@ -93,15 +93,21 @@ function slidesOnSale(slides, dots, slideNumber) {
 
 function showSlides(slideNumber) {
   let slides = document.getElementsByClassName("store-games-slider-container");
-  const dots = document.getElementsByClassName("slide-dot");
+  const dotsMain = document.getElementsByClassName("slide-dot");
 
   if (slides.length !== 0) {
-    slidesOffSale(slides, dots, slideNumber);
+    slidesOffSale(slides, dotsMain, slideNumber);
     return;
   }
 
   slides = document.getElementsByClassName("game-card-item");
-  slidesOnSale(slides, dots, slideNumber);
+  slidesOnSale(slides, dotsMain, slideNumber);
+
+  const deepDiscSlides = document.getElementsByClassName("deep-disc-card-item");
+  const dotsDeep_Disc = document.querySelectorAll(
+    ".deep-discounts-container .slide-dot"
+  );
+  slidesOnSale(deepDiscSlides, dotsDeep_Disc, slideNumber);
 }
 
 (() => {

@@ -19,5 +19,15 @@
             </h1>
             <button>see all</button>
         </div>
+        <div class="deep-discounts-cards">
+            {% include "store/partials/slider_arrow_left.html" %}
+            {% for game in deep_disc_games %}
+            <div class="deep-disc-card-item" title="{{game.name}}">
+                <img src="{{game.capsule_image}}" alt="Game Cover">
+            </div>
+            {% endfor %}
+            {% include "store/partials/slider_arrow_right.html" %}
+        </div>
+        {% include "store/partials/slides_dot.html" %}
     </div>
 </div>

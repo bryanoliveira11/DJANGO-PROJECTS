@@ -55,10 +55,20 @@ class StorePage(View):
 
         return slide_len
 
+    def get_deep_discount_games(self):
+        deep_disc_games = Games.objects.filter(
+            discount_percent__isnull=False,
+            discount_percent__gt=84,
+            price_initial__icontains='R$',
+        )
+        rand_start = self.get_rand_start(deep_disc_games, True)
+        return deep_disc_games[rand_start: rand_start + 24]
+
     def get(self, *args, **kwargs):
         header, background, is_video = get_store_visual_assets()
         slide_games, is_sale = self.get_slide_games(is_sale=True)
         rand_games = self.get_rand_games(5, slide_games)
+        deep_disc_games = self.get_deep_discount_games()
 
         return render(
             self.request,
@@ -71,6 +81,7 @@ class StorePage(View):
                 'is_sale': is_sale,
                 'slide_games': slide_games,
                 'rand_games': rand_games,
+                'deep_disc_games': deep_disc_games,
                 'slide_len': self.get_slide_length(is_sale, slide_games),
             }
         )
