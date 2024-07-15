@@ -772,8 +772,8 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 
 .sales-container {
   display: flex;
-  flex-direction: row;
-  height: 100rem;
+  flex-direction: column;
+  height: fit-content;
   max-width: 130rem;
   width: 100%;
   margin: 0 auto;
@@ -919,7 +919,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   transition: opacity 150ms ease-in-out;
 }
 
-.sales-grid .game-card-item .game-reviews:hover + .game-review-text{
+.sales-grid .game-card-item .game-reviews:hover + .game-review-text {
   opacity: 1;
 }
 
@@ -1112,6 +1112,21 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 .store-slides .slide-dot.active:hover {
   filter: brightness(140%);
   opacity: 1;
+}
+
+.deep-discounts-container {
+  max-width: 120rem;
+  width: 120rem;
+  max-height: 40.5rem;
+  height: 40.5rem;
+  margin: 8.2rem auto;
+  border-radius: 0.3rem;
+  background: rgb(244, 215, 183);
+  background: linear-gradient(
+    140deg,
+    rgba(244, 215, 183, 1) 48%,
+    rgba(241, 193, 139, 1) 86%
+  );
 }
 
 /* keyframes */
