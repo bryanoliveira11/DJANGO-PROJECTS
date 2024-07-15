@@ -34,7 +34,7 @@ class StorePage(View):
                 discount_percent__isnull=False,
                 discount_percent__gt=0,
                 price_initial__icontains='R$',
-            ).prefetch_related('genres')
+            ).prefetch_related('genres').select_related('reviews')
 
         rand_start = self.get_rand_start(games, is_sale)
 
