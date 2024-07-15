@@ -1119,7 +1119,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   width: 120rem;
   max-height: 40.5rem;
   height: 40.5rem;
-  margin: 8.2rem auto;
+  margin: 8.5rem auto;
   border-radius: 0.3rem;
   background: rgb(244, 215, 183);
   background: linear-gradient(
@@ -1127,6 +1127,43 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
     rgba(244, 215, 183, 1) 48%,
     rgba(241, 193, 139, 1) 86%
   );
+}
+
+.deep-discounts-container .deep-discounts-title {
+  padding: 1rem 2.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.deep-discounts-container .deep-discounts-title h1 {
+  color: #E3535B;
+  font-size: 3.8rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.deep-discounts-container .deep-discounts-title h1 p {
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--color-black);
+}
+
+.deep-discounts-container .deep-discounts-title button {
+  width: 8.5rem;
+  height: 2.5rem;
+  background: var(--color-gray-0);
+  font-size: 1.4rem;
+  cursor: pointer;
+  font-weight: 700;
+  border: 0;
+  outline: 0;
+  text-transform: uppercase;
+}
+
+.deep-discounts-container .deep-discounts-title button:hover {
+  background: var(--color-white);
 }
 
 /* keyframes */
