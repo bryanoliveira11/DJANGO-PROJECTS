@@ -1193,6 +1193,44 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   height: 100%;
   object-fit: cover;
   cursor: pointer;
+  z-index: 1;
+}
+
+.deep-discounts-container .deep-discounts-cards .deep-disc-card-item:hover img {
+  opacity: 0;
+  z-index: 0;
+}
+
+.deep-discounts-container
+  .deep-discounts-cards
+  .deep-disc-card-item:hover
+  video {
+  display: block;
+  z-index: 2;
+  position: relative;
+  top: -1rem;
+  scale: 1.1;
+  -webkit-box-shadow: 3px 5px 16px 2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 5px 16px 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 5px 16px 2px rgba(0, 0, 0, 0.75);
+}
+
+.deep-discounts-container .deep-discounts-cards .deep-disc-card-item video {
+  display: none;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+
+.deep-discounts-container
+  .deep-discounts-cards
+  .deep-disc-card-item.no-video:hover
+  img {
+  opacity: 1;
+  scale: 1.1;
+  z-index: 2;
+  -webkit-box-shadow: 3px 5px 16px 2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 5px 16px 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 5px 16px 2px rgba(0, 0, 0, 0.75);
 }
 
 .deep-discounts-container .store-slides .slide-dot {

@@ -22,10 +22,24 @@
         <div class="deep-discounts-cards">
             {% include "store/partials/slider_arrow_left.html" %}
             {% for game in deep_disc_games %}
+            {% if game.movie1 or game.movie2 or game.movie3 %}
             <div class="deep-disc-card-item disc-fade" title="{{game.name}}">
+                <img src="{{game.capsule_image}}" alt="Game Cover">
+                {% if game.movie1 %}
+                <video src="{{game.movie1}}" muted="true" autoplay loop></video>
+                {% elif game.movie2 %}
+                <video src="{{game.movie2}}" muted="true" autoplay loop></video>
+                {% elif game.movie3 %}
+                <video src="{{game.movie3}}" muted="true" autoplay loop></video>
+                {% endif %}
+                {% include "store/partials/sale_prices.html" %}
+            </div>
+            {% else %}
+            <div class="deep-disc-card-item no-video disc-fade" title="{{game.name}}">
                 <img src="{{game.capsule_image}}" alt="Game Cover">
                 {% include "store/partials/sale_prices.html" %}
             </div>
+            {% endif %}
             {% endfor %}
             {% include "store/partials/slider_arrow_right.html" %}
         </div>
