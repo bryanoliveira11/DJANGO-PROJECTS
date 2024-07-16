@@ -1,0 +1,39 @@
+<div class="deep-discounts-container">
+    <div class="deep-discounts-title">
+        <h1>
+            Featured Deep Discounts
+            <p>Especially great deals on some of the all-time greats</p>
+        </h1>
+        <button>see all</button>
+    </div>
+    <div class="deep-discounts-cards">
+        {% include "store/partials/slider_arrow_left.html" %}
+        {% for game in deep_disc_games %}
+        {% if game.movie1 or game.movie2 or game.movie3 %}
+        <div class="deep-disc-card-item disc-fade"
+        title="{{game.name}}">
+            <img src="{{game.capsule_image}}" alt="Game Cover">
+            {% if game.movie1 %}
+            <video src="{{game.movie1}}" muted="true" autoplay loop></video>
+            {% elif game.movie2 %}
+            <video src="{{game.movie2}}" muted="true" autoplay loop></video>
+            {% elif game.movie3 %}
+            <video src="{{game.movie3}}" muted="true" autoplay loop></video>
+            {% endif %}
+            {% include "store/partials/sale_prices.html" %}
+        </div>
+        {% else %}
+        <div class="deep-disc-card-item no-video disc-fade" title="{{game.name}}">
+            <img src="{{game.capsule_image}}" alt="Game Cover">
+            {% include "store/partials/sale_prices.html" %}
+        </div>
+        {% endif %}
+        {% endfor %}
+        {% include "store/partials/slider_arrow_right.html" %}
+    </div>
+    <div class="store-slides">
+        {% for i in slide_deep_disc_len  %}
+        <div class="slide-dot" onclick="currentSlide({{i}})"></div>
+        {% endfor %}
+    </div>
+</div>
