@@ -25,9 +25,8 @@ class StorePage(View):
         return rand_games
 
     def get_slide_games(
-        self, is_sale=False
+        self, games: BaseManager[Games], is_sale=False
     ) -> tuple[BaseManager[Games], bool]:
-        games = Games.objects.all()
 
         if is_sale:
             games = Games.objects.filter(
@@ -60,11 +59,13 @@ class StorePage(View):
 
         return slide_len
 
-    def get_deep_discount_games(self, is_sale: bool):
-        if is_sale:
+    def get_deep_discount_games(
+        self, games: BaseManager[Games], is_sale: bool
+    ):
+        if not is_sale:
             return
 
-        deep_disc_games = Games.objects.filter(
+        deep_disc_games = games.filter(
             discount_percent__isnull=False,
             discount_percent__gt=84,
             price_initial__icontains='R$',
@@ -74,9 +75,10 @@ class StorePage(View):
 
     def get(self, *args, **kwargs):
         header, background, is_video = get_store_visual_assets()
-        slide_games, is_sale = self.get_slide_games(is_sale=False)
+        all_games = Games.objects.all()
+        slide_games, is_sale = self.get_slide_games(all_games, is_sale=True)
         rand_games = self.get_rand_games(5, slide_games)
-        deep_disc_games = self.get_deep_discount_games(is_sale)
+        deep_disc_games = self.get_deep_discount_games(all_games, is_sale)
 
         return render(
             self.request,
