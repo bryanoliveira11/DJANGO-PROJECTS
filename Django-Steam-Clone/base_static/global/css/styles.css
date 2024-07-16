@@ -1218,7 +1218,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 .deep-discounts-container .deep-discounts-cards .deep-disc-card-item video {
   display: none;
   cursor: pointer;
-  transition: all 150ms ease-in-out;
+  transition: scale 600ms ease-in-out;
 }
 
 .deep-discounts-container

@@ -18,98 +18,6 @@ const removeClassList = (element, value) => {
   if (element) element.classList.remove(value);
 };
 
-function removeMoviesAnimation() {
-  const movies = document.querySelectorAll(".game-card-movie video");
-
-  movies.forEach((movie) => {
-    if (movie.classList.contains("toBottomAnimMovie")) {
-      removeClassList(movie, "toBottomAnimMovie");
-    }
-  });
-}
-
-const root = document.documentElement;
-let slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(slideNumber) {
-  showSlides((slideIndex += slideNumber));
-  removeMoviesAnimation();
-}
-
-function currentSlide(slideNumber) {
-  showSlides((slideIndex = slideNumber));
-  removeMoviesAnimation();
-}
-
-function slidesOffSale(slides, dots, slideNumber) {
-  if (slideNumber > slides.length) {
-    slideIndex = 1;
-  }
-
-  if (slideNumber < 1) {
-    slideIndex = slides.length;
-  }
-
-  for (let i = 0; i < slides.length; i++) {
-    changeDisplayStyle(slides[i], "none");
-  }
-
-  for (let i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-
-  changeDisplayStyle(slides[slideIndex - 1], "flex");
-  dots[slideIndex - 1].className += " active";
-}
-
-function slidesOnSale(slides, dots, slideNumber) {
-  let totalSlides = Math.ceil(slides.length / 3);
-
-  if (slideNumber > totalSlides) {
-    slideIndex = 1;
-  }
-
-  if (slideNumber < 1) {
-    slideIndex = totalSlides;
-  }
-
-  for (let i = 0; i < slides.length; i++) {
-    changeDisplayStyle(slides[i], "none");
-  }
-
-  for (let i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-
-  let start = (slideIndex - 1) * 3;
-  for (i = start; i < start + 3; i++) {
-    if (slides[i]) {
-      changeDisplayStyle(slides[i], "flex");
-    }
-  }
-  dots[slideIndex - 1].className += " active";
-}
-
-function showSlides(slideNumber) {
-  let slides = document.getElementsByClassName("store-games-slider-container");
-  const dotsMain = document.getElementsByClassName("slide-dot");
-
-  if (slides.length !== 0) {
-    slidesOffSale(slides, dotsMain, slideNumber);
-    return;
-  }
-
-  slides = document.getElementsByClassName("game-card-item");
-  slidesOnSale(slides, dotsMain, slideNumber);
-
-  const deepDiscSlides = document.getElementsByClassName("deep-disc-card-item");
-  const dotsDeep_Disc = document.querySelectorAll(
-    ".deep-discounts-container .slide-dot"
-  );
-  slidesOnSale(deepDiscSlides, dotsDeep_Disc, slideNumber);
-}
-
 (() => {
   const gameCardItems = document.querySelectorAll(".game-card-item");
 
@@ -133,4 +41,83 @@ function showSlides(slideNumber) {
       }
     });
   });
+})();
+
+function removeMoviesAnimation() {
+  const movies = document.querySelectorAll(".game-card-movie video");
+
+  movies.forEach((movie) => {
+    if (movie.classList.contains("toBottomAnimMovie")) {
+      removeClassList(movie, "toBottomAnimMovie");
+    }
+  });
+}
+
+const handleSlides = (slides, dots, slideIndex) => {
+  for (let i = 0; i < slides.length; i++) {
+    changeDisplayStyle(slides[i], "none");
+  }
+
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  let start = (slideIndex - 1) * 3;
+  for (i = start; i < start + 3; i++) {
+    if (slides[i]) {
+      changeDisplayStyle(slides[i], "flex");
+    }
+  }
+  dots[slideIndex - 1].className += " active";
+};
+
+const setupCarousel = (slides, dots, nextSlide, prevSlide) => {
+  if (!slides) return;
+  const totalSlides = Math.ceil(slides.length / 3);
+  let slideIndex = 1;
+
+  nextSlide.addEventListener("click", () => {
+    slideIndex++;
+    if (slideIndex > totalSlides) slideIndex = 1;
+    handleSlides(slides, dots, slideIndex);
+    removeMoviesAnimation();
+  });
+
+  prevSlide.addEventListener("click", () => {
+    slideIndex--;
+    if (slideIndex < 1) slideIndex = totalSlides;
+    handleSlides(slides, dots, slideIndex);
+    removeMoviesAnimation();
+  });
+
+  dots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      const dotNumber = parseInt(dot.getAttribute("slide-number"));
+      slideIndex = dotNumber;
+      handleSlides(slides, dots, slideIndex);
+    });
+  });
+  handleSlides(slides, dots, slideIndex);
+};
+
+(() => {
+  const salesContainer = document.querySelector(".sales-grid-cards-content");
+  if (salesContainer) {
+    setupCarousel(
+      (slides = salesContainer.querySelectorAll(".game-card-item")),
+      (dots = salesContainer.querySelectorAll(".store-slides .slide-dot")),
+      (nextSlide = salesContainer.querySelector(".arrow-right")),
+      (prevSlide = salesContainer.querySelector(".arrow-left")),
+    );
+  }
+
+  const deepDiscContainer = document.querySelector(".deep-discounts-container");
+  if (deepDiscContainer) {
+    setupCarousel(
+      (slides = deepDiscContainer.querySelectorAll(".deep-disc-card-item")),
+      (dots = deepDiscContainer.querySelectorAll(".slide-dot")),
+      (nextSlide = deepDiscContainer.querySelector(".arrow-right")),
+      (prevSlide = deepDiscContainer.querySelector(".arrow-left")),
+    );
+  }
 })();
