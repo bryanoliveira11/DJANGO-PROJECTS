@@ -1254,6 +1254,15 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   left: -0.2rem;
 }
 
+.discount-games-grid {
+  max-width: 120rem;
+  width: 120rem;
+  max-height: 40.5rem;
+  height: 40.5rem;
+  margin: 6rem auto;
+  background: red;
+}
+
 /* keyframes */
 
 .saleCardAnim {

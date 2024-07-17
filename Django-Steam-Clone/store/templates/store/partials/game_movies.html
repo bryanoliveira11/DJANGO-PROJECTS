@@ -1,0 +1,7 @@
+{% if game.movie1 %}
+<video src="{{game.movie1}}" muted="true" autoplay loop></video>
+{% elif game.movie2 %}
+<video src="{{game.movie2}}" muted="true" autoplay loop></video>
+{% elif game.movie3 %}
+<video src="{{game.movie3}}" muted="true" autoplay loop></video>
+{% endif %}

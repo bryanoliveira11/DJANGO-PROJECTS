@@ -1,8 +1,7 @@
 <div class="deep-discounts-container">
     <div class="deep-discounts-title">
-        <h1>
-            Featured Deep Discounts
-            <p>Especially great deals on some of the all-time greats</p>
+        <h1> Featured Deep Discounts
+        <p>Especially great deals on some of the all-time greats</p>
         </h1>
         <button>see all</button>
     </div>
@@ -13,13 +12,7 @@
         <div class="deep-disc-card-item disc-fade"
         title="{{game.name}}">
             <img src="{{game.capsule_image}}" alt="Game Cover">
-            {% if game.movie1 %}
-            <video src="{{game.movie1}}" muted="true" autoplay loop></video>
-            {% elif game.movie2 %}
-            <video src="{{game.movie2}}" muted="true" autoplay loop></video>
-            {% elif game.movie3 %}
-            <video src="{{game.movie3}}" muted="true" autoplay loop></video>
-            {% endif %}
+            {% include "store/partials/game_movies.html" %}
             {% include "store/partials/sale_prices.html" %}
         </div>
         {% else %}

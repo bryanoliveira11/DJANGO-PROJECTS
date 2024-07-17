@@ -6,13 +6,7 @@ style="background-image: url('{{game.sale_image}}');
 background-size: cover; background-position: 50%;">
     <div class="game-card-content">
         <div class="game-card-movie">
-            {% if game.movie1 %}
-            <video src="{{game.movie1}}" muted="true" autoplay loop></video>
-            {% elif game.movie2 %}
-            <video src="{{game.movie2}}" muted="true" autoplay loop></video>
-            {% elif game.movie3 %}
-            <video src="{{game.movie3}}" muted="true" autoplay loop></video>
-            {% endif %}
+            {% include "store/partials/game_movies.html" %}
         </div>
         <div class="game-card-flex-content">
             <div class="game-content">
