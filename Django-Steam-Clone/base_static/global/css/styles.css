@@ -1124,7 +1124,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   width: 100%;
   max-height: 40.5rem;
   height: 40.5rem;
-  margin: 8.5rem auto;
+  margin: 8.5rem auto 0 auto;
   border-radius: 0.3rem;
   background: rgb(244, 215, 183);
   background: linear-gradient(
@@ -1259,7 +1259,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   width: 120rem;
   max-height: 40.5rem;
   height: 40.5rem;
-  margin: 6rem auto;
+  margin: 6rem auto 0 auto;
   background: red;
 }
 

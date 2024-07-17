@@ -35,16 +35,7 @@ class StorePage(View):
                 price_initial__icontains='R$',
             ).prefetch_related('genres').select_related('reviews')
 
-        rand_start = self.get_rand_start(games, is_sale)
-
-        # off sale, games = 12 in total, 12 slides
-        if not is_sale:
-            slide_games = games[rand_start:rand_start + 12]
-            return slide_games, is_sale
-
-        # on sale, games = 24 in total, 3 per slide, 8 slides
-        slide_games = games[rand_start: rand_start + 24]
-        return slide_games, is_sale
+        return games, is_sale
 
     def get_slide_length(
         self, is_sale: bool, slide_games: BaseManager[Games] | None
@@ -76,7 +67,14 @@ class StorePage(View):
     def get(self, *args, **kwargs):
         header, background, is_video = get_store_visual_assets()
         all_games = Games.objects.all()
-        slide_games, is_sale = self.get_slide_games(all_games, is_sale=True)
+        disc_games, is_sale = self.get_slide_games(all_games, is_sale=True)
+        rand_start = self.get_rand_start(disc_games, is_sale)
+
+        if is_sale:
+            slide_games = disc_games[rand_start:rand_start+24]
+        else:
+            slide_games = disc_games[rand_start:rand_start+12]
+
         rand_games = self.get_rand_games(5, slide_games)
         deep_disc_games = self.get_deep_discount_games(all_games, is_sale)
 
@@ -91,6 +89,7 @@ class StorePage(View):
                 'is_sale': is_sale,
                 'slide_games': slide_games,
                 'rand_games': rand_games,
+                'disc_games': disc_games,
                 'deep_disc_games': deep_disc_games,
                 'slide_len': self.get_slide_length(is_sale, slide_games),
                 'slide_deep_disc_len': self.get_slide_length(
