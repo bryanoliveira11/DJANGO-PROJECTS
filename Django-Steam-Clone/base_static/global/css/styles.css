@@ -1251,7 +1251,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 
 .discount-games-container {
   max-width: 120rem;
-  width: 120rem;
+  width: 100%;
   height: fit-content;
   margin: 6rem auto 0 auto;
 }
@@ -1329,6 +1329,36 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   -webkit-box-shadow: 3px 5px 16px 2px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 3px 5px 16px 2px rgba(0, 0, 0, 0.75);
   box-shadow: 3px 5px 16px 2px rgba(0, 0, 0, 0.75);
+}
+
+.browse-by-category-container {
+  max-width: 120rem;
+  width: 100%;
+  height: fit-content;
+  margin: 6rem auto 0 auto;
+}
+
+.browse-by-category-container .browse-by-category-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.browse-by-category-container .browse-by-category-title h1 {
+  font-size: 2.4rem;
+  color: var(--color-white);
+}
+
+.browse-by-category-container .browse-by-category-title p {
+  padding: 0.5rem 1rem;
+  font-size: 1.4rem;
+  border-radius: 0.3rem;
+  background: #4ecc8f;
+  color: var(--color-black);
+  font-weight: 700;
+  margin-left: 1rem;
 }
 
 /* keyframes */

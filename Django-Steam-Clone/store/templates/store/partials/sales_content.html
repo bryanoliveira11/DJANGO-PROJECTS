@@ -11,24 +11,6 @@
         {% include "store/partials/slides_dot.html" %}
     </div>
     {% include "store/partials/deep_discounts_items.html" %}
-    <div class="discount-games-container">
-        <div class="discount-games-grid">
-            {% for game in grid_games %}
-            {% if game.movie1 or game.movie2 or game.movie3 %}
-            <div class="game-grid-card">
-                <div class="game-media-container">
-                    <img src="{{game.capsule_image}}" alt="Game Cover">
-                    {% include "store/partials/game_movies.html" %}
-                    {% include "store/partials/sale_prices.html" %}
-                </div>
-            </div>
-            {% else %}
-            <div class="game-grid-card no-video">
-                <img src="{{game.capsule_image}}" alt="Game Cover">
-                {% include "store/partials/sale_prices.html" %}
-            </div>
-            {% endif %}
-            {% endfor %}
-        </div>
-    </div>
+    {% include "store/partials/discount_games_grid.html" %}
+    {% include "store/partials/browse_by_category.html" %}
 </div>
