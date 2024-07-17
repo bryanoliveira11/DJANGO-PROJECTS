@@ -89,7 +89,7 @@ class StorePage(View):
                 'is_sale': is_sale,
                 'slide_games': slide_games,
                 'rand_games': rand_games,
-                'disc_games': disc_games,
+                'grid_games': disc_games[rand_start:rand_start+14],
                 'deep_disc_games': deep_disc_games,
                 'slide_len': self.get_slide_length(is_sale, slide_games),
                 'slide_deep_disc_len': self.get_slide_length(
