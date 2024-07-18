@@ -207,7 +207,14 @@ def calculate_review_percent():
 
 
 def update_genres_with_images():
-    print(genres_image_url)
+    from games.models import Genres
+    genres_to_update = Genres.objects.filter(
+        id__in=[1, 2, 3, 4, 5, 6, 7, 8, 9, 14, 15, 16],
+    )
+    for i in range(len(genres_to_update)):
+        genre = genres_to_update[i]
+        genre.image_url = genres_image_url[i]
+        genre.save()
 
 
 if __name__ == '__main__':

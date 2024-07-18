@@ -4,6 +4,10 @@
         <p>Plus visit a category below and claim a free sticker daily</p>
     </div>
     <div class="categories-card-slides">
-        <div class="category-item"></div>
+        {% for category in categories  %}
+        <div class="category-item">
+            <img src="{{category.image_url}}" alt="">
+        </div>
+        {% endfor %}
     </div>
 </div>
