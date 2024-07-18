@@ -7,7 +7,7 @@ from pathlib import Path
 import django
 import requests
 from django.conf import settings
-from steam_popular_ids import ids_list
+from steam_utils_data import genres_image_url, ids_list
 
 DJANGO_BASE_DIR = Path(__file__).parent.parent
 
@@ -206,7 +206,12 @@ def calculate_review_percent():
             review.save()
 
 
+def update_genres_with_images():
+    print(genres_image_url)
+
+
 if __name__ == '__main__':
     # get_details_data()
     # update_details_with_reviews()
-    calculate_review_percent()
+    # calculate_review_percent()
+    update_genres_with_images()

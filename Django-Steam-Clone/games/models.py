@@ -3,6 +3,7 @@ from django.db import models
 
 class Genres(models.Model):
     name = models.CharField(max_length=150, unique=True)
+    image_url = models.CharField(max_length=150, blank=True, null=True)
 
 
 class Reviews(models.Model):

@@ -500,3 +500,25 @@ ids_list = [
     "1948800",
     "433340"
 ]
+
+
+def get_genres_image(genre_name: str, include_category: bool = True) -> str:
+    if include_category:
+        return f'https://store.steampowered.com/categories/homepageimage/category/{genre_name}?cc=us&l=english'
+    return f'https://store.steampowered.com/categories/homepageimage/{genre_name}?cc=us&l=english'
+
+
+genres_image_url = [
+    get_genres_image('action'),
+    get_genres_image('freetoplay', False),
+    get_genres_image('strategy'),
+    get_genres_image('adventure'),
+    get_genres_image('multiplayer_coop'),
+    get_genres_image('casual'),
+    get_genres_image('simulation'),
+    get_genres_image('rpg'),
+    get_genres_image('rogue_like_rogue_lite'),
+    get_genres_image('survival'),
+    get_genres_image('racing'),
+    get_genres_image('sports'),
+]
