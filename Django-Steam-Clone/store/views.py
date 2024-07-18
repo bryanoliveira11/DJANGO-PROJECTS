@@ -5,7 +5,7 @@ from django.db.models.manager import BaseManager
 from django.shortcuts import render
 from django.views.generic import View
 
-from games.models import Games
+from games.models import Games, Genres
 from utils.get_random_assets import get_store_visual_assets
 
 
@@ -77,6 +77,9 @@ class StorePage(View):
 
         rand_games = self.get_rand_games(5, slide_games)
         deep_disc_games = self.get_deep_discount_games(all_games, is_sale)
+        categories_to_browse = Genres.objects.filter(
+            id__in=[1, 2, 3, 4, 5, 6, 7, 8, 9, 14, 15, 16],
+        )
 
         return render(
             self.request,
@@ -95,5 +98,6 @@ class StorePage(View):
                 'slide_deep_disc_len': self.get_slide_length(
                     is_sale, deep_disc_games
                 ),
+                'categories': categories_to_browse,
             }
         )
