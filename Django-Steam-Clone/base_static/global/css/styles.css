@@ -1077,7 +1077,9 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   .slider-arrow
   .arrow-left,
 .deep-discounts-cards .slider-arrow .arrow-right,
-.deep-discounts-cards .slider-arrow .arrow-left {
+.deep-discounts-cards .slider-arrow .arrow-left,
+.categories-card-slides .slider-arrow .arrow-right,
+.categories-card-slides .slider-arrow .arrow-left {
   background: rgba(15, 21, 34, 0.65);
   transition: all 150ms ease-in-out;
 }
@@ -1093,7 +1095,9 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   .slider-arrow
   .arrow-left:hover,
 .deep-discounts-cards .slider-arrow .arrow-right:hover,
-.deep-discounts-cards .slider-arrow .arrow-left:hover {
+.deep-discounts-cards .slider-arrow .arrow-left:hover,
+.categories-card-slides .slider-arrow .arrow-right:hover,
+.categories-card-slides .slider-arrow .arrow-left:hover {
   background: rgba(15, 21, 34, 0.75);
   scale: 1.1;
 }
@@ -1359,6 +1363,50 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   color: var(--color-black);
   font-weight: 700;
   margin-left: 1rem;
+}
+
+.categories-card-slides {
+  max-width: 120rem;
+  width: 100%;
+  height: fit-content;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.categories-card-slides .category-item {
+  max-width: 29rem;
+  width: 100%;
+  height: 28.5rem;
+  margin-left: 1.5rem;
+  cursor: pointer;
+}
+
+.categories-card-slides .category-item .title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  height: 100%;
+  background: rgb(129, 3, 4);
+  background: linear-gradient(
+    180deg,
+    rgba(129, 3, 4, 0) 28%,
+    rgba(129, 3, 4, 0.05504208519345233) 37%,
+    rgba(129, 3, 4, 1) 83%
+  );
+}
+
+.categories-card-slides .category-item .title-container h1 {
+  color: var(--color-white);
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  margin: 0 0 3rem 0;
+}
+
+.categories-card-slides .category-item:nth-child(2),
+.categories-card-slides .category-item:last-child {
+  margin-left: 0;
 }
 
 /* keyframes */

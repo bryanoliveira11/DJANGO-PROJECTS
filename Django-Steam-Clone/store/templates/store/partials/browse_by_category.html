@@ -4,10 +4,21 @@
         <p>Plus visit a category below and claim a free sticker daily</p>
     </div>
     <div class="categories-card-slides">
-        {% for category in categories  %}
-        <div class="category-item">
-            <img src="{{category.image_url}}" alt="">
+        {% include "store/partials/slider_arrow_left.html" %}
+        {% for category in categories %}
+        <div class="category-item" 
+        style="background-image: url({{category.image_url}});
+        background-size:cover;">
+            <div class="title-container">
+                <h1>{{category.name}}</h1>
+            </div>
         </div>
+        {% endfor %}
+        {% include "store/partials/slider_arrow_right.html" %}
+    </div>
+    <div class="store-slides">
+        {% for i in category_slide_len  %}
+        <div class="slide-dot" slide-number="{{i}}"></div>
         {% endfor %}
     </div>
 </div>

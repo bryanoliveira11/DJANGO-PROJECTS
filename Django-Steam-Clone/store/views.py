@@ -38,7 +38,8 @@ class StorePage(View):
         return games, is_sale
 
     def get_slide_length(
-        self, is_sale: bool, slide_games: BaseManager[Games] | None
+        self, is_sale: bool,
+        slide_games: BaseManager[Games] | BaseManager[Genres] | None
     ):
         if not slide_games:
             return
@@ -98,6 +99,9 @@ class StorePage(View):
                 'slide_deep_disc_len': self.get_slide_length(
                     is_sale, deep_disc_games
                 ),
-                'categories': categories_to_browse,
+                'categories': categories_to_browse[1:5],
+                'category_slide_len': self.get_slide_length(
+                    is_sale, categories_to_browse
+                ),
             }
         )
