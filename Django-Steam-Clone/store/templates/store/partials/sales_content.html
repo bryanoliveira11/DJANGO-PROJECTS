@@ -11,6 +11,19 @@
         {% include "store/partials/slides_dot.html" %}
     </div>
     {% include "store/partials/deep_discounts_items.html" %}
-    {% include "store/partials/discount_games_grid.html" %}
+    <div class="discount-games-container">
+        <div class="discount-games-grid">
+            {% for game in grid_games %}
+            {% include "store/partials/discount_games_grid.html" %}
+            {% endfor %}
+        </div>
+    </div>
     {% include "store/partials/browse_by_category.html" %}
+    <div class="discount-games-container">
+        <div class="discount-games-grid">
+            {% for game in grid_games2 %}
+            {% include "store/partials/discount_games_grid.html" %}
+            {% endfor %}
+        </div>
+    </div>
 </div>

@@ -77,6 +77,7 @@ class StorePage(View):
             slide_games = disc_games[rand_start:rand_start+12]
 
         rand_games = self.get_rand_games(5, slide_games)
+        grid_games = disc_games[rand_start:rand_start+29]
         deep_disc_games = self.get_deep_discount_games(all_games, is_sale)
         categories_to_browse = Genres.objects.filter(
             id__in=[1, 2, 3, 4, 5, 6, 7, 8, 9, 14, 15, 16],
@@ -93,7 +94,8 @@ class StorePage(View):
                 'is_sale': is_sale,
                 'slide_games': slide_games,
                 'rand_games': rand_games,
-                'grid_games': disc_games[rand_start:rand_start+14],
+                'grid_games': grid_games[1:15],
+                'grid_games2': grid_games[15:29],
                 'deep_disc_games': deep_disc_games,
                 'slide_len': self.get_slide_length(is_sale, slide_games),
                 'slide_deep_disc_len': self.get_slide_length(
