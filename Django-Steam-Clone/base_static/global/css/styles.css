@@ -1032,6 +1032,13 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   background: var(--color-black);
 }
 
+.game-prices.free-to-play {
+  width: 10rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-white);
+}
+
 .initial-price {
   font-size: 1.4rem;
   color: var(--color-gray-5);
@@ -1494,11 +1501,11 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   max-width: 120rem;
   width: 100%;
   height: fit-content;
-  margin: 8rem auto;
+  margin: 6rem auto;
 }
 
 .top-sellers-container h1 {
-  font-size: 26px;
+  font-size: 2.6rem;
   text-transform: uppercase;
   font-weight: 600;
   text-shadow: 2px 2px 4px #5a2222;
@@ -1507,9 +1514,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 
 .top-sellers-container .top-sellers-grid {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 2rem;
   padding: 1.8rem;

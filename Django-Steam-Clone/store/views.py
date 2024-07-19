@@ -1,6 +1,7 @@
 import math
 import random
 
+from django.db.models import Q
 from django.db.models.manager import BaseManager
 from django.shortcuts import render
 from django.views.generic import View
@@ -83,7 +84,12 @@ class StorePage(View):
             id__in=[1, 2, 3, 4, 5, 6, 7, 8, 9, 14, 15, 16],
         )
         top_sellers = all_games.filter(
-            reviews__positive_percent__gt=90,
+            Q
+            (
+                Q(reviews__positive_percent__gt=90) &
+                Q(price_initial__icontains='R$') |
+                Q(price_initial__isnull=True),
+            )
         )
         top_rand_start = random.randint(1, len(top_sellers) - 16)
 

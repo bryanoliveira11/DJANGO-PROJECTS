@@ -1,11 +1,19 @@
 {% load filters %}
 
 <div class="game-card-prices">
+    {% if game.discount_percent %}
     <div class="discount-price">
         <span>-{{game.discount_percent|format_discount}}%</span>
     </div>
+    {% endif %}
+    {% if not game.is_free and game.price_initial is not None and game.price_final is not None %}
     <div class="game-prices">
         <span class="initial-price strikediag">{{game.price_initial}}</span>
         <span class="final-price">{{game.price_final}}</span>
     </div>
+    {% else %}
+    <div class="game-prices free-to-play">
+        <span>Free to Play</span>
+    </div>
+    {% endif %}
 </div>
