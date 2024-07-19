@@ -1,0 +1,8 @@
+<div class="top-sellers-container">
+    <h1>top sellers</h1>
+    <div class="top-sellers-grid">
+        {% for game in top_sellers  %}
+        {% include "store/partials/discount_games_grid.html" %}
+        {% endfor %}
+    </div>
+</div>

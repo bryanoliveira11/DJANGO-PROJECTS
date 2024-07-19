@@ -82,6 +82,10 @@ class StorePage(View):
         categories_to_browse = Genres.objects.filter(
             id__in=[1, 2, 3, 4, 5, 6, 7, 8, 9, 14, 15, 16],
         )
+        top_sellers = all_games.filter(
+            reviews__positive_percent__gt=90,
+        )
+        top_rand_start = random.randint(1, len(top_sellers) - 16)
 
         return render(
             self.request,
@@ -104,6 +108,7 @@ class StorePage(View):
                 'categories': categories_to_browse,
                 'category_slide_len': range(
                     1, math.ceil((len(categories_to_browse) / 4) + 1)
-                )
+                ),
+                'top_sellers': top_sellers[top_rand_start:top_rand_start + 16],
             }
         )
