@@ -53,7 +53,7 @@ function removeMoviesAnimation() {
   });
 }
 
-const handleSlides = (slides, dots, slideIndex) => {
+const handleSlides = (slides, dots, slideIndex, cardsPerSlide) => {
   for (let i = 0; i < slides.length; i++) {
     changeDisplayStyle(slides[i], "none");
   }
@@ -62,8 +62,8 @@ const handleSlides = (slides, dots, slideIndex) => {
     dots[i].className = dots[i].className.replace(" active", "");
   }
 
-  let start = (slideIndex - 1) * 3;
-  for (i = start; i < start + 3; i++) {
+  let start = (slideIndex - 1) * cardsPerSlide;
+  for (let i = start; i < start + cardsPerSlide; i++) {
     if (slides[i]) {
       changeDisplayStyle(slides[i], "flex");
     }
@@ -71,22 +71,22 @@ const handleSlides = (slides, dots, slideIndex) => {
   dots[slideIndex - 1].className += " active";
 };
 
-const setupCarousel = (slides, dots, nextSlide, prevSlide) => {
+const setupCarousel = (slides, dots, nextSlide, prevSlide, cardsPerSlide) => {
   if (!slides) return;
-  const totalSlides = Math.ceil(slides.length / 3);
+  const totalSlides = Math.ceil(slides.length / cardsPerSlide);
   let slideIndex = 1;
 
   nextSlide.addEventListener("click", () => {
     slideIndex++;
     if (slideIndex > totalSlides) slideIndex = 1;
-    handleSlides(slides, dots, slideIndex);
+    handleSlides(slides, dots, slideIndex, cardsPerSlide);
     removeMoviesAnimation();
   });
 
   prevSlide.addEventListener("click", () => {
     slideIndex--;
     if (slideIndex < 1) slideIndex = totalSlides;
-    handleSlides(slides, dots, slideIndex);
+    handleSlides(slides, dots, slideIndex, cardsPerSlide);
     removeMoviesAnimation();
   });
 
@@ -94,10 +94,10 @@ const setupCarousel = (slides, dots, nextSlide, prevSlide) => {
     dot.addEventListener("click", () => {
       const dotNumber = parseInt(dot.getAttribute("slide-number"));
       slideIndex = dotNumber;
-      handleSlides(slides, dots, slideIndex);
+      handleSlides(slides, dots, slideIndex, cardsPerSlide);
     });
   });
-  handleSlides(slides, dots, slideIndex);
+  handleSlides(slides, dots, slideIndex, cardsPerSlide);
 };
 
 (() => {
@@ -108,6 +108,7 @@ const setupCarousel = (slides, dots, nextSlide, prevSlide) => {
       (dots = salesContainer.querySelectorAll(".store-slides .slide-dot")),
       (nextSlide = salesContainer.querySelector(".arrow-right")),
       (prevSlide = salesContainer.querySelector(".arrow-left")),
+      (cardsPerSlide = 3)
     );
   }
 
@@ -118,6 +119,20 @@ const setupCarousel = (slides, dots, nextSlide, prevSlide) => {
       (dots = deepDiscContainer.querySelectorAll(".slide-dot")),
       (nextSlide = deepDiscContainer.querySelector(".arrow-right")),
       (prevSlide = deepDiscContainer.querySelector(".arrow-left")),
+      (cardsPerSlide = 3)
+    );
+  }
+
+  const categoriesContainer = document.querySelector(
+    ".browse-by-category-container"
+  );
+  if (categoriesContainer) {
+    setupCarousel(
+      (slides = categoriesContainer.querySelectorAll(".category-item")),
+      (dots = categoriesContainer.querySelectorAll(".slide-dot")),
+      (nextSlide = categoriesContainer.querySelector(".arrow-right")),
+      (prevSlide = categoriesContainer.querySelector(".arrow-left")),
+      (cardsPerSlide = 4)
     );
   }
 })();
