@@ -1,7 +1,6 @@
 import math
 import random
 
-from django.db.models import Q
 from django.db.models.manager import BaseManager
 from django.shortcuts import render
 from django.views.generic import View
@@ -33,7 +32,6 @@ class StorePage(View):
             games = Games.objects.filter(
                 discount_percent__isnull=False,
                 discount_percent__gt=0,
-                price_initial__icontains='R$',
             ).prefetch_related('genres').select_related('reviews')
 
         return games, is_sale
@@ -61,7 +59,6 @@ class StorePage(View):
         deep_disc_games = games.filter(
             discount_percent__isnull=False,
             discount_percent__gt=84,
-            price_initial__icontains='R$',
         )
         rand_start = self.get_rand_start(deep_disc_games, True)
         return deep_disc_games[rand_start: rand_start + 21]
@@ -83,14 +80,7 @@ class StorePage(View):
         categories_to_browse = Genres.objects.filter(
             id__in=[1, 2, 3, 4, 5, 6, 7, 8, 9, 14, 15, 16],
         )
-        top_sellers = all_games.filter(
-            Q
-            (
-                Q(reviews__positive_percent__gt=90) &
-                Q(price_initial__icontains='R$') |
-                Q(price_initial__isnull=True),
-            )
-        )
+        top_sellers = all_games.filter(reviews__positive_percent__gt=90)
         top_rand_start = random.randint(1, len(top_sellers) - 16)
 
         return render(

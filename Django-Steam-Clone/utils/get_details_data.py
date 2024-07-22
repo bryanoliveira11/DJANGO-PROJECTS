@@ -217,8 +217,27 @@ def update_genres_with_images():
         genre.save()
 
 
+def remove_currency_from_prices():
+    from games.models import Games
+
+    def replace_currency(value: str):
+        return value.replace('R$', '').replace(' ', '')
+
+    games = Games.objects.filter(
+        price_initial__icontains='R$',
+        price_final__icontains='R$',
+    )
+    for i in range(len(games)):
+        game = games[i]
+        if game.price_initial and game.price_final:
+            game.price_initial = replace_currency(game.price_initial)
+            game.price_final = replace_currency(game.price_final)
+            game.save()
+
+
 if __name__ == '__main__':
     # get_details_data()
     # update_details_with_reviews()
     # calculate_review_percent()
-    update_genres_with_images()
+    # update_genres_with_images()
+    remove_currency_from_prices()

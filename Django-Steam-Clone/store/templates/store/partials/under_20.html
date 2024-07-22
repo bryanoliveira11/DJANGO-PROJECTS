@@ -1,0 +1,14 @@
+<div class="top-sellers-container">
+    <h1>Under 20 R$</h1>
+    <div class="top-sellers-grid">
+        {% for game in under_20_games  %}
+        {% include "store/partials/discount_games_grid.html" %}
+        {% endfor %}
+    </div>
+    <div class="see-more">
+        <span>See more: 
+            <button class="see-more-btn">under 20 R$</button> or
+            <button class="see-more-btn">under 10 R$</button>
+        </span>
+    </div>
+</div>
