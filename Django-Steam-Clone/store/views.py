@@ -82,6 +82,10 @@ class StorePage(View):
         )
         top_sellers = all_games.filter(reviews__positive_percent__gt=90)
         top_rand_start = random.randint(1, len(top_sellers) - 16)
+        under_20_games = all_games.filter(
+            price_final__lt=20,
+        )
+        und20_start = random.randint(1, len(under_20_games) - 8)
 
         return render(
             self.request,
@@ -106,5 +110,6 @@ class StorePage(View):
                     1, math.ceil((len(categories_to_browse) / 4) + 1)
                 ),
                 'top_sellers': top_sellers[top_rand_start:top_rand_start + 16],
+                'under_20_games': top_sellers[und20_start:und20_start + 8],
             }
         )
