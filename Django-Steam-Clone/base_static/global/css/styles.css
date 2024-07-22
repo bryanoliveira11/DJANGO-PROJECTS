@@ -1161,9 +1161,10 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   color: var(--color-black);
 }
 
-.deep-discounts-container .deep-discounts-title button {
-  width: 8.5rem;
+button.see-more-btn {
+  width: fit-content;
   height: 2.5rem;
+  padding: 0 1.5rem;
   background: var(--color-gray-0);
   font-size: 1.4rem;
   cursor: pointer;
@@ -1173,7 +1174,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   text-transform: uppercase;
 }
 
-.deep-discounts-container .deep-discounts-title button:hover {
+button.see-more-btn:hover {
   background: var(--color-white);
 }
 
@@ -1526,6 +1527,22 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   max-width: 27rem;
   width: 100%;
   height: 18.5rem;
+}
+
+.top-sellers-container .see-more {
+  color: var(--color-white);
+  margin: 1rem;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  font-size: 1.4rem;
+}
+
+.top-sellers-container .see-more button.see-more-btn {
+  border: none;
+  outline: 0;
+  text-transform: capitalize;
+  border-radius: 0.3rem;
 }
 
 /* keyframes */
