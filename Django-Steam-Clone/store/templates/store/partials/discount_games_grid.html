@@ -1,14 +1,14 @@
 {% if game.movie1 or game.movie2 or game.movie3 %}
 <div class="game-grid-card">
     <div class="game-media-container" title={{game.name}}>
-        <img src="{{game.capsule_image}}" alt="Game Cover">
+        <img src="{{game.capsule_image}}" alt="game.name">
         {% include "store/partials/game_movies.html" %}
         {% include "store/partials/sale_prices.html" %}
     </div>
 </div>
 {% else %}
 <div class="game-grid-card no-video" title={{game.name}}>
-    <img src="{{game.capsule_image}}" alt="Game Cover">
+    <img src="{{game.capsule_image}}" alt="game.name">
     {% include "store/partials/sale_prices.html" %}
 </div>
 {% endif %}

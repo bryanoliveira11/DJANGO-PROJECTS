@@ -63,29 +63,37 @@ class StorePage(View):
         rand_start = self.get_rand_start(deep_disc_games, True)
         return deep_disc_games[rand_start: rand_start + 21]
 
+    def get_random_range_games(
+        self, games: BaseManager[Games], qtd_games: int
+    ):
+        rand_range = random.randint(1, len(games) - qtd_games)
+        return games[rand_range:rand_range + qtd_games]
+
     def get(self, *args, **kwargs):
         header, background, is_video = get_store_visual_assets()
         all_games = Games.objects.all()
         disc_games, is_sale = self.get_slide_games(all_games, is_sale=True)
         rand_start = self.get_rand_start(disc_games, is_sale)
+        rand_games = grid_games = top_sellers = under_20_games = None
+        deep_disc_games = None
 
         if is_sale:
             slide_games = disc_games[rand_start:rand_start+24]
+            deep_disc_games = self.get_deep_discount_games(all_games, is_sale)
+            grid_games = self.get_random_range_games(disc_games, 29)
+            top_sellers = self.get_random_range_games(
+                all_games.filter(reviews__positive_percent__gt=90), 16
+            )
+            under_20_games = self.get_random_range_games(
+                all_games.filter(price_final__lt=20), 8
+            )
         else:
             slide_games = disc_games[rand_start:rand_start+12]
+            rand_games = self.get_rand_games(5, slide_games)
 
-        rand_games = self.get_rand_games(5, slide_games)
-        grid_games = disc_games[rand_start:rand_start+29]
-        deep_disc_games = self.get_deep_discount_games(all_games, is_sale)
         categories_to_browse = Genres.objects.filter(
             id__in=[1, 2, 3, 4, 5, 6, 7, 8, 9, 14, 15, 16],
         )
-        top_sellers = all_games.filter(reviews__positive_percent__gt=90)
-        top_rand_start = random.randint(1, len(top_sellers) - 16)
-        under_20_games = all_games.filter(
-            price_final__lt=20,
-        )
-        und20_start = random.randint(1, len(under_20_games) - 8)
 
         return render(
             self.request,
@@ -98,8 +106,8 @@ class StorePage(View):
                 'is_sale': is_sale,
                 'slide_games': slide_games,
                 'rand_games': rand_games,
-                'grid_games': grid_games[1:15],
-                'grid_games2': grid_games[15:29],
+                'grid_games': grid_games[1:15] if grid_games else None,
+                'grid_games2': grid_games[15:29] if grid_games else None,
                 'deep_disc_games': deep_disc_games,
                 'slide_len': self.get_slide_length(is_sale, slide_games),
                 'slide_deep_disc_len': self.get_slide_length(
@@ -109,7 +117,7 @@ class StorePage(View):
                 'category_slide_len': range(
                     1, math.ceil((len(categories_to_browse) / 4) + 1)
                 ),
-                'top_sellers': top_sellers[top_rand_start:top_rand_start + 16],
-                'under_20_games': top_sellers[und20_start:und20_start + 8],
+                'top_sellers': top_sellers,
+                'under_20_games': under_20_games,
             }
         )
