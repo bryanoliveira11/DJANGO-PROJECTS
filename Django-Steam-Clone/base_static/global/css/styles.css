@@ -780,7 +780,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   padding-top: 1.6rem;
   margin: 0 auto;
   color: var(--color-gray-4);
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .footer-container .footer-content hr {
@@ -790,17 +790,18 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 
 .footer-container .footer-content img {
   height: 2.5rem;
+  cursor: pointer;
 }
 
-.footer-container .footer-content div {
+.footer-container .footer-content .footer-flex {
   display: flex;
+  justify-content: space-between;
 }
 
 .footer-container .footer-content a {
-  margin: 0 1rem;
+  margin: 0 0.5rem;
   color: var(--color-gray-2);
 }
-
 
 .footer-container .footer-content a:hover {
   color: var(--color-gray-0);
