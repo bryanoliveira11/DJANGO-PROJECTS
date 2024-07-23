@@ -775,7 +775,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 }
 
 .footer-container .footer-content {
-  max-width: 94rem;
+  max-width: 120rem;
   width: 100%;
   padding-top: 1.6rem;
   margin: 0 auto;
@@ -805,6 +805,22 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 
 .footer-container .footer-content a:hover {
   color: var(--color-gray-0);
+}
+
+.footer-container .footer-content .footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-container .footer-content .footer-links a {
+  font-size: 1.4rem;
+  margin: 0;
+  color: var(--color-gray-0);
+}
+
+.footer-container .footer-content .footer-links a:hover {
+  filter: brightness(130%);
 }
 
 /* sales cards style */

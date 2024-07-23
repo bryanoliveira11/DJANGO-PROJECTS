@@ -3,7 +3,7 @@ import random
 
 from django.db.models.manager import BaseManager
 from django.shortcuts import render
-from django.views.generic import View
+from django.views.generic import DetailView, View
 
 from games.models import Games, Genres
 from utils.get_random_assets import get_store_visual_assets
@@ -121,3 +121,7 @@ class StorePage(View):
                 'under_20_games': under_20_games,
             }
         )
+
+
+class AppPage(DetailView):
+    ...
