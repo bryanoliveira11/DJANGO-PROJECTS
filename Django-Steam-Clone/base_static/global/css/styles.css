@@ -768,6 +768,44 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   filter: brightness(100%);
 }
 
+.footer-container {
+  background: #171A21;
+  width: 100%;
+  height: 25rem;
+}
+
+.footer-container .footer-content {
+  max-width: 94rem;
+  width: 100%;
+  padding-top: 1.6rem;
+  margin: 0 auto;
+  color: var(--color-gray-4);
+  font-size: 1.3rem;
+}
+
+.footer-container .footer-content hr {
+  color: #3e4149;
+  margin: 1rem 0;
+}
+
+.footer-container .footer-content img {
+  height: 2.5rem;
+}
+
+.footer-container .footer-content div {
+  display: flex;
+}
+
+.footer-container .footer-content a {
+  margin: 0 1rem;
+  color: var(--color-gray-2);
+}
+
+
+.footer-container .footer-content a:hover {
+  color: var(--color-gray-0);
+}
+
 /* sales cards style */
 
 .sales-container {
