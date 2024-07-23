@@ -124,4 +124,7 @@ class StorePage(View):
 
 
 class AppPage(DetailView):
-    ...
+    model = Games
+    template_name = 'store/pages/app.html'
+    context_object_name = 'app_details'
+    pk_url_kwarg = 'steam_appid'

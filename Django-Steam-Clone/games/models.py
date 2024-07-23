@@ -19,6 +19,7 @@ class Reviews(models.Model):
 class Games(models.Model):
     name = models.CharField(max_length=200)
     steam_appid = models.CharField(max_length=150)
+    slug = models.SlugField(null=True, blank=True)
     is_free = models.BooleanField(default=False)
     short_description = models.CharField(max_length=500)
     sale_image = models.CharField(max_length=500)

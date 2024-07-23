@@ -7,6 +7,7 @@ from pathlib import Path
 import django
 import requests
 from django.conf import settings
+from django.utils.text import slugify
 from steam_utils_data import genres_image_url, ids_list
 
 DJANGO_BASE_DIR = Path(__file__).parent.parent
@@ -235,9 +236,21 @@ def remove_currency_from_prices():
             game.save()
 
 
+def generate_slug_from_game_name():
+    from games.models import Games
+
+    games = Games.objects.all()
+    for i in range(len(games)):
+        game = games[i]
+        if game:
+            game.slug = slugify(game.name)
+            game.save()
+
+
 if __name__ == '__main__':
     # get_details_data()
     # update_details_with_reviews()
     # calculate_review_percent()
     # update_genres_with_images()
-    remove_currency_from_prices()
+    # remove_currency_from_prices()
+    generate_slug_from_game_name()
