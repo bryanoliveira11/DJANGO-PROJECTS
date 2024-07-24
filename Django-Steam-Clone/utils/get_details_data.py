@@ -9,6 +9,7 @@ import requests
 from django.conf import settings
 from django.utils.text import slugify
 from steam_utils_data import genres_image_url, ids_list
+from unidecode import unidecode
 
 DJANGO_BASE_DIR = Path(__file__).parent.parent
 
@@ -239,11 +240,15 @@ def remove_currency_from_prices():
 def generate_slug_from_game_name():
     from games.models import Games
 
+    def custom_slugify(value):
+        value = unidecode(value)
+        return slugify(value)
+
     games = Games.objects.all()
     for i in range(len(games)):
         game = games[i]
         if game:
-            game.slug = slugify(game.name)
+            game.slug = custom_slugify(game.name)
             game.save()
 
 

@@ -9,17 +9,18 @@
         {% include "store/partials/slider_arrow_left.html" %}
         {% for game in deep_disc_games %}
         {% if game.movie1 or game.movie2 or game.movie3 %}
-        <div class="deep-disc-card-item disc-fade"
-        title="{{game.name}}">
+        <a href="{% url 'store:app' game.steam_appid game.slug %}" 
+        class="deep-disc-card-item disc-fade" title="{{game.name}}">
             <img src="{{game.capsule_image}}" alt="{{game.name}}">
             {% include "store/partials/game_movies.html" %}
             {% include "store/partials/sale_prices.html" %}
-        </div>
+        </a>
         {% else %}
-        <div class="deep-disc-card-item no-video disc-fade" title="{{game.name}}">
+        <a href="{% url 'store:app' game.steam_appid game.slug %}"
+        class="deep-disc-card-item no-video disc-fade" title="{{game.name}}">
             <img src="{{game.capsule_image}}" alt="{{game.name}}">
             {% include "store/partials/sale_prices.html" %}
-        </div>
+        </a>
         {% endif %}
         {% endfor %}
         {% include "store/partials/slider_arrow_right.html" %}

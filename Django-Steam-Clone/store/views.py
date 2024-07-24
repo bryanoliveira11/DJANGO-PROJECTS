@@ -72,7 +72,7 @@ class StorePage(View):
 
     def get(self, *args, **kwargs):
         header, background, is_video = get_store_visual_assets()
-        all_games = Games.objects.all().exclude(slug="")
+        all_games = Games.objects.all()
         disc_games, is_sale = self.get_slide_games(all_games, is_sale=True)
         rand_start = self.get_rand_start(disc_games, is_sale)
         rand_games = grid_games = top_sellers = under_20_games = None

@@ -1333,29 +1333,29 @@ button.see-more-btn:hover {
   gap: 1.5rem;
 }
 
-.discount-games-grid .game-grid-card:nth-child(1),
-.discount-games-grid .game-grid-card:nth-child(2),
-.discount-games-grid .game-grid-card:nth-child(3),
-.discount-games-grid .game-grid-card:nth-child(4) {
+.discount-games-grid a:nth-child(1),
+.discount-games-grid a:nth-child(2),
+.discount-games-grid a:nth-child(3),
+.discount-games-grid a:nth-child(4) {
   grid-column: span 3;
 }
 
-.discount-games-grid .game-grid-card:nth-child(5),
-.discount-games-grid .game-grid-card:nth-child(6),
-.discount-games-grid .game-grid-card:nth-child(7) {
+.discount-games-grid a:nth-child(5),
+.discount-games-grid a:nth-child(6),
+.discount-games-grid a:nth-child(7) {
   grid-column: span 4;
 }
 
-.discount-games-grid .game-grid-card:nth-child(8),
-.discount-games-grid .game-grid-card:nth-child(9),
-.discount-games-grid .game-grid-card:nth-child(10),
-.discount-games-grid .game-grid-card:nth-child(11) {
+.discount-games-grid a:nth-child(8),
+.discount-games-grid a:nth-child(9),
+.discount-games-grid a:nth-child(10),
+.discount-games-grid a:nth-child(11) {
   grid-column: span 3;
 }
 
-.discount-games-grid .game-grid-card:nth-child(12),
-.discount-games-grid .game-grid-card:nth-child(13),
-.discount-games-grid .game-grid-card:nth-child(14) {
+.discount-games-grid a:nth-child(12),
+.discount-games-grid a:nth-child(13),
+.discount-games-grid a:nth-child(14) {
   grid-column: span 4;
 }
 
