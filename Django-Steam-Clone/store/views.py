@@ -2,6 +2,7 @@ import math
 import random
 
 from django.db.models.manager import BaseManager
+from django.http import Http404
 from django.shortcuts import render
 from django.views.generic import DetailView, View
 
@@ -127,4 +128,28 @@ class AppPage(DetailView):
     model = Games
     template_name = 'store/pages/app.html'
     context_object_name = 'app_details'
-    pk_url_kwarg = 'steam_appid'
+    slug_url_kwarg = 'game_slug'
+
+    def get_queryset(self, *args, **kwargs):
+        queryset = super().get_queryset(*args, **kwargs)
+        queryset = queryset.filter(
+            slug=self.kwargs.get('game_slug'),
+        )
+
+        if not queryset:
+            raise Http404()
+
+        return queryset
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+
+        game = context.get('app_details')
+        print(game)
+
+        context.update({
+            'game': game,
+            'title': game.name if game else 'Steam',
+        })
+
+        return context

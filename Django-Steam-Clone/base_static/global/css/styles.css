@@ -861,6 +861,11 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   cursor: pointer;
 }
 
+.sales-grid .game-card-item a {
+  width: 100%;
+  height: 100%;
+}
+
 .sales-grid .game-card-item.active {
   display: flex;
   color: var(--color-white);
@@ -1076,6 +1081,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   height: 100%;
   font-weight: 600;
   background: #a1cd44;
+  color: var(--color-black);
 }
 
 .game-prices {
