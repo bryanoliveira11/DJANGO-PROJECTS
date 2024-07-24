@@ -2,12 +2,14 @@
 {% block content %}
 {% include "global/partials/shop_shortcuts.html" %}
 
-<div class="breadcrumb-nav">
-    <span>
-        <a href="#">All Games</a> >
-        <a href="#">Genre Games</a> >
-        <a href="{% url 'store:app' game.steam_appid game.slug %}">{{game.name}}</a>
-    </span>
+<div class="app-store-container">
+    <div class="breadcrumb-nav">
+        <span>
+            <a href="#">All Games</a> >
+            <a href="#">{{game.genres.all.first.name}}</a> >
+            <a href="{% url 'store:app' game.steam_appid game.slug %}">{{game.name}}</a>
+        </span>
+    </div>
 </div>
 
 {% endblock content %}

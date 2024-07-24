@@ -771,7 +771,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span a {
 }
 
 .footer-container .footer-content {
-  max-width: 120rem;
+  max-width: 94rem;
   width: 100%;
   padding-top: 1.6rem;
   margin: 0 auto;
@@ -1600,6 +1600,28 @@ button.see-more-btn:hover {
   outline: 0;
   text-transform: capitalize;
   border-radius: 0.3rem;
+}
+
+/* app page */
+
+.app-store-container {
+  max-width: 94rem;
+  width: 100%;
+  margin: 2.5rem auto;
+}
+
+.breadcrumb-nav span {
+  color: var(--color-secondary-lighter);
+  font-size: 1.4rem;
+}
+
+.breadcrumb-nav a {
+  color: var(--color-gray-2);
+}
+
+.breadcrumb-nav a:hover {
+  color: var(--color-white);
+  filter: brightness(150%);
 }
 
 /* keyframes */

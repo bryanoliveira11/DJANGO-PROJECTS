@@ -72,7 +72,7 @@ class StorePage(View):
 
     def get(self, *args, **kwargs):
         header, background, is_video = get_store_visual_assets()
-        all_games = Games.objects.all()
+        all_games = Games.objects.all().exclude(slug="")
         disc_games, is_sale = self.get_slide_games(all_games, is_sale=True)
         rand_start = self.get_rand_start(disc_games, is_sale)
         rand_games = grid_games = top_sellers = under_20_games = None
@@ -100,7 +100,7 @@ class StorePage(View):
             self.request,
             'store/pages/store.html',
             {
-                'title': 'Store',
+                'site_title': 'Store',
                 'header': header,
                 'background': background,
                 'is_video': is_video,
@@ -134,7 +134,7 @@ class AppPage(DetailView):
         queryset = super().get_queryset(*args, **kwargs)
         queryset = queryset.filter(
             slug=self.kwargs.get('game_slug'),
-        ).prefetch_related('genres')
+        )
 
         if not queryset:
             raise Http404()
@@ -145,11 +145,10 @@ class AppPage(DetailView):
         context = super().get_context_data(*args, **kwargs)
 
         game = context.get('app_details')
-        print(game)
 
         context.update({
             'game': game,
-            'title': game.name if game else 'Steam',
+            'site_title': game.name if game else None,
         })
 
         return context
