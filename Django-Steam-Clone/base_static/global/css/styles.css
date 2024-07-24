@@ -243,7 +243,8 @@ nav.nav-container .nav-row-items-start .row-item-upper span:hover {
   color: var(--color-white);
 }
 
-nav.nav-container .nav-row-items-start .row-item-upper.active span {
+nav.nav-container .nav-row-items-start .row-item-upper.active span,
+nav.nav-container .nav-row-items-start .row-item-upper.active span a {
   color: var(--color-secondary);
   border-bottom: 3px solid var(--color-secondary);
 }
@@ -258,7 +259,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   width: 100%;
 }
 
-.header-container .shop-shortcuts-container .shop-shortcuts-col {
+.shop-shortcuts-container .shop-shortcuts-col {
   display: flex;
   flex-direction: column;
   width: fit-content;
@@ -266,7 +267,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   align-items: end;
 }
 
-.header-container .shop-shortcuts-content {
+.shop-shortcuts-content {
   width: 94rem;
   margin: 0 auto;
   height: 3.5rem;
@@ -276,7 +277,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   box-shadow: -1px 1px 8px 3px rgb(32, 44, 60, 0.295);
 }
 
-.header-container .shop-shortcuts-content .shop-shortcut {
+.shop-shortcuts-content .shop-shortcut {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -284,15 +285,12 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   height: 100%;
 }
 
-.header-container
-  .shop-shortcuts-content
-  .shop-shortcut-dropdown
-  img.profile-pic {
+.shop-shortcuts-content .shop-shortcut-dropdown img.profile-pic {
   width: 1.8rem;
   margin-right: 1rem;
 }
 
-.header-container .shop-shortcuts-content .shop-shortcut-dropdown {
+.shop-shortcuts-content .shop-shortcut-dropdown {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -303,7 +301,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   height: 100%;
 }
 
-.header-container .shop-shortcuts-content .shop-shortcut-dropdown:hover {
+.shop-shortcuts-content .shop-shortcut-dropdown:hover {
   background: rgb(78, 138, 184);
   background: linear-gradient(
     97deg,
@@ -312,20 +310,18 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   );
 }
 
-.header-container
-  .shop-shortcuts-content
-  .shop-shortcut-dropdown.profile-pic-drop {
+.shop-shortcuts-content .shop-shortcut-dropdown.profile-pic-drop {
   margin-left: 0;
 }
 
-.header-container .shop-shortcuts-content .shop-shortcut-dropdown span {
+.shop-shortcuts-content .shop-shortcut-dropdown span {
   color: var(--color-white);
   text-transform: capitalize;
   font-weight: 700;
   font-size: 1.4rem;
 }
 
-.header-container .shop-shortcuts-content .shop-search-bar {
+.shop-shortcuts-content .shop-search-bar {
   margin-left: auto;
   margin-right: 0.5rem;
 }
@@ -336,7 +332,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   align-items: center;
 }
 
-.header-container .shop-shortcuts-content .shop-search-bar input {
+.shop-shortcuts-content .shop-search-bar input {
   height: 2.8rem;
   border-radius: 0.3rem;
   border: none;
@@ -347,11 +343,11 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   color: var(--color-white);
 }
 
-.header-container .shop-shortcuts-content .shop-search-bar input:hover {
+.shop-shortcuts-content .shop-search-bar input:hover {
   outline: 1px solid var(--color-secondary);
 }
 
-.header-container .shop-shortcuts-content .shop-search-bar button {
+.shop-shortcuts-content .shop-search-bar button {
   position: absolute;
   right: 0;
   background: none;
@@ -368,16 +364,16 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   scale: 0.95;
 }
 
-.header-container .shop-shortcuts-content .shop-search-bar button:hover {
+.shop-shortcuts-content .shop-search-bar button:hover {
   filter: brightness(120%);
 }
 
-.header-container .shop-shortcuts-content .shop-search-bar button i {
+.shop-shortcuts-content .shop-search-bar button i {
   font-size: 1.6rem;
   color: var(--search-form-primary-color);
 }
 
-.header-container .shop-wishlist-btn {
+.shop-wishlist-btn {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -392,11 +388,11 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
   cursor: pointer;
 }
 
-.header-container .shop-wishlist-btn span {
+.shop-wishlist-btn span {
   margin-bottom: 0.2rem;
 }
 
-.header-container .shop-wishlist-btn:hover {
+.shop-wishlist-btn:hover {
   background: #ffffffd7;
   color: var(--color-dark-text);
 }
@@ -769,7 +765,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span {
 }
 
 .footer-container {
-  background: #171A21;
+  background: #171a21;
   width: 100%;
   height: 25rem;
 }

@@ -1,3 +1,13 @@
 {% extends "global/base.html" %}
+{% block content %}
+{% include "global/partials/shop_shortcuts.html" %}
 
-{{game.name}} details
+<div class="breadcrumb-nav">
+    <span>
+        <a href="#">All Games</a> >
+        <a href="#">Genre Games</a> >
+        <a href="{% url 'store:app' game.steam_appid game.slug %}">{{game.name}}</a>
+    </span>
+</div>
+
+{% endblock content %}

@@ -5,41 +5,12 @@
     style="background: url('{% static header %}');
     background-position: 50% 50%; background-repeat: no-repeat;
     background-size: cover;">
-    <div class="shop-shortcuts-container">
+    <div>
 {% else %}
 <div class="header-container">
     <video src="{% static header %}" autoplay="true" loop="true"></video>
-    <div class="shop-shortcuts-container" style="position:relative;">
+    <div style="position:relative;">
 {% endif %}
-        <div class="shop-shortcuts-col">
-            <div class="shop-wishlist-btn">
-                <span>Wishlist (99)</span>
-            </div>
-            <div class="shop-shortcuts-content">
-                <div class="shop-shortcut">
-                    <div class="shop-shortcut-dropdown profile-pic-drop">
-                        <img class="profile-pic" src="{% static 'global/img/profile-pic.png' %}" alt="Profile Pic">
-                        <span>
-                            your store
-                        </span>
-                    </div>
-                    <div class="shop-shortcut-dropdown"><span>new & noteworthy</span></div>
-                    <div class="shop-shortcut-dropdown"><span>categories</span></div>
-                    <div class="shop-shortcut-dropdown"><span>points shop</span></div>
-                    <div class="shop-shortcut-dropdown"><span>news</span></div>
-                    <div class="shop-shortcut-dropdown"><span>labs</span></div>
-                    <div class="shop-search-bar">
-                        <form  action="{{search_form_action}}" method="GET" class="search" role="search">
-                            <div class="search-container">
-                                <input type="search" value="{{search_term}}" name="term" placeholder="search" required />
-                                <button type="submit">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% include "global/partials/shop_shortcuts.html" %}
     </div>
 </div>
