@@ -10,6 +10,10 @@
             <a href="{% url 'store:app' game.steam_appid game.slug %}">{{game.name}}</a>
         </span>
     </div>
+    <div class="game-title">
+        <h1>{{game.name}}</h1>
+        <a href="#">Community Hub</a>
+    </div>
 </div>
 
 {% endblock content %}
