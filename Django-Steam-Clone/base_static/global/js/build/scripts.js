@@ -136,3 +136,17 @@ const setupCarousel = (slides, dots, nextSlide, prevSlide, cardsPerSlide) => {
     );
   }
 })();
+
+(() => {
+  const gameCarouselItems = document.querySelectorAll(".game-carousel-item");
+
+  if (!gameCarouselItems) return;
+
+  if (gameCarouselItems.length > 5) {
+    const gameCarouselArray = Array.from(gameCarouselItems);
+    const lastElements = gameCarouselArray.slice(5);
+    for (const elm of lastElements) changeDisplayStyle(elm, "none");
+  }
+
+  addClassList(gameCarouselItems[0], "active");
+})();

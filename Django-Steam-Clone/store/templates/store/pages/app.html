@@ -19,17 +19,9 @@ style="background: url('{{game.background}}'); background-size:cover;">
         <div class="game-details-container">
             <div class="game-content">
                 <div class="game-media-display">
-                    {% if game.movie1 %}
-                    <video src="{{game.movie1}}" class="game-media" muted="true" autoplay loop></video>
-                    {% endif %}
+                    {% include "store/partials/game_movies.html" %}
                     <div class="media-carousel">
-                        {% if game.movie1 %}
-                        <div class="video-media">
-                            <video src="{{game.movie1}}" class="game-carousel-item active"></video>
-                            <div class="active-arrow-up"></div>
-                            <div class="pause-icon"><i class="fa-solid fa-play"></i></div>
-                        </div>
-                        {% endif %}
+                        {% include "store/partials/app_page_media_carousel.html" %}
                     </div>
                 </div>
                 <div class="game-content-data">

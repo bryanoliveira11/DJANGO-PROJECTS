@@ -1702,15 +1702,13 @@ button.see-more-btn:hover {
 
 .game-media-display .media-carousel {
   max-width: 60rem;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
   gap: 0.5rem;
-  margin-top: 0.6rem;
+  margin-top: 0.5rem;
 }
 
 .media-carousel .game-carousel-item {
-  width: 100%;
   height: 6rem;
   cursor: pointer;
 }
@@ -1735,10 +1733,13 @@ button.see-more-btn:hover {
   visibility: visible;
 }
 
-.media-carousel .video-media {
+.media-carousel .video-media,
+.media-carousel .screenshot-media {
   position: relative;
   display: inline-block;
   cursor: pointer;
+  width: fit-content;
+  margin-left: 0.5rem;
 }
 
 .media-carousel .pause-icon {
@@ -1746,7 +1747,6 @@ button.see-more-btn:hover {
   color: var(--color-white);
   background: black;
   padding: 0.5rem 1rem;
-  height: fit-content;
   position: absolute;
   top: 1.2rem;
   left: 35%;
