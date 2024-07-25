@@ -17,8 +17,26 @@ style="background: url('{{game.background}}'); background-size:cover;">
             <a href="#">Community Hub</a>
         </div>
         <div class="game-details-container">
-            <div class="game-media-display"></div>
-            <div class="game-content-data"></div>
+            <div class="game-content">
+                <div class="game-media-display">
+                    {% if game.movie1 %}
+                    <video src="{{game.movie1}}" class="game-media" muted="true" autoplay loop></video>
+                    {% endif %}
+                    <div class="media-carousel">
+                        {% if game.movie1 %}
+                        <div class="video-media">
+                            <video src="{{game.movie1}}" class="game-carousel-item active"></video>
+                            <div class="active-arrow-up"></div>
+                            <div class="pause-icon"><i class="fa-solid fa-play"></i></div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="game-content-data">
+                    <img src="{{game.capsule_image}}" alt="{{game.name}}">
+                    <p class="game-description">{{game.short_description}}</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
