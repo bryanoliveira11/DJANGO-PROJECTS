@@ -42,6 +42,7 @@ class Games(models.Model):
     screenshot3 = models.CharField(max_length=500)
     screenshot4 = models.CharField(max_length=500)
     screenshot5 = models.CharField(max_length=500)
+    background = models.CharField(max_length=500, null=True, blank=True)
     background_raw = models.CharField(max_length=500)
     movie1 = models.CharField(max_length=500, null=True, blank=True)
     movie2 = models.CharField(max_length=500, null=True, blank=True)

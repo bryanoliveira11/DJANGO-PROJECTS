@@ -252,10 +252,26 @@ def generate_slug_from_game_name():
             game.save()
 
 
+def update_details_with_background():
+    from games.models import Games
+
+    all_games = Games.objects.all()
+
+    for i in range(len(all_games)):
+        steam_id = all_games[i].steam_appid
+        data = get_single_game_data(steam_id)
+        if data:
+            background = data.get('background')
+            game = all_games[i]
+            game.background = background
+            game.save()
+
+
 if __name__ == '__main__':
     # get_details_data()
     # update_details_with_reviews()
     # calculate_review_percent()
     # update_genres_with_images()
     # remove_currency_from_prices()
-    generate_slug_from_game_name()
+    # generate_slug_from_game_name()
+    update_details_with_background()
