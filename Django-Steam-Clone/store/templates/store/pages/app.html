@@ -19,7 +19,11 @@ style="background: url('{{game.background}}'); background-size:cover;">
         <div class="game-details-container">
             <div class="game-content">
                 <div class="game-media-display">
-                    {% include "store/partials/game_movies.html" %}
+                    {% if game.movie1 or game.movie2 or game.movie3 %}
+                    <video src="" id="game-app-media-video" muted autoplay loop></video>
+                    {% else %}
+                    <img src="" id="game-app-media-img" alt="{{game.name}} Cover">
+                    {% endif %}
                     <div class="media-carousel">
                         {% include "store/partials/app_page_media_carousel.html" %}
                     </div>

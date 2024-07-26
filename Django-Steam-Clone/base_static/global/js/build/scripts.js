@@ -137,6 +137,11 @@ const setupCarousel = (slides, dots, nextSlide, prevSlide, cardsPerSlide) => {
   }
 })();
 
+const handleAppMedia = (gameMediaElm, newMediaElm) => {
+  if (!gameMediaElm || !newMediaElm) return;
+  gameMediaElm.src = newMediaElm.src;
+};
+
 (() => {
   const gameCarouselItems = document.querySelectorAll(".game-carousel-item");
 
@@ -145,8 +150,14 @@ const setupCarousel = (slides, dots, nextSlide, prevSlide, cardsPerSlide) => {
   if (gameCarouselItems.length > 5) {
     const gameCarouselArray = Array.from(gameCarouselItems);
     const lastElements = gameCarouselArray.slice(5);
-    for (const elm of lastElements) changeDisplayStyle(elm, "none");
+    for (const elm of lastElements) changeDisplayStyle(elm.parentElement, "none");
   }
 
-  addClassList(gameCarouselItems[0], "active");
+  const gameAppMediaImage = document.getElementById("game-app-media-img");
+  const gameAppMediaVideo = document.getElementById("game-app-media-video");
+  const firstItem = gameCarouselItems[0];
+
+  if (gameAppMediaImage) handleAppMedia(gameAppMediaImage, firstItem);
+  if (gameAppMediaVideo) handleAppMedia(gameAppMediaVideo, firstItem);
+  addClassList(firstItem, "active");
 })();
