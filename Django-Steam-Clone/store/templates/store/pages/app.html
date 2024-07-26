@@ -5,32 +5,56 @@
 style="background: url('{{game.background}}'); background-position:center;">
     {% include "global/partials/shop_shortcuts.html" %}
     <div class="app-page">
-        <div class="breadcrumb-nav">
-            <span>
-                <a href="#">All Games</a> >
-                <a href="#">{{game.genres.all.first.name}} Games</a> >
-                <a href="{% url 'store:app' game.steam_appid game.slug %}">{{game.name}}</a>
-            </span>
-        </div>
-        <div class="game-title">
-            <h1>{{game.name}}</h1>
-            <a href="#">Community Hub</a>
+        <div class="page-container">
+            <div class="breadcrumb-nav">
+                <span>
+                    <a href="#">All Games</a> >
+                    <a href="#">{{game.genres.all.first.name}} Games</a> >
+                    <a href="{% url 'store:app' game.steam_appid game.slug %}">{{game.name}}</a>
+                </span>
+            </div>
+            <div class="game-title app-page-action-btn">
+                <h1>{{game.name}}</h1>
+                <a href="#">Community Hub</a>
+            </div>
         </div>
         <div class="game-details-container">
-            <div class="game-content">
-                <div class="game-media-display">
-                    {% if game.movie1 or game.movie2 or game.movie3 %}
-                    <video src="" id="game-app-media-video" muted autoplay loop></video>
-                    {% else %}
-                    <img src="" id="game-app-media-img" alt="{{game.name}} Cover">
-                    {% endif %}
-                    <div class="media-carousel">
-                        {% include "store/partials/app_page_media_carousel.html" %}
+            <div class="game-app-bg">
+                <div class="game-content">
+                    <div class="game-media-display">
+                        {% if game.movie1 or game.movie2 or game.movie3 %}
+                        <video src="" id="game-app-media-video" muted autoplay loop></video>
+                        {% else %}
+                        <img src="" id="game-app-media-img" alt="{{game.name}} Cover">
+                        {% endif %}
+                        <div class="media-carousel">
+                            {% include "store/partials/app_page_media_carousel.html" %}
+                        </div>
+                    </div>
+                    <div class="game-content-data">
+                        <img src="{{game.capsule_image}}" alt="{{game.name}}">
+                        <p class="game-description">{{game.short_description}}</p>
                     </div>
                 </div>
-                <div class="game-content-data">
-                    <img src="{{game.capsule_image}}" alt="{{game.name}}">
-                    <p class="game-description">{{game.short_description}}</p>
+            </div>
+        </div>
+        <div class="game-actions-btns">
+            <div class="initial-btns">
+                <div class="app-page-action-btn">
+                    <a href="#">Add to your wishlist</a>
+                </div>
+                <div class="app-page-action-btn">
+                    <a href="#">Follow</a>
+                </div>
+                <div class="app-page-action-btn">
+                    <a href="#">Ignore</a>
+                </div>
+            </div>
+            <div class="end-btns">
+                <div class="app-page-action-btn">
+                    <a href="#">
+                        View Your Queue <i class="fa-solid fa-right-long"></i>
+                    </a>
                 </div>
             </div>
         </div>
