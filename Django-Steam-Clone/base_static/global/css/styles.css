@@ -941,15 +941,15 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span a {
   padding: 0 0.3rem;
 }
 
-.sales-grid .game-card-item .game-reviews p.Positive {
+.game-reviews p.Positive {
   color: #47a7ee;
 }
 
-.sales-grid .game-card-item .game-reviews p.Mixed {
+.game-reviews p.Mixed {
   color: #b1a06c;
 }
 
-.sales-grid .game-card-item .game-reviews p.Negative {
+.game-reviews p.Negative {
   color: #9d4c2e;
 }
 
@@ -957,11 +957,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span a {
   color: var(--color-white);
 }
 
-.sales-grid
-  .game-card-item
-  .game-card-flex-content
-  .game-content
-  .game-review-text {
+.game-review-text {
   position: absolute;
   opacity: 0;
   top: 18px;
@@ -1652,7 +1648,7 @@ button.see-more-btn:hover {
 .app-page-action-btn a {
   color: #79ceff;
   padding: 0.5rem 1.3rem;
-  background: #2f5173;
+  background: #2f5173c0;
   border-radius: 0.2rem;
 }
 
@@ -1789,6 +1785,78 @@ button.see-more-btn:hover {
   color: var(--color-white);
 }
 
+.game-content-data .game-reviews {
+  padding: 0.8rem 1.1rem 0 0;
+  line-height: 1.6rem;
+}
+
+.game-content-data .content span {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgb(85, 103, 114);
+  max-width: 11rem;
+  width: 100%;
+}
+
+.game-content-data .content span.tags {
+  text-transform: none;
+  padding: 0;
+  letter-spacing: 0;
+}
+
+.game-content-data .content {
+  display: flex;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+
+.game-content-data .content p {
+  font-size: 1.2rem;
+  margin: 0 0.2rem 0 0.5rem;
+  padding: 0;
+}
+
+.game-content-data .content p.release-date {
+  color: var(--color-gray-3);
+}
+
+.game-content-data .content p.developers {
+  color: #79ceff;
+  cursor: pointer;
+}
+
+.game-content-data .content p.developers:hover {
+  color: var(--color-white);
+}
+
+.game-content-data .content h2 {
+  font-size: 1.2rem;
+  color: rgb(85, 103, 114);
+  font-weight: 500;
+}
+
+.content .game-tags {
+  display: flex;
+  height: fit-content;
+  gap: 0.2rem;
+  margin-top: 1rem;
+}
+
+.content .game-tags .app-page-action-btn a {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+}
+
+.content.top-spaced {
+  margin-top: 1.2rem;
+}
+
+.content.tags {
+  display: block;
+}
+
 .game-actions-btns {
   max-width: 94rem;
   width: 100%;
@@ -1798,7 +1866,7 @@ button.see-more-btn:hover {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background: #16202D;
+  background: #16202d;
   padding: 0 1.5rem;
 }
 

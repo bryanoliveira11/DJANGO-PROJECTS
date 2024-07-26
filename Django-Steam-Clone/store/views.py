@@ -134,7 +134,7 @@ class AppPage(DetailView):
         queryset = super().get_queryset(*args, **kwargs)
         queryset = queryset.filter(
             slug=self.kwargs.get('game_slug'),
-        )
+        ).select_related('reviews')
 
         if not queryset:
             raise Http404()

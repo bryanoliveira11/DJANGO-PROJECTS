@@ -1,0 +1,41 @@
+{% load humanize %}
+<div class="game-reviews">
+    <div class="content">
+        <span>recent reviews:</span>
+        <p class="{{game.reviews.description}}">
+            {{game.reviews.description}}
+        </p>
+        <h2>({{game.reviews.total_positive|intcomma}})</h2>
+    </div>
+    <div class="content">
+        <span>all reviews:</span>
+        <p class="{{game.reviews.description}}">
+            {{game.reviews.description}}
+        </p>
+        <h2>({{game.reviews.total_reviews|intcomma}})</h2>
+    </div>
+</div>
+<div class="content top-spaced">
+    <span>release date:</span>
+    <p class="release-date">{{game.release_date}}</p>
+</div>
+<div class="content top-spaced">
+    <span>developer:</span>
+    <p class="developers">{{game.developers}}</p>
+</div>
+<div class="content">
+    <span>publisher:</span>
+    <p class="developers">{{game.publishers}}</p>
+</div>
+<div class="content top-spaced tags">
+    <span class="tags">
+        Popular user-defined tags for this product:
+    </span>
+    <div class="game-tags">
+    {% for genre in game.genres.all %}
+        <div class="app-page-action-btn">
+            <a href="#">{{genre.name}}</a>
+        </div>
+    {% endfor %}
+    </div>
+</div>

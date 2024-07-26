@@ -1,6 +1,5 @@
 {% extends "global/base.html" %}
 {% block content %}
-
 <div class="app-store-container" 
 style="background: url('{{game.background}}'); background-position:center;">
     {% include "global/partials/shop_shortcuts.html" %}
@@ -34,31 +33,12 @@ style="background: url('{{game.background}}'); background-position:center;">
                     <div class="game-content-data">
                         <img src="{{game.capsule_image}}" alt="{{game.name}}">
                         <p class="game-description">{{game.short_description}}</p>
+                        {% include "store/partials/app_game_reviews.html" %}
                     </div>
                 </div>
             </div>
         </div>
-        <div class="game-actions-btns">
-            <div class="initial-btns">
-                <div class="app-page-action-btn">
-                    <a href="#">Add to your wishlist</a>
-                </div>
-                <div class="app-page-action-btn">
-                    <a href="#">Follow</a>
-                </div>
-                <div class="app-page-action-btn">
-                    <a href="#">Ignore</a>
-                </div>
-            </div>
-            <div class="end-btns">
-                <div class="app-page-action-btn">
-                    <a href="#">
-                        View Your Queue <i class="fa-solid fa-right-long"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
+        {% include "store/partials/app_actions_btns.html" %}
     </div>
 </div>
-
 {% endblock content %}
