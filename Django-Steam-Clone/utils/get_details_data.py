@@ -267,6 +267,46 @@ def update_details_with_background():
             game.save()
 
 
+def update_details_with_app_page_content():
+    from games.models import Games
+
+    all_games = Games.objects.all()
+
+    for i in range(len(all_games)):
+        steam_id = all_games[i].steam_appid
+        data = get_single_game_data(steam_id)
+        if data:
+            required_age = data.get('required_age', None)
+            release_date = data.get('release_date', {}).get('date', None)
+            controller_support = data.get('controller_support', None)
+            metacritic_score = data.get('metacritic', {}).get('score', None)
+            metacritic_url = data.get('metacritic', {}).get('url', None)
+            about_the_game = data.get('about_the_game', None)
+            languages = data.get('supported_languages', None)
+            app_reviews = data.get('reviews', None)
+            legal_notice = data.get('legal_notice', None)
+            ratings = data.get('ratings', None)
+            pegi_rating = None
+
+            if ratings:
+                pegi = ratings.get('pegi', None)
+                if pegi:
+                    pegi_rating = pegi.get('descriptors', None)
+
+            game = all_games[i]
+            game.required_age = required_age
+            game.release_date = release_date
+            game.controller_support = controller_support
+            game.metacritic_score = metacritic_score
+            game.metacritic_url = metacritic_url
+            game.about_the_game = about_the_game
+            game.languages = languages
+            game.app_reviews = app_reviews
+            game.legal_notice = legal_notice
+            game.pegi_rating = pegi_rating
+            game.save()
+
+
 if __name__ == '__main__':
     # get_details_data()
     # update_details_with_reviews()
@@ -274,4 +314,5 @@ if __name__ == '__main__':
     # update_genres_with_images()
     # remove_currency_from_prices()
     # generate_slug_from_game_name()
-    update_details_with_background()
+    # update_details_with_background()
+    update_details_with_app_page_content()

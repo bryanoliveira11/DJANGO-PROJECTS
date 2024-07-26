@@ -51,3 +51,13 @@ class Games(models.Model):
     reviews = models.ForeignKey(
         Reviews, on_delete=models.CASCADE, null=True, blank=True
     )
+    required_age = models.CharField(max_length=10, null=True, blank=True)
+    release_date = models.CharField(max_length=50, null=True, blank=True)
+    controller_support = models.CharField(max_length=50, null=True, blank=True)
+    metacritic_score = models.IntegerField(null=True, blank=True)
+    metacritic_url = models.CharField(max_length=150, null=True, blank=True)
+    about_the_game = models.TextField(max_length=500, null=True, blank=True)
+    languages = models.CharField(max_length=500, null=True, blank=True)
+    app_reviews = models.CharField(max_length=500, null=True, blank=True)
+    legal_notice = models.CharField(max_length=150, null=True, blank=True)
+    pegi_rating = models.CharField(max_length=150, blank=True, null=True)
