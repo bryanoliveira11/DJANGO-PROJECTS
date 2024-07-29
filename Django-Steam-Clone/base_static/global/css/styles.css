@@ -1780,26 +1780,6 @@ button.see-more-btn:hover {
   margin-top: 0.5rem;
 }
 
-.slider-ctn .slider {
-  position: absolute;
-  left: 39px;
-  right: 39px;
-  top: 0;
-  bottom: 0;
-  background-color: rgba( 0, 0, 0, 0.2 );
-  border-radius: 3px;
-}
-
-.slider-ctn .slider .scroll {
-  position: absolute;
-  top: 0;
-  background-color: rgba( 35, 60, 81, 0.4 );
-  border-radius: 3px;
-  height: 18px;
-  width: 60px;
-  cursor: pointer;
-}
-
 .slider-ctn .slider-left {
   left: 0;
 }
@@ -1811,34 +1791,63 @@ button.see-more-btn:hover {
 .slider-ctn .slider-left,
 .slider-ctn .slider-right {
   position: absolute;
-  width: 3.8rem;
+  width: 38px;
   top: 0;
   bottom: 0;
-  border-radius: 0.3rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
   cursor: pointer;
-  background: rgba(35, 60, 81, 0.4);
 }
 
-.slider-ctn .slider-left span {
-  display: inline-block;
-  background-position: -18px 0px;
-  background-repeat: no-repeat;
-  background-image: url('../img/icon_cluster_controls.png');
-  width: 9px;
-  height: 7px;
-  margin-left: 13px;
-  margin-top: 5px;
+.slider-ctn .slider-left:hover,
+.slider-ctn .slider-right:hover,
+.slider .scroll:hover {
+  background: linear-gradient(135deg, #3d6c8d 0%, #2e5470 100%);
 }
 
+.slider-ctn .slider-left span,
 .slider-ctn .slider-right span {
-  display: inline-block;
-  background-position: -9px 0px;
-  background-repeat: no-repeat;
-  background-image: url('../img/icon_cluster_controls.png');
-  width: 9px;
-  height: 7px;
-  margin-left: 15px;
-  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.slider-ctn .slider-left span i,
+.slider-ctn .slider-right span i {
+  font-size: 1.4rem;
+  color: #407899;
+  transform: scale(1.2);
+}
+
+.slider-ctn .slider-left:hover span i,
+.slider-ctn .slider-right:hover span i {
+  color: var(--color-white);
+}
+
+.slider-ctn .slider-left,
+.slider-ctn .slider-right,
+.slider-ctn .scroll {
+  background-color: rgba(35, 60, 81, 0.4);
+}
+
+.slider-ctn .slider {
+  position: absolute;
+  left: 39px;
+  right: 39px;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.slider-ctn .slider .scroll {
+  position: absolute;
+  top: 0;
+  border-radius: 3px;
+  height: 18px;
+  width: 60px;
+  cursor: pointer;
 }
 
 .game-details-container .game-content .game-content-data {
