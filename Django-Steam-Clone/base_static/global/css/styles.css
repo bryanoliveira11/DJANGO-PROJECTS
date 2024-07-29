@@ -1708,12 +1708,21 @@ button.see-more-btn:hover {
   height: 33.5rem;
 }
 
+.media-carousel-wrapper {
+  height: fit-content;
+  overflow: hidden;
+}
+
 .game-media-display .media-carousel {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
   max-width: 60rem;
-  margin-top: 0.5rem;
+  margin-top: 0.7rem;
+}
+
+.media-carousel .media {
+  flex-shrink: 0;
 }
 
 .media-carousel .game-carousel-item {
@@ -1762,6 +1771,74 @@ button.see-more-btn:hover {
   position: absolute;
   top: 1.2rem;
   left: 35%;
+}
+
+.slider-ctn {
+  position: relative;
+  height: 1.8rem;
+  user-select: none;
+  margin-top: 0.5rem;
+}
+
+.slider-ctn .slider {
+  position: absolute;
+  left: 39px;
+  right: 39px;
+  top: 0;
+  bottom: 0;
+  background-color: rgba( 0, 0, 0, 0.2 );
+  border-radius: 3px;
+}
+
+.slider-ctn .slider .scroll {
+  position: absolute;
+  top: 0;
+  background-color: rgba( 35, 60, 81, 0.4 );
+  border-radius: 3px;
+  height: 18px;
+  width: 60px;
+  cursor: pointer;
+}
+
+.slider-ctn .slider-left {
+  left: 0;
+}
+
+.slider-ctn .slider-right {
+  right: 0;
+}
+
+.slider-ctn .slider-left,
+.slider-ctn .slider-right {
+  position: absolute;
+  width: 3.8rem;
+  top: 0;
+  bottom: 0;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  background: rgba(35, 60, 81, 0.4);
+}
+
+.slider-ctn .slider-left span {
+  display: inline-block;
+  background-position: -18px 0px;
+  background-repeat: no-repeat;
+  background-image: url('../img/icon_cluster_controls.png');
+  width: 9px;
+  height: 7px;
+  margin-left: 13px;
+  margin-top: 5px;
+}
+
+.slider-ctn .slider-right span {
+  display: inline-block;
+  background-position: -9px 0px;
+  background-repeat: no-repeat;
+  background-image: url('../img/icon_cluster_controls.png');
+  width: 9px;
+  height: 7px;
+  margin-left: 15px;
+  margin-top: 5px;
 }
 
 .game-details-container .game-content .game-content-data {

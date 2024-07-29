@@ -174,12 +174,6 @@ const initializeCarousel = () => {
   const gameCarouselItems = document.querySelectorAll(".media");
   if (!gameCarouselItems) return;
 
-  if (gameCarouselItems.length > 5) {
-    gameCarouselItems.forEach((item, index) => {
-      if (index >= 5) changeDisplayStyle(item, "none");
-    });
-  }
-
   const gameAppMediaImage = document.getElementById("game-app-media-img");
   const gameAppMediaVideo = document.getElementById("game-app-media-video");
   const firstItem = gameCarouselItems[0];
