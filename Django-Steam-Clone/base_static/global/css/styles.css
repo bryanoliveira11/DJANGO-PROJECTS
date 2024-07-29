@@ -1709,7 +1709,6 @@ button.see-more-btn:hover {
 }
 
 .media-carousel-wrapper {
-  height: fit-content;
   overflow: hidden;
 }
 
@@ -1759,7 +1758,7 @@ button.see-more-btn:hover {
 
 .media-carousel .video-media video,
 .media-carousel .screenshot-media img {
-  width: 12rem;
+  width: 11.5rem;
   object-fit: cover;
 }
 
