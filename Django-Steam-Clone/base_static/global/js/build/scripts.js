@@ -175,6 +175,7 @@ const handleActiveMedia = (newMedia, isVideo) => {
 };
 
 const initializeCarousel = () => {
+  const mediaCarousel = document.querySelector(".media-carousel");
   const gameCarouselItems = Array.from(document.querySelectorAll(".media"));
   if (gameCarouselItems.length === 0) return;
 
@@ -199,6 +200,10 @@ const initializeCarousel = () => {
 
     handleActiveMedia(newMedia, isVideo);
     currentIndex = newIndex;
+
+    const itemWidth =
+      newMedia.offsetWidth + parseFloat(getComputedStyle(newMedia).marginRight);
+    mediaCarousel.scrollLeft = newIndex * itemWidth;
   };
 
   gameCarouselItems.forEach((media, index) => {
@@ -206,6 +211,7 @@ const initializeCarousel = () => {
       const isVideo = media.classList.contains("video-media");
       handleActiveMedia(media, isVideo);
       currentIndex = index;
+      updateActiveMedia(currentIndex);
     });
   });
 

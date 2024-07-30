@@ -1708,16 +1708,14 @@ button.see-more-btn:hover {
   height: 33.5rem;
 }
 
-.media-carousel-wrapper {
-  overflow: hidden;
-}
-
 .game-media-display .media-carousel {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
   max-width: 60rem;
   margin-top: 0.7rem;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .media-carousel .media {
@@ -1743,16 +1741,15 @@ button.see-more-btn:hover {
   border-left: 1rem solid transparent;
   border-right: 1rem solid transparent;
   border-bottom: 1rem solid var(--color-gray-0);
+  visibility: visible;
   position: absolute;
   top: -1rem;
   left: 40%;
-  visibility: visible;
 }
 
 .media-carousel .video-media,
 .media-carousel .screenshot-media {
   position: relative;
-  display: inline-block;
   cursor: pointer;
 }
 
