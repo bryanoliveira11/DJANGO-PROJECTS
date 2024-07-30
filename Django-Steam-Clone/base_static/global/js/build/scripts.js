@@ -207,7 +207,7 @@ const initializeCarousel = () => {
 
   let currentIndex = 0;
   let isVideo = false;
-  if (gameAppMediaVideo.style.display !== "none") isVideo = true;
+  if (gameAppMediaVideo) isVideo = true;
   handleAutoSlideShow(currentIndex, isVideo, gameAppMediaVideo);
 
   const updateActiveMedia = (index) => {
