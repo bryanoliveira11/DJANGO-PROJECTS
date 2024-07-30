@@ -21,17 +21,12 @@ style="background: url('{{game.background}}'); background-position:center;">
             <div class="game-app-bg">
                 <div class="game-content">
                     <div class="game-media-display">
-                        {% if game.movie1 or game.movie2 or game.movie3 %}
-                        <div class="media-to-show">
-                            <video src="" id="game-app-media-video" muted autoplay loop></video>
-                            <img src="" id="game-app-media-img" alt="{{game.name}} Cover" style="display:none;">
-                        </div>
-                        {% else %}
                         <div class="media-to-show disc-fade">
-                            <video src="" id="game-app-media-video" muted autoplay loop style="display:none;"></video>
+                            {% if game.movie1 or game.movie2 or game.movie3 %}
+                            <video src="" id="game-app-media-video" muted autoplay controls></video>
+                            {% endif %}
                             <img src="" id="game-app-media-img" alt="{{game.name}} Cover">
                         </div>
-                        {% endif %}
                         <div class="media-carousel">
                             {% include "store/partials/app_page_media_carousel.html" %}
                         </div>

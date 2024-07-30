@@ -188,7 +188,27 @@ const initializeCarousel = () => {
   if (gameAppMediaVideo) handleAppMedia(gameAppMediaVideo, firstMedia);
   addClassList(firstItem, "active");
 
+  let autoSlideTimeout;
+
+  const handleAutoSlideShow = (currentIndex, isVideo, video) => {
+    clearTimeout(autoSlideTimeout);
+
+    if (!isVideo) {
+      autoSlideTimeout = setTimeout(
+        () => updateActiveMedia(currentIndex + 1),
+        5000
+      );
+      return;
+    }
+    video.addEventListener("ended", () => {
+      updateActiveMedia(currentIndex + 1);
+    });
+  };
+
   let currentIndex = 0;
+  let isVideo = false;
+  if (gameAppMediaVideo.style.display !== "none") isVideo = true;
+  handleAutoSlideShow(currentIndex, isVideo, gameAppMediaVideo);
 
   const updateActiveMedia = (index) => {
     const carouselLength = gameCarouselItems.length;
@@ -201,8 +221,10 @@ const initializeCarousel = () => {
 
     handleActiveMedia(newMedia, isVideo);
     currentIndex = newIndex;
+    handleAutoSlideShow(currentIndex, isVideo, gameAppMediaVideo);
 
-    const itemWidth = newMedia.offsetWidth + parseFloat(getComputedStyle(newMedia).marginRight);
+    const itemWidth =
+      newMedia.offsetWidth + parseFloat(getComputedStyle(newMedia).marginRight);
     const totalWidth = newIndex * itemWidth;
 
     mediaCarousel.scrollLeft =

@@ -1872,7 +1872,6 @@ button.see-more-btn:hover {
 
 .game-content-data .content span {
   font-size: 1.1rem;
-  letter-spacing: 1px;
   text-transform: uppercase;
   color: rgb(85, 103, 114);
   max-width: 11rem;
@@ -1882,7 +1881,6 @@ button.see-more-btn:hover {
 .game-content-data .content span.tags {
   text-transform: none;
   padding: 0;
-  letter-spacing: 0;
 }
 
 .game-content-data .content {
