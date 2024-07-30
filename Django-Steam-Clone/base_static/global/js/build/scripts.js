@@ -191,19 +191,38 @@ const initializeCarousel = () => {
   let currentIndex = 0;
 
   const updateActiveMedia = (index) => {
-    if (gameCarouselItems.length === 0) return;
+    const carouselLength = gameCarouselItems.length;
 
-    const newIndex =
-      (index + gameCarouselItems.length) % gameCarouselItems.length;
+    if (carouselLength === 0) return;
+
+    const newIndex = (index + carouselLength) % carouselLength;
     const newMedia = gameCarouselItems[newIndex];
     const isVideo = newMedia.classList.contains("video-media");
 
     handleActiveMedia(newMedia, isVideo);
     currentIndex = newIndex;
 
-    const itemWidth =
-      newMedia.offsetWidth + parseFloat(getComputedStyle(newMedia).marginRight);
-    mediaCarousel.scrollLeft = newIndex * itemWidth;
+    const itemWidth = newMedia.offsetWidth + parseFloat(getComputedStyle(newMedia).marginRight);
+    const totalWidth = newIndex * itemWidth;
+
+    mediaCarousel.scrollLeft =
+      totalWidth - itemWidth < 0 ? 0 : totalWidth - itemWidth;
+
+    const scrollBar = document.querySelector(".slider-ctn .slider .scroll");
+    const slider = document.querySelector(".slider-ctn .slider");
+    const maxLeft = parseFloat(slider.offsetWidth - scrollBar.offsetWidth);
+
+    let moveScroll = itemWidth * currentIndex;
+
+    if (moveScroll > maxLeft) moveScroll = maxLeft;
+
+    if (currentIndex === 0) {
+      scrollBar.style.left = "0";
+    } else if (currentIndex === carouselLength - 1) {
+      scrollBar.style.left = `${maxLeft}px`;
+    } else {
+      scrollBar.style.left = `${moveScroll}px`;
+    }
   };
 
   gameCarouselItems.forEach((media, index) => {

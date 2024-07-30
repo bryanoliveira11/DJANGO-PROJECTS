@@ -1840,10 +1840,12 @@ button.see-more-btn:hover {
 .slider-ctn .slider .scroll {
   position: absolute;
   top: 0;
+  left: 0;
   border-radius: 3px;
   height: 18px;
   width: 60px;
   cursor: pointer;
+  transition: left 300ms ease-in-out
 }
 
 .game-details-container .game-content .game-content-data {
