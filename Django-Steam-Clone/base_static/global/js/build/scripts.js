@@ -145,15 +145,19 @@ const handleAppMedia = (gameMediaElm, newMediaElm) => {
 const getActiveMedia = () => document.querySelector(".media.active");
 
 const toggleMediaDisplay = (isVideo) => {
-  const mediaVideo = document.querySelector(".media-to-show #game-app-media-video");
-  const mediaImage = document.querySelector(".media-to-show #game-app-media-img");
+  const mediaVideo = document.querySelector(
+    ".media-to-show #game-app-media-video"
+  );
+  const mediaImage = document.querySelector(
+    ".media-to-show #game-app-media-img"
+  );
 
   if (isVideo) {
-    changeDisplayStyle(mediaImage, 'none');
-    changeDisplayStyle(mediaVideo, 'block');
+    changeDisplayStyle(mediaImage, "none");
+    changeDisplayStyle(mediaVideo, "block");
   } else {
-    changeDisplayStyle(mediaVideo, 'none');
-    changeDisplayStyle(mediaImage, 'block');
+    changeDisplayStyle(mediaVideo, "none");
+    changeDisplayStyle(mediaImage, "block");
   }
 
   return isVideo ? mediaVideo : mediaImage;
@@ -171,8 +175,8 @@ const handleActiveMedia = (newMedia, isVideo) => {
 };
 
 const initializeCarousel = () => {
-  const gameCarouselItems = document.querySelectorAll(".media");
-  if (!gameCarouselItems) return;
+  const gameCarouselItems = Array.from(document.querySelectorAll(".media"));
+  if (gameCarouselItems.length === 0) return;
 
   const gameAppMediaImage = document.getElementById("game-app-media-img");
   const gameAppMediaVideo = document.getElementById("game-app-media-video");
@@ -183,13 +187,38 @@ const initializeCarousel = () => {
   if (gameAppMediaVideo) handleAppMedia(gameAppMediaVideo, firstMedia);
   addClassList(firstItem, "active");
 
-  gameCarouselItems.forEach((media) => {
+  let currentIndex = 0;
+
+  const updateActiveMedia = (index) => {
+    if (gameCarouselItems.length === 0) return;
+
+    const newIndex =
+      (index + gameCarouselItems.length) % gameCarouselItems.length;
+    const newMedia = gameCarouselItems[newIndex];
+    const isVideo = newMedia.classList.contains("video-media");
+
+    handleActiveMedia(newMedia, isVideo);
+    currentIndex = newIndex;
+  };
+
+  gameCarouselItems.forEach((media, index) => {
     media.addEventListener("click", () => {
       const isVideo = media.classList.contains("video-media");
       handleActiveMedia(media, isVideo);
+      currentIndex = index;
     });
+  });
+
+  const sliderLeft = document.querySelector(".slider-left");
+  const sliderRight = document.querySelector(".slider-right");
+
+  sliderLeft.addEventListener("click", () => {
+    updateActiveMedia(currentIndex - 1);
+  });
+
+  sliderRight.addEventListener("click", () => {
+    updateActiveMedia(currentIndex + 1);
   });
 };
 
 initializeCarousel();
-
