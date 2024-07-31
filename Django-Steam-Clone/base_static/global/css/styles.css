@@ -1678,8 +1678,8 @@ button.see-more-btn:hover {
   background: rgb(23, 36, 55);
   background: linear-gradient(
     180deg,
-    rgba(23, 36, 55, 0) 73%,
-    rgba(16, 25, 34, 1) 100%
+    rgba(23, 36, 55, 0) 78%,
+    rgba(16, 25, 34, 0.7469188358937324) 100%
   );
 }
 
@@ -1727,24 +1727,8 @@ button.see-more-btn:hover {
   cursor: pointer;
 }
 
-.media-carousel .media + .active-arrow-up {
-  visibility: hidden;
-}
-
 .media-carousel .media.active {
-  border: 2px solid var(--color-gray-0);
-}
-
-.media-carousel .media.active .active-arrow-up {
-  width: 0;
-  height: 0;
-  border-left: 1rem solid transparent;
-  border-right: 1rem solid transparent;
-  border-bottom: 1rem solid var(--color-gray-0);
-  visibility: visible;
-  position: absolute;
-  top: -1rem;
-  left: 40%;
+  border: 2px solid var(--color-white);
 }
 
 .media-carousel .video-media,
@@ -1845,7 +1829,7 @@ button.see-more-btn:hover {
   height: 18px;
   width: 60px;
   cursor: pointer;
-  transition: left 300ms ease-in-out
+  transition: left 300ms ease-in-out;
 }
 
 .game-details-container .game-content .game-content-data {
@@ -1944,7 +1928,7 @@ button.see-more-btn:hover {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background: #16202d;
+  background: #16202dbb;
   padding: 0 1.5rem;
 }
 
@@ -1955,6 +1939,28 @@ button.see-more-btn:hover {
 
 .game-actions-btns a i.fa-right-long {
   margin-left: 0.5rem;
+}
+
+.game-app-attrs-content {
+  max-width: 94rem;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.game-app-attrs-content .game-app-prices {
+  max-width: 61.5rem;
+  width: 100%;
+  height: 10rem;
+  margin: 3.5rem 0;
+  border-radius: 0.3rem;
+  background: rgb(45, 61, 74);
+  background: linear-gradient(
+    90deg,
+    rgba(45, 61, 74, 1) 5%,
+    rgba(68, 83, 97, 1) 55%,
+    rgba(87, 101, 116, 1) 100%
+  );
 }
 
 /* keyframes */

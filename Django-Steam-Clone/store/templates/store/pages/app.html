@@ -1,7 +1,8 @@
 {% extends "global/base.html" %}
 {% block content %}
 <div class="app-store-container" 
-style="background: url('{{game.background}}'); background-position:center;">
+style="background: url('{{game.background}}');
+background-position:center; background-repeat: no-repeat;">
     {% include "global/partials/shop_shortcuts.html" %}
     <div class="app-page">
         <div class="page-container">
@@ -49,6 +50,9 @@ style="background: url('{{game.background}}'); background-position:center;">
             </div>
         </div>
         {% include "store/partials/app_actions_btns.html" %}
+    </div>
+    <div class="game-app-attrs-content">
+        <div class="game-app-prices"></div>
     </div>
 </div>
 {% endblock content %}
