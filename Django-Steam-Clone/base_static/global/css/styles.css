@@ -1994,6 +1994,64 @@ button.see-more-btn:hover {
   font-size: 1.3rem;
 }
 
+.game-app-attrs-content .game-app-prices .flex-container {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: end;
+}
+
+.game-app-attrs-content .game-app-prices .game-price {
+  max-width: 27rem;
+  width: 100%;
+  height: 3.7rem;
+  background: black;
+  position: relative;
+  top: 2rem;
+}
+
+.game-app-prices .game-price .content {
+  display: flex;
+  padding: 0.2rem;
+  gap: 0.2rem;
+  height: 100%;
+}
+
+.game-price .content .prices-ctn {
+  display: flex;
+  height: 100%;
+  width: 60%;
+}
+
+.game-price .content .prices-ctn .discount-value {
+  text-align: center;
+  width: 50%;
+  background: #4e6b22;
+  color: #beee11;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.game-price .content .prices-ctn .prices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  background: #344654;
+}
+
+.game-price .content .prices-ctn .prices .initial-price {
+  font-size: 1.1rem;
+  color: #647383;
+  margin: 0;
+}
+
+.game-price .content .prices-ctn .prices .final-price {
+  font-size: 1.5rem;
+  color: #beee11;
+}
+
 .game-app-attrs-content .game-attrs-column {
   max-width: 31rem;
   width: 100%;

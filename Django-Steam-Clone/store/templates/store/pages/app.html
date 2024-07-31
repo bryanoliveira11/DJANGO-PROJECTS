@@ -1,8 +1,10 @@
 {% extends "global/base.html" %}
+{% load filters %}
+
 {% block content %}
 <div class="app-store-container" 
 style="background: url('{{game.background}}');
-background-position:center; background-repeat: no-repeat;">
+background-position:top; background-repeat: no-repeat;">
     {% include "global/partials/shop_shortcuts.html" %}
     <div class="app-page">
         <div class="page-container">
@@ -62,6 +64,27 @@ background-position:center; background-repeat: no-repeat;">
                 <span>special promotion!</span>
                 {% else %}
                 {% endif %}
+                <div class="flex-container">
+                    <div class="game-price">
+                        <div class="content">
+                            <div class="prices-ctn">
+                                <span class="discount-value">
+                                    -{{game.discount_percent|format_discount}}%
+                                </span>
+                                {% if not game.is_free and game.price_initial is not None and game.price_final is not None %}
+                                <div class="prices">
+                                    <span class="initial-price strikediag">R$ {{game.price_initial}}</span>
+                                    <span class="final-price">R$ {{game.price_final}}</span>
+                                </div>
+                                {% else %}
+                                <div class="game-prices free-to-play">
+                                    <span>Free to Play</span>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="game-attrs-column">
