@@ -1008,7 +1008,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span a {
   opacity: 0;
 }
 
-.sales-grid .game-card-item .game-card-flex-content button {
+.add-to-cart-btn button {
   position: relative;
   padding: 0.8rem 1.5rem;
   border-radius: 0.5rem;
@@ -1985,7 +1985,7 @@ button.see-more-btn:hover {
 
 .game-app-attrs-content .game-app-prices .game-name i {
   color: var(--color-white);
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .game-app-attrs-content .game-app-prices .game-container span {
@@ -2026,10 +2026,11 @@ button.see-more-btn:hover {
 .game-price .content .prices-ctn .discount-value {
   text-align: center;
   width: 50%;
+  height: 100%;
   background: #4e6b22;
   color: #beee11;
-  font-size: 2.4rem;
-  font-weight: 700;
+  font-size: 2.6rem;
+  font-weight: 600;
 }
 
 .game-price .content .prices-ctn .prices {
@@ -2044,12 +2045,35 @@ button.see-more-btn:hover {
 .game-price .content .prices-ctn .prices .initial-price {
   font-size: 1.1rem;
   color: #647383;
-  margin: 0;
+  margin: 0 0 0 1rem;
 }
 
 .game-price .content .prices-ctn .prices .final-price {
   font-size: 1.5rem;
   color: #beee11;
+}
+
+.content .add-to-cart-btn {
+  padding: 0.1rem 0;
+}
+
+.content .add-to-cart-btn button {
+  padding: 0 1rem;
+  height: 100%;
+  border-radius: 0.4rem;
+  background: linear-gradient(
+    90deg,
+    #75b022,
+    #73ae22,
+    #6fa821,
+    #69a11f,
+    #63991e,
+    #5e911c,
+    #5a8c1b,
+    #588a1b
+  );
+  color: #d2de5c;
+  text-shadow: 2px 2px #588a1b;
 }
 
 .game-app-attrs-content .game-attrs-column {
