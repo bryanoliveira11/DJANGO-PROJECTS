@@ -1,0 +1,59 @@
+{% load filters %}
+
+<div class="game-app-prices">
+    <div class="game-container">
+        <div class="game-name">
+            <h1>buy {{game.name}}</h1>
+            <i class="fa-brands fa-windows"></i>
+        </div>
+        {% if game.discount_percent > 0 %}
+        <span>special promotion!</span>
+        {% else %}
+        {% endif %}
+        <div class="flex-container">
+            {% if game.discount_percent > 0 %}
+            <div class="game-price">
+            {% else %}
+            <div class="game-price fit-content">
+            {% endif %}
+                <div class="content">
+                    {% if game.discount_percent > 0 %}
+                    <div class="prices-ctn">
+                        <span class="discount-value">
+                            -{{game.discount_percent|format_discount}}%
+                        </span>
+                        <div class="prices">
+                            <span class="initial-price strikediag">
+                                {% if 'R$' not in game.price_initial and game.price_initial %}
+                                R$
+                                {% endif %}
+                                {{game.price_initial}}
+                            </span>
+                            <span class="final-price">
+                                {% if 'R$' not in game.price_final %}
+                                R$
+                                {% endif %}
+                                {{game.price_final}}
+                            </span>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="price">
+                        {% if game.price_final is not None %}
+                        {% if 'R$' not in game.price_final %}
+                        R$
+                        {% endif %}
+                        {{game.price_final}}
+                        {% else %}
+                        Free to Play
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                    <div class="add-to-cart-btn" title="Add to Cart">
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

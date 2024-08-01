@@ -1021,7 +1021,7 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span a {
   cursor: pointer;
 }
 
-.sales-grid .game-card-item .game-card-flex-content button:hover {
+.add-to-cart-btn button:hover {
   filter: brightness(130%);
 }
 
@@ -1705,6 +1705,7 @@ button.see-more-btn:hover {
 }
 
 .game-media-display .media-to-show {
+  width: 100%;
   height: 33.5rem;
 }
 
@@ -2010,11 +2011,26 @@ button.see-more-btn:hover {
   top: 2rem;
 }
 
+.game-app-attrs-content .game-app-prices .game-price.fit-content {
+  width: fit-content;
+  top: 4rem;
+}
+
 .game-app-prices .game-price .content {
   display: flex;
+  justify-content: space-between;
   padding: 0.2rem;
   gap: 0.2rem;
   height: 100%;
+}
+
+.game-price .content .price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1rem;
+  height: 100%;
+  color: var(--color-white);
 }
 
 .game-price .content .prices-ctn {
@@ -2046,11 +2062,14 @@ button.see-more-btn:hover {
   font-size: 1.1rem;
   color: #647383;
   margin: 0 0 0 1rem;
+  position: relative;
+  top: 0.3rem;
 }
 
 .game-price .content .prices-ctn .prices .final-price {
   font-size: 1.5rem;
   color: #beee11;
+  margin-bottom: 0.5rem;
 }
 
 .content .add-to-cart-btn {
