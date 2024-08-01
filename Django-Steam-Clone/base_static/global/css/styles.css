@@ -941,15 +941,18 @@ nav.nav-container .nav-row-items-start .row-item-upper.active span a {
   padding: 0 0.3rem;
 }
 
-.game-reviews p.Positive {
+.game-reviews p.Positive,
+span.Positive {
   color: #47a7ee;
 }
 
-.game-reviews p.Mixed {
+.game-reviews p.Mixed,
+span.Mixed {
   color: #b1a06c;
 }
 
-.game-reviews p.Negative {
+.game-reviews p.Negative,
+span.Negative {
   color: #9d4c2e;
 }
 
@@ -1949,7 +1952,7 @@ button.see-more-btn:hover {
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
-  margin: 0 auto;
+  margin: 0 auto 1rem auto;
 }
 
 .game-app-attrs-content .game-app-prices {
@@ -2006,7 +2009,7 @@ button.see-more-btn:hover {
   max-width: 27rem;
   width: 100%;
   height: 3.7rem;
-  background: black;
+  background: var(--color-black);
   position: relative;
   top: 2rem;
 }
@@ -2040,7 +2043,9 @@ button.see-more-btn:hover {
 }
 
 .game-price .content .prices-ctn .discount-value {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 50%;
   height: 100%;
   background: #4e6b22;
@@ -2114,6 +2119,51 @@ button.see-more-btn:hover {
     rgba(21, 31, 44, 0.911) 26%,
     rgba(11, 18, 27, 0.795) 100%
   );
+}
+
+.game-attrs-column .game-attrs-data .game-attrs-title {
+  padding: 1rem 1.5rem;
+  color: var(--color-white);
+  background: linear-gradient(
+    90deg,
+    #131b25,
+    #131a24,
+    #121922,
+    #11171f,
+    #0f151c,
+    #0d131a,
+    #0c1118,
+    #0b1017
+  );
+}
+
+.game-attrs-column .game-attrs-data .game-attrs-title h2 {
+  font-weight: 600;
+}
+
+.game-attrs-column .game-attrs-data .attrs-content {
+  color: var(--color-gray-3);
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.game-attrs-column .game-attrs-data .attrs-content .fa-check {
+  color: #a3d006;
+  font-size: 1.7rem;
+  margin-right: 0.2rem;
+}
+
+.game-attrs-column .game-attrs-data .attrs-content p {
+  margin: 0 1.5rem;
+}
+
+.attrs-content hr {
+  color: #273747;
+  margin: 1rem 2rem 1rem 3.5rem;
+}
+
+.game-attrs-column .game-attrs-data .attrs-content span {
+  margin: 0 0.2rem;
 }
 
 /* keyframes */
