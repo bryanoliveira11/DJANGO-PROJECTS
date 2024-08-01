@@ -60,19 +60,15 @@ background-position:top; background-repeat: no-repeat;">
                     <h2>Is this game relevant to you?</h2>
                 </div>
                 <div class="attrs-content">
-                    <p>
-                        <i class="fa-solid fa-check"></i>
-                        User reviews:
+                    <p><i class="fa-solid fa-check"></i> Players like you love this game.</p>
+                    <hr><p> <i class="fa-solid fa-check"></i> User reviews:
                         <span class="{{game.reviews.description}}">
                             {{game.reviews.description}}
                         </span>
                     </p>
-                    <hr>
-                    <p>
-                        <i class="fa-solid fa-check"></i>
-                        Players like you love this game.
-                    </p>
-                    <hr>
+                    {% if game.currently_popular %}
+                    <hr><p><i class="fa-solid fa-check"></i> Currently popular</p>
+                    {% endif %}
                 </div>
             </div>
         </div>

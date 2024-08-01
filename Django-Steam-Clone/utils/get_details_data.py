@@ -307,6 +307,21 @@ def update_details_with_app_page_content():
             game.save()
 
 
+def update_currently_popular():
+    from games.models import Games
+
+    all_games = Games.objects.all()
+
+    for i in range(len(all_games)):
+        game = all_games[i]
+        if game.reviews:
+            reviews = game.reviews
+            if reviews.positive_percent is not None and reviews.total_reviews is not None:
+                if reviews.positive_percent > 85 and reviews.total_reviews > 15000:
+                    game.currently_popular = True
+                    game.save()
+
+
 if __name__ == '__main__':
     # get_details_data()
     # update_details_with_reviews()
@@ -315,4 +330,5 @@ if __name__ == '__main__':
     # remove_currency_from_prices()
     # generate_slug_from_game_name()
     # update_details_with_background()
-    update_details_with_app_page_content()
+    # update_details_with_app_page_content()
+    update_currently_popular()

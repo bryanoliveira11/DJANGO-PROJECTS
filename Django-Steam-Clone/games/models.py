@@ -61,3 +61,4 @@ class Games(models.Model):
     app_reviews = models.CharField(max_length=500, null=True, blank=True)
     legal_notice = models.CharField(max_length=150, null=True, blank=True)
     pegi_rating = models.CharField(max_length=150, blank=True, null=True)
+    currently_popular = models.BooleanField(default=False)
