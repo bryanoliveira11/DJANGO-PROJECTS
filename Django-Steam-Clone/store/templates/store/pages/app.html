@@ -55,22 +55,7 @@ background-position:top; background-repeat: no-repeat;">
     <div class="game-app-attrs-content">
         {% include "store/partials/app_game_prices.html" %}
         <div class="game-attrs-column">
-            <div class="game-attrs-data">
-                <div class="game-attrs-title">
-                    <h2>Is this game relevant to you?</h2>
-                </div>
-                <div class="attrs-content">
-                    <p><i class="fa-solid fa-check"></i> Players like you love this game.</p>
-                    <hr><p> <i class="fa-solid fa-check"></i> User reviews:
-                        <span class="{{game.reviews.description}}">
-                            {{game.reviews.description}}
-                        </span>
-                    </p>
-                    {% if game.currently_popular %}
-                    <hr><p><i class="fa-solid fa-check"></i> Currently popular</p>
-                    {% endif %}
-                </div>
-            </div>
+            {% include "store/partials/app_attrs_content.html" %}
         </div>
     </div>
 </div>

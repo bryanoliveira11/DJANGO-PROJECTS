@@ -1,0 +1,41 @@
+{% load static %}
+
+<div class="game-attrs-data">
+    <div class="game-attrs-title">
+        <h2>Is this game relevant to you?</h2>
+    </div>
+    <div class="attrs-content">
+        <p><i class="fa-solid fa-check"></i> Players like you love this game.</p>
+        <hr><p> <i class="fa-solid fa-check"></i> User reviews:
+            <span class="{{game.reviews.description}}">
+                {{game.reviews.description}}
+            </span>
+        </p>
+        {% if game.currently_popular %}
+        <hr><p><i class="fa-solid fa-check"></i> Currently popular</p>
+        {% endif %}
+    </div>
+</div>
+
+<div class="game-attrs-data">
+    <div class="attrs-content controller-support">
+        <p>
+            {% if game.controller_support %}
+            {{game.controller_support}}
+            {% endif %}
+            controller support
+        </p>
+        <div class="controllers-col">
+            {% if game.controller_support%}
+            <div class="controller-ctn">
+                <div class="controller-icon">
+                    <img src="{% static 'global/img/dualsense-icon.png' %}" alt="">
+                </div> 
+                <div class="controller-name">
+                    xbox controller
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

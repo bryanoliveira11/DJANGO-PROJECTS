@@ -2107,6 +2107,7 @@ button.see-more-btn:hover {
   margin-top: 3.5rem;
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 }
 
 .game-app-attrs-content .game-attrs-column .game-attrs-data {
@@ -2121,7 +2122,7 @@ button.see-more-btn:hover {
   );
 }
 
-.game-attrs-column .game-attrs-data .game-attrs-title {
+.game-attrs-data .game-attrs-title {
   padding: 1rem 1.5rem;
   color: var(--color-white);
   background: linear-gradient(
@@ -2137,23 +2138,23 @@ button.see-more-btn:hover {
   );
 }
 
-.game-attrs-column .game-attrs-data .game-attrs-title h2 {
+.game-attrs-data .game-attrs-title h2 {
   font-weight: 600;
 }
 
-.game-attrs-column .game-attrs-data .attrs-content {
+.game-attrs-data .attrs-content {
   color: var(--color-gray-3);
   margin-top: 1.5rem;
   font-size: 1.5rem;
 }
 
-.game-attrs-column .game-attrs-data .attrs-content .fa-check {
+.game-attrs-data .attrs-content .fa-check {
   color: #a3d006;
   font-size: 1.7rem;
   margin-right: 0.2rem;
 }
 
-.game-attrs-column .game-attrs-data .attrs-content p {
+.game-attrs-data .attrs-content p {
   margin: 1.5rem;
 }
 
@@ -2162,8 +2163,47 @@ button.see-more-btn:hover {
   margin: 0 2rem 0 3.5rem;
 }
 
-.game-attrs-column .game-attrs-data .attrs-content span {
+.game-attrs-data .attrs-content span {
   margin: 0 0.2rem;
+}
+
+.game-attrs-data .attrs-content.controller-support p {
+  text-transform: capitalize;
+  margin-bottom: 0.5rem;
+}
+
+.game-attrs-data .attrs-content .controllers-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  margin: 0 1.5rem;
+}
+
+.attrs-content .controllers-col .controller-ctn {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  height: 3rem;
+  background: #172531;
+}
+
+.attrs-content .controllers-col .controller-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 4rem;
+}
+
+.attrs-content .controllers-col .controller-icon img {
+  height: 1.8rem;
+}
+
+.attrs-content .controllers-col .controller-name {
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  margin-left: 0.5rem;
+  color: #69a712;
 }
 
 /* keyframes */
