@@ -2074,15 +2074,17 @@ button.see-more-btn:hover {
 .game-price .content .prices-ctn .prices .initial-price {
   font-size: 1.1rem;
   color: #647383;
-  margin: 0 0 0 1rem;
+  margin: 0 0 0 0.5rem;
   position: relative;
   top: 0.3rem;
+  width: fit-content;
 }
 
 .game-price .content .prices-ctn .prices .final-price {
   font-size: 1.5rem;
   color: #beee11;
   margin-bottom: 0.5rem;
+  width: fit-content;
 }
 
 .content .add-to-cart-btn {
@@ -2271,6 +2273,10 @@ button.see-more-btn:hover {
 .game-attrs-data .game-attr-info .game-attr-col .attr-name i {
   font-size: 0.8rem;
   color: var(--color-white);
+}
+
+.game-attrs-data .game-actions-btns {
+  background: none;
 }
 
 /* keyframes */
