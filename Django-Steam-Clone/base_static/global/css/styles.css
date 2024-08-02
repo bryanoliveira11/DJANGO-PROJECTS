@@ -1858,7 +1858,7 @@ button.see-more-btn:hover {
   line-height: 1.6rem;
 }
 
-.game-content-data .content span {
+.content span {
   font-size: 1.1rem;
   text-transform: uppercase;
   color: rgb(85, 103, 114);
@@ -1866,37 +1866,40 @@ button.see-more-btn:hover {
   width: 100%;
 }
 
-.game-content-data .content span.tags {
+.content span.tags {
   text-transform: none;
   padding: 0;
 }
 
-.game-content-data .content {
+.content {
   display: flex;
   font-size: 1.2rem;
   text-transform: capitalize;
 }
 
-.game-content-data .content p {
+.content p {
   font-size: 1.2rem;
   margin: 0 0.2rem 0 0.5rem;
   padding: 0;
 }
 
-.game-content-data .content p.release-date {
+.content p.release-date,
+.content p.title {
   color: var(--color-gray-3);
 }
 
-.game-content-data .content p.developers {
+.content p.developers,
+.content p.genre {
   color: #79ceff;
   cursor: pointer;
 }
 
-.game-content-data .content p.developers:hover {
+.content p.developers:hover,
+.content p.genre:hover {
   color: var(--color-white);
 }
 
-.game-content-data .content h2 {
+.content h2 {
   font-size: 1.2rem;
   color: rgb(85, 103, 114);
   font-weight: 500;
@@ -2117,8 +2120,7 @@ button.see-more-btn:hover {
 
 .game-app-attrs-content .game-attrs-column .game-attrs-data {
   width: 100%;
-  max-height: 20rem;
-  height: 100%;
+  height: fit-content;
   background: rgb(21, 31, 44);
   background: linear-gradient(
     90deg,
@@ -2239,6 +2241,35 @@ button.see-more-btn:hover {
 }
 
 .attrs-content .game-attr-col .game-attr-ctn:hover .attr-name.alt-color {
+  color: var(--color-white);
+}
+
+.game-attrs-data .game-attr-info {
+  padding: 1.5rem;
+}
+
+.game-attrs-data .game-attr-info .content {
+  margin-bottom: 0.5rem;
+}
+
+.game-attrs-data .game-attr-info .content span {
+  width: fit-content;
+}
+
+.game-attrs-data .game-attr-info .content a {
+  color: inherit;
+}
+
+.game-attrs-data .game-attr-info .game-attr-col {
+  margin: 1.5rem 0 0 0;
+}
+
+.game-attrs-data .game-attr-info .game-attr-col .attr-name {
+  font-size: 1.4rem;
+}
+
+.game-attrs-data .game-attr-info .game-attr-col .attr-name i {
+  font-size: 0.8rem;
   color: var(--color-white);
 }
 

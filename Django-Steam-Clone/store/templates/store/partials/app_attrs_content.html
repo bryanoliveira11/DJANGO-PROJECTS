@@ -32,9 +32,7 @@
                 <div class="attr-icon">
                     <img src="{% static 'global/img/xbox-icon.png' %}" alt="">
                 </div> 
-                <div class="attr-name">
-                    xbox controller
-                </div>
+                <div class="attr-name">xbox controller</div>
             </a>
             {% if game.controller_support %}
             <a href="#" class="game-attr-ctn">
@@ -63,6 +61,63 @@
                 </div>
             </a>
             {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="game-attrs-data">
+    <div class="game-attr-info">
+        <div class="content">
+            <span>title:</span>
+            <p class="title">{{game.name}}</p>
+        </div>
+        <div class="content">
+            <span>genre:</span>
+            <p class="genre">
+                <a href="#">{{game.genres.all.first.name}}</a>
+            </p>
+        </div>
+        <div class="content">
+            <span>developer:</span>
+            <p class="developers">{{game.developers}}</p>
+        </div>
+        <div class="content">
+            <span>publisher:</span>
+            <p class="developers">{{game.publishers}}</p>
+        </div>
+        <div class="content">
+            <span>release date:</span>
+            <p class="release-date">{{game.release_date}}</p>
+        </div>
+        <div class="attrs-content">
+            <div class="game-attr-col">
+                <a href="#" class="game-attr-ctn">
+                    <div class="attr-name no-capitalize alt-color">
+                        Visit the website
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </div>
+                </a>
+                <a href="#" class="game-attr-ctn">
+                    <div class="attr-name no-capitalize alt-color">
+                        View update history
+                    </div>
+                </a>
+                <a href="#" class="game-attr-ctn">
+                    <div class="attr-name no-capitalize alt-color">
+                        Read related news
+                    </div>
+                </a>
+                <a href="#" class="game-attr-ctn">
+                    <div class="attr-name no-capitalize alt-color">
+                        View discussions
+                    </div>
+                </a>
+                <a href="#" class="game-attr-ctn">
+                    <div class="attr-name alt-color">
+                        find community groups
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </div>
