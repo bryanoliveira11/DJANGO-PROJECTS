@@ -1904,9 +1904,14 @@ button.see-more-btn:hover {
 
 .content .game-tags {
   display: flex;
+  flex-wrap: wrap;
   height: fit-content;
   gap: 0.2rem;
-  margin: 0.5rem 0;
+  margin-top: 0.3rem;
+}
+
+.content .game-tags .app-page-action-btn {
+  margin: 0.2rem 0;
 }
 
 .content .game-tags .app-page-action-btn a {
@@ -2169,41 +2174,72 @@ button.see-more-btn:hover {
 
 .game-attrs-data .attrs-content.controller-support p {
   text-transform: capitalize;
+  font-size: 1.3rem;
+  color: #8f98a0;
   margin-bottom: 0.5rem;
 }
 
-.game-attrs-data .attrs-content .controllers-col {
+.game-attrs-data .attrs-content .game-attr-col {
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
-  margin: 0 1.5rem;
+  gap: 0.3rem;
+  margin: 0 1.5rem 1.5rem 1.5rem;
 }
 
-.attrs-content .controllers-col .controller-ctn {
+.attrs-content .game-attr-col .game-attr-ctn {
   display: flex;
   align-items: center;
   justify-content: start;
   height: 3rem;
-  background: #172531;
+  background: #1b2b38;
+  cursor: pointer;
 }
 
-.attrs-content .controllers-col .controller-icon {
+.attrs-content .game-attr-col .game-attr-ctn:hover {
+  background: #5097bf;
+  background: linear-gradient(
+    90deg,
+    #65bdf0,
+    #63b9eb,
+    #5eb0e0,
+    #57a4d0,
+    #5097bf,
+    #498bb0,
+    #4582a5,
+    #437fa1
+  );
+}
+
+.attrs-content .game-attr-col .attr-icon {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
   width: 4rem;
+  background: #101822;
 }
 
-.attrs-content .controllers-col .controller-icon img {
+.attrs-content .game-attr-col .attr-icon img {
   height: 1.8rem;
 }
 
-.attrs-content .controllers-col .controller-name {
-  font-size: 1.4rem;
+.attrs-content .game-attr-col .attr-name {
+  font-size: 1.2rem;
   text-transform: capitalize;
-  margin-left: 0.5rem;
+  margin-left: 0.8rem;
   color: #69a712;
+}
+
+.attrs-content .game-attr-col .attr-name.no-capitalize {
+  text-transform: none;
+}
+
+.attrs-content .game-attr-col .attr-name.alt-color {
+  color: #47a7ee;
+}
+
+.attrs-content .game-attr-col .game-attr-ctn:hover .attr-name.alt-color {
+  color: var(--color-white);
 }
 
 /* keyframes */

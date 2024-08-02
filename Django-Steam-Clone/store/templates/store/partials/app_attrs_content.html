@@ -22,19 +22,46 @@
         <p>
             {% if game.controller_support %}
             {{game.controller_support}}
+            {% else %}
+            partial
             {% endif %}
             controller support
         </p>
-        <div class="controllers-col">
-            {% if game.controller_support%}
-            <div class="controller-ctn">
-                <div class="controller-icon">
-                    <img src="{% static 'global/img/dualsense-icon.png' %}" alt="">
+        <div class="game-attr-col">
+            <a href="#" class="game-attr-ctn">
+                <div class="attr-icon">
+                    <img src="{% static 'global/img/xbox-icon.png' %}" alt="">
                 </div> 
-                <div class="controller-name">
+                <div class="attr-name">
                     xbox controller
                 </div>
-            </div>
+            </a>
+            {% if game.controller_support %}
+            <a href="#" class="game-attr-ctn">
+                <div class="attr-icon">
+                    <img src="{% static 'global/img/ps4-icon.png' %}" alt="">
+                </div> 
+                <div class="attr-name alt-color">
+                    dualshock controllers (USB only)
+                </div>
+            </a>
+            <a href="#" class="game-attr-ctn">
+                <div class="attr-icon">
+                    <img src="{% static 'global/img/dualsense-icon.png' %}" alt="">
+                </div> 
+                <div class="attr-name">
+                    dualsense controller (USB only)
+                </div>
+            </a>
+            {% else %}
+            <a href="#" class="game-attr-ctn">
+                <div class="attr-icon">
+                    <img src="{% static 'global/img/no-controller.png' %}" alt="">
+                </div> 
+                <div class="attr-name no-capitalize">
+                    Support for other controllers is not known
+                </div>
+            </a>
             {% endif %}
         </div>
     </div>
