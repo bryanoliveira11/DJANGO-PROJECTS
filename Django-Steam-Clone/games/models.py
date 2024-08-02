@@ -51,7 +51,7 @@ class Games(models.Model):
     reviews = models.ForeignKey(
         Reviews, on_delete=models.CASCADE, null=True, blank=True
     )
-    required_age = models.CharField(max_length=10, null=True, blank=True)
+    required_age = models.IntegerField(null=True, blank=True)
     release_date = models.CharField(max_length=50, null=True, blank=True)
     controller_support = models.CharField(max_length=50, null=True, blank=True)
     metacritic_score = models.IntegerField(null=True, blank=True)

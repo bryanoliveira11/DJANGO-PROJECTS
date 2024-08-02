@@ -134,6 +134,7 @@ class AppPage(DetailView):
         queryset = super().get_queryset(*args, **kwargs)
         queryset = queryset.filter(
             slug=self.kwargs.get('game_slug'),
+            steam_appid=self.kwargs.get('steam_appid')
         ).select_related('reviews')
 
         if not queryset:

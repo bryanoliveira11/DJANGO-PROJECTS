@@ -2279,6 +2279,33 @@ button.see-more-btn:hover {
   background: none;
 }
 
+.game-attrs-data .game-attr-rating {
+  padding: 1rem 1.5rem 1.5rem 1.5rem;
+  color: var(--color-white);
+}
+
+.game-attrs-data .game-attr-rating .rating-classify span {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.game-attrs-data .game-attr-rating .rating-ctn {
+  display: flex;
+  margin-top: 0.5rem;
+}
+
+.game-attrs-data .game-attr-rating .rating-ctn .rating {
+  margin-left: 0.5rem;
+  text-transform: capitalize;
+  max-width: 8.5rem;
+  font-size: 1.3rem;
+}
+
+.game-attrs-data .game-attr-rating .rating-for {
+  margin-top: 0.5rem;
+  font-size: 1.3rem;
+}
+
 /* keyframes */
 
 .saleCardAnim {

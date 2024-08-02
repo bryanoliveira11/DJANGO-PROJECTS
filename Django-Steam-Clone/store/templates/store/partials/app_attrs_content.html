@@ -30,14 +30,14 @@
         <div class="game-attr-col">
             <a href="#" class="game-attr-ctn">
                 <div class="attr-icon">
-                    <img src="{% static 'global/img/xbox-icon.png' %}" alt="">
+                    <img src="{% static 'global/img/xbox-icon.png' %}" alt="Xbox Controller Icon">
                 </div> 
                 <div class="attr-name">xbox controller</div>
             </a>
             {% if game.controller_support %}
             <a href="#" class="game-attr-ctn">
                 <div class="attr-icon">
-                    <img src="{% static 'global/img/ps4-icon.png' %}" alt="">
+                    <img src="{% static 'global/img/ps4-icon.png' %}" alt="Dualshock Controller Icon">
                 </div> 
                 <div class="attr-name alt-color">
                     dualshock controllers (USB only)
@@ -45,7 +45,7 @@
             </a>
             <a href="#" class="game-attr-ctn">
                 <div class="attr-icon">
-                    <img src="{% static 'global/img/dualsense-icon.png' %}" alt="">
+                    <img src="{% static 'global/img/dualsense-icon.png' %}" alt="Dualsense Controller Icon">
                 </div> 
                 <div class="attr-name">
                     dualsense controller (USB only)
@@ -61,6 +61,39 @@
                 </div>
             </a>
             {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="game-attrs-data">
+    <div class="game-attr-rating">
+        {% if game.required_age >= 12 %}
+        <div class="rating-classify">
+            <span>parental rating {{game.required_age}}</span>
+        </div>
+        {% endif %}
+        <div class="rating-icon">
+            <div class="rating-ctn">
+                {% if game.required_age < 12 %}
+                    <img src="https://store.akamai.steamstatic.com/public/shared/images/game_ratings/DEJUS/l.png?v=2" alt="Pegi Rating">
+                {% elif game.required_age == 12 %}
+                    <img src="https://store.akamai.steamstatic.com/public/shared/images/game_ratings/DEJUS/12.png?v=2" alt="Pegi Rating 12">
+                {% elif game.required_age == 14 %}
+                    <img src="https://store.akamai.steamstatic.com/public/shared/images/game_ratings/DEJUS/14.png?v=2" alt="Pegi Rating 14">
+                {% elif game.required_age == 16 %}
+                    <img src="https://store.akamai.steamstatic.com/public/shared/images/game_ratings/DEJUS/16.png?v=2" alt="Pegi Rating 16">
+                {% elif game.required_age == 18 %}
+                    <img src="https://store.akamai.steamstatic.com/public/shared/images/game_ratings/DEJUS/18.png?v=2" alt="Pegi Rating 18">
+                {% endif %}
+                {% if game.pegi_rating %}
+                    <div class="rating">
+                        <p>{{ game.pegi_rating }}</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="rating-for">
+            <span>Classification for: Indicative Rating Coordination</span>
         </div>
     </div>
 </div>
